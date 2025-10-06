@@ -1,0 +1,67 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Bienvenido a Connecta",
+    "subtitle": "Conectando empresas, personas y posibilidades",
+    "cta": "Comenzar"
+  },
+  "about": {
+    "title": "Acerca de Connecta",
+    "description": "Somos Connecta, la empresa de software de Guatemala. Nuestra misión es diseñar tecnología que sirva primero a las personas. Desde agentes impulsados por inteligencia artificial hasta soluciones a medida, creamos herramientas que brindan a empresas e individuos la libertad de conectar, crear y crecer.",
+    "features": {
+      "innovation": {
+        "title": "Innovación",
+        "description": "Soluciones de vanguardia para desafíos modernos"
+      },
+      "partnership": {
+        "title": "Asociación",
+        "description": "Construyendo relaciones duraderas con nuestros clientes"
+      },
+      "efficiency": {
+        "title": "Eficiencia",
+        "description": "Procesos optimizados para resultados óptimos"
+      }
+    }
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "items": {
+      "consulting": {
+        "title": "Agente de Mensajes Inteligente para Redes Sociales",
+        "description": "Automatiza conversaciones con clientes en Instagram y más. Nuestro agente IA responde preguntas, consulta inventario, confirma ventas y agenda citas—ahorrándote tiempo mientras aumentas ventas."
+      },
+      "solutions": {
+        "title": "Soluciones de IA para Crecimiento Empresarial",
+        "description": "Soluciones de automatización inteligente diseñadas para escalar su negocio y desbloquear nuevas oportunidades de ingresos."
+      },
+      "support": {
+        "title": "Soporte de IA 24/7",
+        "description": "Agentes de IA que manejan servicio al cliente, ventas y soporte las 24 horas, mejorando la eficiencia."
+      },
+      "technology": {
+        "title": "Integración Perfecta",
+        "description": "Soluciones de IA fáciles de implementar que se integran con sus sistemas y flujos de trabajo existentes."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contáctenos",
+    "form": {
+      "name": "Su Nombre",
+      "email": "Su Email",
+      "message": "Su Mensaje",
+      "submit": "Enviar Mensaje",
+      "sending": "Enviando...",
+      "success": "¡Gracias! Su mensaje ha sido enviado exitosamente.",
+      "error": "¡Ups! Algo salió mal. Por favor, inténtelo de nuevo."
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados."
+  }
+}
