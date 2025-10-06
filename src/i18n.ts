@@ -18,7 +18,7 @@ i18n
     },
     fallbackLng: 'en', // Fallback language
     detection: {
-      order: ['navigator', 'htmlTag', 'path', 'subdomain'],
+      order: ['localStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
       caches: ['localStorage']
     },
     interpolation: {
