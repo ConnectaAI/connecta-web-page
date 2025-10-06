@@ -14,7 +14,7 @@ function LanguageSwitcher() {
       onClick={toggleLanguage}
       aria-label="Toggle language"
     >
-      {i18n.language === 'es' ? '🇺🇸 EN' : '🇪🇸 ES'}
+      {i18n.language === 'es' ? 'ES 🇪🇸' : 'EN 🇺🇸'}
     </button>
   );
 }
