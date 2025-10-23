@@ -3,7 +3,8 @@
     "home": "Inicio",
     "about": "Nosotros",
     "services": "Servicios",
-    "contact": "Contacto"
+    "contact": "Contacto",
+    "privacy": "Responde - Política de Privacidad"
   },
   "hero": {
     "title": "Bienvenido a Connecta",
@@ -32,8 +33,8 @@
     "title": "Nuestros Servicios",
     "items": {
       "consulting": {
-        "title": "Agente de Mensajes Inteligente para Redes Sociales",
-        "description": "Automatiza conversaciones con clientes en Instagram y más. Nuestro agente IA responde preguntas, consulta inventario, confirma ventas y agenda citas—ahorrándote tiempo mientras aumentas ventas."
+        "title": "Responde - Agente de Mensajes Inteligente para Redes Sociales",
+        "description": "Responde es el servicio de atención al cliente automatizado para Instagram y más. Nuestro agente IA responde preguntas, consulta inventario, confirma ventas y agenda citas—ahorrándote tiempo mientras aumentas ventas."
       },
       "solutions": {
         "title": "Soluciones de IA para Crecimiento Empresarial",
@@ -63,5 +64,115 @@
   },
   "footer": {
     "rights": "Todos los derechos reservados."
+  },
+  "privacy": {
+    "title": "Política de Privacidad — Responde",
+    "lastUpdated": "Última actualización: Octubre 2025",
+    "intro": "Responde es un servicio de Agente IA desarrollado y operado por Connecta (\"nosotros,\" \"nuestro,\" \"nos\"). Responde permite a las empresas (\"clientes\") proporcionar respuestas automatizadas e inteligentes a través de plataformas Meta como Mensajes Directos de Instagram (DMs).",
+    "introAgreement": "Esta Política de Privacidad explica cómo Responde recopila, usa y protege la información personal cuando interactúa con usuarios en nombre de nuestros clientes.",
+    "agreementText": "Al enviar mensajes o interactuar con una empresa que usa Responde, usted acepta la recopilación y uso de información de acuerdo con esta Política de Privacidad.",
+    "sections": {
+      "informationCollect": {
+        "title": "1. Información que Recopilamos",
+        "description": "Recopilamos y procesamos información proporcionada a través de las APIs de Meta y las interacciones del usuario con el Agente IA.",
+        "personalData": {
+          "title": "a. Datos Personales",
+          "items": [
+            "Nombre y nombre de usuario obtenidos de perfiles de Meta (Instagram).",
+            "Contenido de mensajes o datos que el usuario comparte voluntariamente vía DMs."
+          ]
+        },
+        "usageData": {
+          "title": "b. Datos de Uso",
+          "items": [
+            "Duración de sesión, número de interacciones e intercambios de mensajes para mejorar la eficiencia y precisión del servicio."
+          ]
+        },
+        "clientData": {
+          "title": "c. Datos de Clientes",
+          "items": [
+            "Los clientes pueden tener acceso a resúmenes agregados y anonimizados derivados de conversaciones para propósitos analíticos o de mejora del servicio."
+          ]
+        },
+        "noTracking": {
+          "title": "d. Sin Datos de Dispositivo o Seguimiento",
+          "items": [
+            "Responde no recopila información del dispositivo (como dirección IP, navegador o ubicación).",
+            "Responde no usa cookies o píxeles de seguimiento."
+          ]
+        }
+      },
+      "howWeUse": {
+        "title": "2. Cómo Usamos la Información",
+        "description": "Usamos los datos recopilados para:",
+        "items": [
+          "Permitir que el Agente IA proporcione asistencia automatizada y responda a mensajes de usuarios en nombre de nuestros clientes.",
+          "Generar análisis de datos anonimizados para identificar tendencias y patrones que ayuden a los clientes a mejorar sus interacciones con clientes.",
+          "Mejorar el rendimiento y precisión del modelo de IA con el tiempo.",
+          "Apoyar las operaciones comerciales del cliente mejorando el servicio y la comunicación."
+        ],
+        "note": "Todos los datos analíticos utilizados para insights son agregados y anonimizados antes de ser procesados o compartidos con clientes."
+      },
+      "dataSharing": {
+        "title": "3. Compartir Datos",
+        "description": "Responde puede compartir datos de mensajes limitados y anonimizados con:",
+        "items": [
+          "Modelos de Lenguaje Grande (LLMs) o sistemas de procesamiento de IA para generar respuestas o insights relevantes. Estos servicios procesan datos solo para proporcionar respuestas o análisis y no reciben información personal identificable."
+        ],
+        "note": "Responde no vende, alquila o comparte datos de usuarios con terceros para publicidad o propósitos no relacionados."
+      },
+      "dataRetention": {
+        "title": "4. Retención de Datos",
+        "items": [
+          "Los datos del usuario se retienen durante la duración de la relación activa del cliente con Connecta o hasta que se reciba una solicitud de eliminación.",
+          "Los datos no se eliminan automáticamente después de un período fijo, para asegurar la continuidad del servicio y la precisión del aprendizaje."
+        ]
+      },
+      "dataDeletion": {
+        "title": "5. Solicitudes de Eliminación de Datos",
+        "description": "Los usuarios pueden solicitar la eliminación de sus datos en cualquier momento siguiendo estos pasos:",
+        "steps": [
+          "Enviar un email a connectaguatemala@gmail.com",
+          "Usar el asunto: \"Solicitud de eliminación de datos\"",
+          "Incluir su nombre de usuario de Instagram en el cuerpo del mensaje."
+        ],
+        "note": "Una vez verificado, sus datos personales e historial de mensajes serán eliminados permanentemente de nuestros sistemas y excluidos de análisis futuros."
+      },
+      "dataSecurity": {
+        "title": "6. Seguridad de Datos",
+        "items": [
+          "Connecta aplica salvaguardas técnicas y organizacionales razonables para proteger la información del acceso no autorizado, alteración o mal uso.",
+          "Sin embargo, como ninguna comunicación en línea o basada en API es completamente segura, no podemos garantizar protección absoluta."
+        ]
+      },
+      "childrenPrivacy": {
+        "title": "7. Privacidad de Menores",
+        "items": [
+          "Responde no está destinado para niños menores de 13 años, y no recopilamos conscientemente información personal de ellos.",
+          "Si nos damos cuenta de que hemos recopilado inadvertidamente datos de un menor, los eliminaremos prontamente."
+        ]
+      },
+      "internationalTransfers": {
+        "title": "8. Transferencias Internacionales de Datos",
+        "items": [
+          "Los datos pueden ser procesados en servidores ubicados fuera de su país.",
+          "Al interactuar con Responde, usted consiente a tales transferencias, siempre que cumplan con los estándares de protección de datos aplicables."
+        ]
+      },
+      "policyChanges": {
+        "title": "9. Cambios a Esta Política",
+        "items": [
+          "Podemos actualizar esta Política de Privacidad periódicamente.",
+          "Todas las actualizaciones estarán disponibles en: http://connectaia.com/agent-policy",
+          "La fecha de \"Última actualización\" en la parte superior reflejará la versión más reciente."
+        ]
+      },
+      "contactUs": {
+        "title": "10. Contáctenos",
+        "description": "Para cualquier pregunta, solicitud o preocupación sobre esta Política de Privacidad o nuestras prácticas de datos, por favor contáctenos en:",
+        "email": "📧 connectaguatemala@gmail.com",
+        "website": "🌐 http://connectaia.com"
+      }
+    }
   }
 }

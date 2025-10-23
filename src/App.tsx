@@ -1,18 +1,15 @@
 import { useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
-import Snowfall from './components/Snowfall';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Layout from './components/Layout';
+import Home from './components/Home';
+import PrivacyPolicy from './components/PrivacyPolicy';
 import './App.css';
 
 function App() {
   useEffect(() => {
     // Navbar scroll effect
     const handleScroll = () => {
-      const navbar = document.querySelector('.navbar');
+      const navbar = document.querySelector('.navbar') as HTMLElement;
       if (navbar) {
         if (window.pageYOffset > 100) {
           navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
@@ -36,8 +33,9 @@ function App() {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'translateY(0)';
+          const target = entry.target as HTMLElement;
+          target.style.opacity = '1';
+          target.style.transform = 'translateY(0)';
         }
       });
     }, observerOptions);
@@ -45,9 +43,10 @@ function App() {
     // Observe all cards
     const cards = document.querySelectorAll('.feature-card, .service-card');
     cards.forEach(card => {
-      card.style.opacity = '0';
-      card.style.transform = 'translateY(20px)';
-      card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      const element = card as HTMLElement;
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(20px)';
+      element.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
       observer.observe(card);
     });
 
@@ -55,15 +54,14 @@ function App() {
   }, []);
 
   return (
-    <>
-      {/* <Snowfall /> */}
-      <Navbar />
-      <Hero />
-      <About />
-      <Services />
-      <Contact />
-      <Footer />
-    </>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/agent-policy" element={<PrivacyPolicy />} />
+        </Routes>
+      </Layout>
+    </Router>
   );
 }
 
