@@ -1,11 +1,13 @@
 import { useState, MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/connecta-logo.svg';
 import LanguageSwitcher from './LanguageSwitcher';
 
 function Navbar() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -17,6 +19,13 @@ function Navbar() {
 
   const scrollToSection = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
+    
+    // If we're not on the home page, navigate to home first
+    if (location.pathname !== '/') {
+      window.location.href = `/#${id}`;
+      return;
+    }
+    
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -28,7 +37,9 @@ function Navbar() {
     <nav className="navbar">
       <div className="container">
         <div className="logo">
-          <img src={logo} alt="Connecta Logo" className="logo-image" />
+          <Link to="/">
+            <img src={logo} alt="Connecta Logo" className="logo-image" />
+          </Link>
         </div>
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
           <li><a href="#home" onClick={(e) => scrollToSection(e, 'home')}>{t('nav.home')}</a></li>
