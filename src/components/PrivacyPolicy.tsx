@@ -17,7 +17,7 @@ function PrivacyPolicy() {
             <p><strong>{t('privacy.agreementText')}</strong></p>
           </div>
 
-          <section className="privacy-section">
+          <section className="privacy-section" id="information-collect">
             <h2>{t('privacy.sections.informationCollect.title')}</h2>
             <p>{t('privacy.sections.informationCollect.description')}</p>
             
@@ -58,7 +58,7 @@ function PrivacyPolicy() {
             </div>
           </section>
 
-          <section className="privacy-section">
+          <section className="privacy-section" id="how-we-use">
             <h2>{t('privacy.sections.howWeUse.title')}</h2>
             <p>{t('privacy.sections.howWeUse.description')}</p>
             <ul>
@@ -69,7 +69,7 @@ function PrivacyPolicy() {
             <p className="note">{t('privacy.sections.howWeUse.note')}</p>
           </section>
 
-          <section className="privacy-section">
+          <section className="privacy-section" id="data-sharing">
             <h2>{t('privacy.sections.dataSharing.title')}</h2>
             <p>{t('privacy.sections.dataSharing.description')}</p>
             <ul>
@@ -80,7 +80,7 @@ function PrivacyPolicy() {
             <p className="note">{t('privacy.sections.dataSharing.note')}</p>
           </section>
 
-          <section className="privacy-section">
+          <section className="privacy-section" id="data-retention">
             <h2>{t('privacy.sections.dataRetention.title')}</h2>
             <ul>
               {(t('privacy.sections.dataRetention.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
@@ -89,7 +89,7 @@ function PrivacyPolicy() {
             </ul>
           </section>
 
-          <section className="privacy-section">
+          <section className="privacy-section" id="data-deletion">
             <h2>{t('privacy.sections.dataDeletion.title')}</h2>
             <p>{t('privacy.sections.dataDeletion.description')}</p>
             <ol>
@@ -100,7 +100,7 @@ function PrivacyPolicy() {
             <p className="note">{t('privacy.sections.dataDeletion.note')}</p>
           </section>
 
-          <section className="privacy-section">
+          <section className="privacy-section" id="data-security">
             <h2>{t('privacy.sections.dataSecurity.title')}</h2>
             <ul>
               {(t('privacy.sections.dataSecurity.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
@@ -109,7 +109,7 @@ function PrivacyPolicy() {
             </ul>
           </section>
 
-          <section className="privacy-section">
+          <section className="privacy-section" id="children-privacy">
             <h2>{t('privacy.sections.childrenPrivacy.title')}</h2>
             <ul>
               {(t('privacy.sections.childrenPrivacy.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
@@ -118,7 +118,7 @@ function PrivacyPolicy() {
             </ul>
           </section>
 
-          <section className="privacy-section">
+          <section className="privacy-section" id="international-transfers">
             <h2>{t('privacy.sections.internationalTransfers.title')}</h2>
             <ul>
               {(t('privacy.sections.internationalTransfers.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
@@ -127,7 +127,7 @@ function PrivacyPolicy() {
             </ul>
           </section>
 
-          <section className="privacy-section">
+          <section className="privacy-section" id="policy-changes">
             <h2>{t('privacy.sections.policyChanges.title')}</h2>
             <ul>
               {(t('privacy.sections.policyChanges.items', { returnObjects: true }) as string[]).map((item: string, index: number) => (
@@ -136,7 +136,7 @@ function PrivacyPolicy() {
             </ul>
           </section>
 
-          <section className="privacy-section">
+          <section className="privacy-section" id="contact-us">
             <h2>{t('privacy.sections.contactUs.title')}</h2>
             <p>{t('privacy.sections.contactUs.description')}</p>
             <div className="contact-info">
