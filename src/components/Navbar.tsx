@@ -1,7 +1,7 @@
 import { useState, MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/connecta-logo.svg';
+import logo from '../assets/connecta-logo.png';
 import LanguageSwitcher from './LanguageSwitcher';
 import '../styles/Navbar.css';
 
