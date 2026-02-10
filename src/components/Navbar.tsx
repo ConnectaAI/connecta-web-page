@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import logo from '../assets/connecta-logo.svg';
 import LanguageSwitcher from './LanguageSwitcher';
+import '../styles/Navbar.css';
 
 function Navbar() {
   const { t } = useTranslation();
@@ -49,11 +50,14 @@ function Navbar() {
         </ul>
         <div className="nav-actions">
           <LanguageSwitcher />
-          <div className="hamburger" onClick={toggleMenu}>
+          <a href="#contact" className="nav-contact-btn" onClick={(e) => scrollToSection(e, 'contact')}>
+            {t('nav.contact')}
+          </a>
+          <button className="hamburger" onClick={toggleMenu}>
             <span></span>
             <span></span>
             <span></span>
-          </div>
+          </button>
         </div>
       </div>
     </nav>

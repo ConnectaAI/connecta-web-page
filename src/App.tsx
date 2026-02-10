@@ -7,23 +7,6 @@ import './App.css';
 
 function App() {
   useEffect(() => {
-    // Navbar scroll effect
-    const handleScroll = () => {
-      const navbar = document.querySelector('.navbar') as HTMLElement;
-      if (navbar) {
-        if (window.pageYOffset > 100) {
-          navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
-        } else {
-          navbar.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  useEffect(() => {
     // Intersection Observer for animations
     const observerOptions = {
       threshold: 0.1,
