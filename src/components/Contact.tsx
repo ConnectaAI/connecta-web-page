@@ -1,5 +1,6 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
+import '../styles/Contact.css';
 
 interface FormData {
   name: string;
@@ -83,52 +84,70 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="contact">
-      <div className="container">
-        <h2 className="section-title">{t('contact.title')}</h2>
-        <form className="contact-form" onSubmit={handleSubmit}>
-          <div className="form-group">
-            <input
-              type="text"
-              id="name"
-              placeholder={t('contact.form.name')}
-              value={formData.name}
-              onChange={handleChange}
-              required
-              disabled={isLoading}
-            />
-          </div>
-          <div className="form-group">
-            <input
-              type="email"
-              id="email"
-              placeholder={t('contact.form.email')}
-              value={formData.email}
-              onChange={handleChange}
-              required
-              disabled={isLoading}
-            />
-          </div>
-          <div className="form-group">
-            <textarea
-              id="message"
-              rows={5}
-              placeholder={t('contact.form.message')}
-              value={formData.message}
-              onChange={handleChange}
-              required
-              disabled={isLoading}
-            />
-          </div>
-          {status.message && (
-            <div className={`alert alert-${status.type}`}>
-              {status.message}
+    <section id="contact" className="contact-section">
+      <div className="contact-bg"></div>
+      <div className="contact-container">
+        <div className="contact-grid">
+          <div className="contact-content">
+            <div className="contact-header">
+              <span className="contact-label">{t('contact.label')}</span>
+              <h2 className="contact-title">{t('contact.title')}</h2>
+              <p className="contact-description">{t('contact.description')}</p>
             </div>
-          )}
-          <button type="submit" className="btn btn-primary" disabled={isLoading}>
-            {isLoading ? t('contact.form.sending') : t('contact.form.submit')}
-          </button>
-        </form>
+          </div>
+          <div className="contact-form-wrapper">
+            <div className="contact-form-card">
+              <div className="contact-form-bg"></div>
+              <form className="contact-form" onSubmit={handleSubmit}>
+                <div className="form-field">
+                  <label htmlFor="name">{t('contact.form.name')}</label>
+                  <input
+                    type="text"
+                    id="name"
+                    placeholder={t('contact.form.namePlaceholder')}
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    disabled={isLoading}
+                  />
+                </div>
+                <div className="form-field">
+                  <label htmlFor="email">{t('contact.form.email')}</label>
+                  <input
+                    type="email"
+                    id="email"
+                    placeholder={t('contact.form.emailPlaceholder')}
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    disabled={isLoading}
+                  />
+                </div>
+                <div className="form-field">
+                  <label htmlFor="message">{t('contact.form.message')}</label>
+                  <textarea
+                    id="message"
+                    rows={5}
+                    placeholder={t('contact.form.messagePlaceholder')}
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    disabled={isLoading}
+                  />
+                </div>
+                {status.message && (
+                  <div className={`form-alert form-alert-${status.type}`}>
+                    {status.message}
+                  </div>
+                )}
+                <button type="submit" className="contact-submit-btn" disabled={isLoading}>
+                  {isLoading ? t('contact.form.sending') : t('contact.form.submit')}
+                  <span className="btn-arrow">→</span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );

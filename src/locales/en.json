@@ -7,9 +7,15 @@
     "privacy": "Responde - Privacy Policy"
   },
   "hero": {
-    "title": "Welcome to Connecta",
-    "subtitle": "Connecting businesses, people, and possibilities",
-    "cta": "Get Started"
+    "badge": "Intelligent Clinical Management",
+    "titleLine1": "Your clinic",
+    "titleLine2": "One place",
+    "subtitle": "The software that would allow you to manage your clinic and make intelligent decisions. All integrated, all simple.",
+    "cta": "Join to the waitlist",
+    "ctaSecondary": "Learn More",
+    "feature1": "Easy to use",
+    "feature2": "5-minute setup",
+    "imageAlt": "Doctor using tablet in a modern and bright clinic"
   },
   "about": {
     "title": "About Connecta",
@@ -51,11 +57,16 @@
     }
   },
   "contact": {
-    "title": "Get In Touch",
+    "label": "Contact Us",
+    "title": "Ready to transform your clinic?",
+    "description": "Join hundreds of clinics that have already digitized their operation. Fill out the form and we'll get in touch with you.",
     "form": {
-      "name": "Your Name",
-      "email": "Your Email",
-      "message": "Your Message",
+      "name": "Name",
+      "namePlaceholder": "John Doe",
+      "email": "Email",
+      "emailPlaceholder": "john@clinic.com",
+      "message": "Message",
+      "messagePlaceholder": "Tell us about your clinic...",
       "submit": "Send Message",
       "sending": "Sending...",
       "success": "Thank you! Your message has been sent successfully.",

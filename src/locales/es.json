@@ -7,9 +7,15 @@
     "privacy": "Responde - Política de Privacidad"
   },
   "hero": {
-    "title": "Bienvenido a Connecta",
-    "subtitle": "Conectando empresas, personas y posibilidades",
-    "cta": "Comenzar"
+    "badge": "Gestión De Clínica Inteligente",
+    "titleLine1": "Tu clínica",
+    "titleLine2": "Un solo lugar",
+    "subtitle": "El software que te permitiría administrar tu clínica y tomar decisiones inteligentes. Todo integrado, todo simple.",
+    "cta": "Unirme a la waitlist",
+    "ctaSecondary": "Conocer más",
+    "feature1": "Fácil de usar",
+    "feature2": "Setup en 5 minutos",
+    "imageAlt": "Doctora usando tablet en una clínica moderna y luminosa"
   },
   "about": {
     "title": "Acerca de Connecta",
@@ -51,11 +57,16 @@
     }
   },
   "contact": {
-    "title": "Contáctenos",
+    "label": "Contáctanos",
+    "title": "¿Listo para transformar tu clínica?",
+    "description": "Únete a cientos de clínicas que ya digitalizaron su operación. Llena el formulario y nos pondremos en contacto contigo.",
     "form": {
-      "name": "Su Nombre",
-      "email": "Su Email",
-      "message": "Su Mensaje",
+      "name": "Nombre",
+      "namePlaceholder": "Juan Pérez",
+      "email": "Email",
+      "emailPlaceholder": "juan@clinica.com",
+      "message": "Mensaje",
+      "messagePlaceholder": "Cuéntanos sobre tu clínica...",
       "submit": "Enviar Mensaje",
       "sending": "Enviando...",
       "success": "¡Gracias! Su mensaje ha sido enviado exitosamente.",

@@ -44,8 +44,6 @@ function Navbar() {
         </div>
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
           <li><a href="#home" onClick={(e) => scrollToSection(e, 'home')}>{t('nav.home')}</a></li>
-          <li><a href="#about" onClick={(e) => scrollToSection(e, 'about')}>{t('nav.about')}</a></li>
-          <li><a href="#services" onClick={(e) => scrollToSection(e, 'services')}>{t('nav.services')}</a></li>
           <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>{t('nav.contact')}</a></li>
         </ul>
         <div className="nav-actions">
