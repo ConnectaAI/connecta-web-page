@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Hero from './Hero';
+import Preview from './Preview';
 import Contact from './Contact';
 
 function Home() {
@@ -20,6 +21,7 @@ function Home() {
   return (
     <>
       <Hero />
+      <Preview />
       <Contact />
     </>
   );

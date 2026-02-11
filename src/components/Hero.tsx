@@ -7,7 +7,7 @@ function Hero() {
 
   const scrollToContact = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
-    const element = document.getElementById('contact');
+    const element = document.getElementById('preview');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
