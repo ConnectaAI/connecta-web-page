@@ -17,6 +17,11 @@
     "feature2": "Setup en 5 minutos",
     "imageAlt": "Doctora usando tablet en una clínica moderna y luminosa"
   },
+  "preview": {
+    "title": "Tu Ecosistema Médico, Unificado e Inteligente",
+    "description": "Una interfaz diseñada para humanos, potenciada por datos. Visualiza todo lo que importa en un solo vistazo.",
+    "imageAlt": "Vista previa del Dashboard de Connecta"
+  },
   "about": {
     "title": "Acerca de Connecta",
     "description": "Somos Connecta, la empresa de software de Guatemala. Nuestra misión es diseñar tecnología que sirva primero a las personas. Desde agentes impulsados por inteligencia artificial hasta soluciones a medida, creamos herramientas que brindan a empresas e individuos la libertad de conectar, crear y crecer.",
