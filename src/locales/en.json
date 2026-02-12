@@ -17,6 +17,33 @@
     "feature2": "5-minute setup",
     "imageAlt": "Doctor using tablet in a modern and bright clinic"
   },
+  "preview": {
+    "title": "Your Medical Ecosystem, Unified and Intelligent",
+    "description": "An interface designed for humans, powered by data. Visualize everything that matters at a glance.",
+    "imageAlt": "Connecta Dashboard Preview"
+  },
+  "features": {
+    "items": {
+      "visitSummaries": {
+        "badge": "Direct Communication",
+        "title": "Automated Visit Summaries",
+        "description": "Instantly send a complete visit summary to your patient's email after the consultation. Improve patient adherence and keep them informed with a single click.",
+        "imageAlt": "Automated email summary interface"
+      },
+      "profileAccess": {
+        "badge": "Quick Access",
+        "title": "Instant Profile Access",
+        "description": "Specific patient details are just a keystroke away. Access full history, allergies, and notes in seconds without digging through physical files.",
+        "imageAlt": "Patient profile search interface"
+      },
+      "paymentManagement": {
+        "badge": "Financial Control",
+        "title": "Flexible Payment Management",
+        "description": "Handle clinic finances with ease. Record full or partial payments, track outstanding balances, and manage invoices directly within the patient's file.",
+        "imageAlt": "Payment management interface"
+      }
+    }
+  },
   "about": {
     "title": "About Connecta",
     "description": "We are Connecta, the software company of Guatemala. Our mission is to design technology that serves people first. From AI-powered agents to custom-built solutions, we craft tools that give businesses and individuals the freedom to connect, create, and grow.",

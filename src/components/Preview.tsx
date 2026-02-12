@@ -1,14 +1,17 @@
+import { useTranslation } from 'react-i18next';
 import '../styles/Preview.css';
 import previewImage from '../assets/preview.png';
 
 function Preview() {
+  const { t } = useTranslation();
+
   return (
     <section id="preview" className="preview-section">
       <div className="preview-container">
         <div className="preview-header">
-          <h2 className="preview-title">Tu Ecosistema Médico, Unificado e Inteligente</h2>
+          <h2 className="preview-title">{t('preview.title')}</h2>
           <p className="preview-description">
-            Una interfaz diseñada para humanos, potenciada por datos. Visualiza todo lo que importa en un solo vistazo.
+            {t('preview.description')}
           </p>
         </div>
 
@@ -18,7 +21,7 @@ function Preview() {
 
           <img 
             src={previewImage} 
-            alt="Connecta Dashboard Preview" 
+            alt={t('preview.imageAlt')} 
             className="preview-image"
           />
         </div>
