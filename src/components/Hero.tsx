@@ -51,9 +51,9 @@ function Hero() {
             <div className="hero-image-bg"></div>
             <div className="hero-image-container">
               <img 
-                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDCklsXhcl1ldIfXwo6M-f9cAH4kJjajEKjYGntVpGRYE8V0-J7tV_ySXs97iVbHn6WG3bu5H3S2-FZt1rTklLcWeLCV73HZ9bfCDE9FFHZn5Hbw5qeHFAWLVCJAz5ihekbHS77hy0tfB4BPFtkLagHlGgAn2pvjFNK6cZyyqvSbgoHTB_xkRU7p7O26QR418LjET2-gTz1HSYDSfncKSm3ldja_qtXpB6RgmDDQWiS8hd22xNoBc_BTnZ3kxf6jgIb8oQkfOJj7g"
-                alt={t('hero.imageAlt')}
-                className="hero-image"
+              src="/src/assets/hero.png"
+              alt={t('hero.imageAlt')}
+              className="hero-image"
               />
             </div>
           </div>
