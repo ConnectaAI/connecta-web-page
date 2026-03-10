@@ -1,5 +1,6 @@
 import { MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
+import heroImage from '../assets/hero.png';
 import '../styles/Hero.css';
 
 function Hero() {
@@ -51,7 +52,7 @@ function Hero() {
             <div className="hero-image-bg"></div>
             <div className="hero-image-container">
               <img 
-              src="/src/assets/hero.png"
+              src={heroImage}
               alt={t('hero.imageAlt')}
               className="hero-image"
               />
