@@ -1,4 +1,6 @@
-/* Glass Morphism Navbar */
+/* Glass Morphism Navbar — transparent over the dark hero by default,
+   switches to an opaque light pill once the dark hero scrolls out from behind it
+   (see Navbar.tsx: IntersectionObserver toggles the .navbar-on-light class). */
 .navbar {
   position: fixed;
   top: 1.5rem;
@@ -12,7 +14,7 @@
 .navbar .container {
   max-width: 1280px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.01);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
@@ -21,9 +23,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease, box-shadow 0.3s ease;
   border: none;
   box-sizing: border-box;
+}
+
+.navbar-on-light .container {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .logo {
@@ -32,9 +38,21 @@
   gap: 0.5rem;
 }
 
+.logo a {
+  display: flex;
+  align-items: center;
+}
+
 .logo-image {
-  height: 30px;
+  display: block;
+  height: 24px;
   width: auto;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar-on-light .logo-image {
+  color: var(--stone-900);
 }
 
 .nav-menu {
@@ -46,14 +64,25 @@
 }
 
 .nav-menu a {
-  color: #475569;
+  color: white;
   text-decoration: none;
+  font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
+  color: var(--blue-300);
+}
+
+.navbar-on-light .nav-menu a {
+  color: var(--stone-600);
+}
+
+.navbar-on-light .nav-menu a:hover {
   color: var(--primary-color);
 }
 
@@ -63,35 +92,16 @@
   gap: 1rem;
 }
 
-.nav-contact-btn {
-  background: var(--primary-color);
-  color: white;
-  border: none;
-  padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
-  text-decoration: none;
-  display: inline-block;
-}
-
-.nav-contact-btn:hover {
-  background: var(--secondary-color);
-  transform: translateY(-1px);
-  box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.25);
-}
-
 .language-switcher {
   background: transparent;
-  color: #475569;
-  border: 1px solid #e2e8f0;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 0.5rem 1rem;
   border-radius: 9999px;
-  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   font-weight: 500;
+  letter-spacing: 0.02em;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -100,7 +110,17 @@
 }
 
 .language-switcher:hover {
-  background: #f1f5f9;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: white;
+}
+
+.navbar-on-light .language-switcher {
+  color: var(--stone-600);
+  border-color: var(--stone-200);
+}
+
+.navbar-on-light .language-switcher:hover {
+  background: var(--stone-100);
   border-color: var(--primary-color);
   color: var(--primary-color);
 }
@@ -117,10 +137,14 @@
 .hamburger span {
   width: 25px;
   height: 2px;
-  background: #475569;
+  background: white;
   margin: 3px 0;
   transition: 0.3s;
   border-radius: 2px;
+}
+
+.navbar-on-light .hamburger span {
+  background: var(--stone-600);
 }
 
 /* Mobile Responsive */
@@ -156,9 +180,16 @@
     left: 0;
   }
 
+  /* The open mobile panel is always an opaque white sheet, regardless of
+     navbar theme, so its links must always stay dark to stay readable. */
   .nav-menu a {
+    color: var(--stone-600);
     font-size: 1rem;
     padding: 0.5rem 0;
+  }
+
+  .nav-menu a:hover {
+    color: var(--primary-color);
   }
 
   .nav-actions {
@@ -169,11 +200,6 @@
     display: flex;
   }
 
-  .nav-contact-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-
   .language-switcher {
     padding: 0.5rem 0.75rem;
     font-size: 0.8rem;
@@ -181,11 +207,5 @@
 
   .logo-image {
     height: 32px;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-contact-btn {
-    display: none;
   }
 }

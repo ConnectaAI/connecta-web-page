@@ -2,7 +2,6 @@ import React from 'react';
 import FeatureBadge from './FeatureBadge';
 
 interface FeatureRowProps {
-  badgeIcon: string;
   badgeText: string;
   title: string;
   description: string;
@@ -12,7 +11,6 @@ interface FeatureRowProps {
 }
 
 const FeatureRow: React.FC<FeatureRowProps> = ({
-  badgeIcon,
   badgeText,
   title,
   description,
@@ -23,7 +21,7 @@ const FeatureRow: React.FC<FeatureRowProps> = ({
   return (
     <div className={`feature-row ${imageLeft ? 'feature-row-reverse' : ''}`}>
       <div className="feature-content">
-        <FeatureBadge icon={badgeIcon} text={badgeText} />
+        <FeatureBadge text={badgeText} />
         <h3 className="feature-title">{title}</h3>
         <p className="feature-description">{description}</p>
       </div>

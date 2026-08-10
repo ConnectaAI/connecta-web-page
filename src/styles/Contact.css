@@ -1,15 +1,9 @@
-/* Contact Section */
+/* Contact Section — bookends the hero: same blue-900, closing the page on
+   the same bold note it opened on. */
 .contact-section {
   position: relative;
   padding: 6rem 0;
-  overflow: hidden;
-}
-
-.contact-bg {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, transparent, rgba(239, 246, 255, 0.5));
-  z-index: -1;
+  background: var(--blue-900);
 }
 
 .contact-container {
@@ -37,25 +31,28 @@
 }
 
 .contact-label {
-  color: var(--primary-color);
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  color: var(--blue-300);
+  font-family: var(--font-mono);
+  font-weight: 500;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
 }
 
 .contact-title {
+  font-family: var(--font-display);
   font-size: 2.25rem;
-  font-weight: 800;
-  line-height: 1.2;
-  color: #0f172a;
+  font-weight: 600;
+  line-height: 1.15;
+  color: white;
 }
 
 .contact-description {
+  font-family: var(--font-ui);
   font-size: 1.125rem;
   line-height: 1.6;
-  color: #64748b;
-  font-weight: 300;
+  color: var(--blue-100);
+  font-weight: 400;
   max-width: 32rem;
 }
 
@@ -65,31 +62,14 @@
 
 .contact-form-card {
   position: relative;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  background: var(--white);
+  border: 1px solid var(--stone-200);
   padding: 2rem;
-  border-radius: 1.5rem;
-  box-shadow: 0 25px 50px -12px rgba(37, 99, 235, 0.1);
-  overflow: hidden;
-}
-
-.contact-form-bg {
-  position: absolute;
-  top: -6rem;
-  right: -6rem;
-  width: 12rem;
-  height: 12rem;
-  background: rgba(37, 99, 235, 0.1);
-  border-radius: 50%;
-  filter: blur(60px);
-  z-index: 0;
+  border-radius: 1.25rem;
+  box-shadow: var(--shadow);
 }
 
 .contact-form {
-  position: relative;
-  z-index: 10;
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -102,20 +82,22 @@
 }
 
 .form-field label {
+  font-family: var(--font-ui);
   font-size: 0.875rem;
   font-weight: 600;
-  color: #334155;
+  color: var(--stone-800);
 }
 
 .form-field input,
 .form-field textarea {
   width: 100%;
   padding: 0.75rem 1rem;
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid #e2e8f0;
+  background: var(--stone-25);
+  border: 1px solid var(--stone-200);
   border-radius: 0.75rem;
+  font-family: var(--font-ui);
   font-size: 1rem;
-  color: #0f172a;
+  color: var(--stone-900);
   transition: all 0.3s ease;
   outline: none;
 }
@@ -124,12 +106,12 @@
 .form-field textarea:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
-  background: rgba(255, 255, 255, 0.8);
+  background: var(--white);
 }
 
 .form-field input::placeholder,
 .form-field textarea::placeholder {
-  color: #94a3b8;
+  color: var(--stone-400);
 }
 
 .form-field textarea {
@@ -146,14 +128,15 @@
 .form-alert {
   padding: 0.75rem 1rem;
   border-radius: 0.5rem;
+  font-family: var(--font-ui);
   font-size: 0.875rem;
   font-weight: 500;
 }
 
 .form-alert-success {
-  background: #d1fae5;
-  color: #065f46;
-  border: 1px solid #10b981;
+  background: #dcfce7;
+  color: #166534;
+  border: 1px solid #16a34a;
 }
 
 .form-alert-error {
@@ -172,7 +155,8 @@
   background: var(--primary-color);
   color: white;
   border: none;
-  border-radius: 0.75rem;
+  border-radius: 9999px;
+  font-family: var(--font-ui);
   font-size: 1rem;
   font-weight: 600;
   cursor: pointer;

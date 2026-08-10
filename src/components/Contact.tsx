@@ -85,7 +85,6 @@ function Contact() {
 
   return (
     <section id="contact" className="contact-section">
-      <div className="contact-bg"></div>
       <div className="contact-container">
         <div className="contact-grid">
           <div className="contact-content">
@@ -97,7 +96,6 @@ function Contact() {
           </div>
           <div className="contact-form-wrapper">
             <div className="contact-form-card">
-              <div className="contact-form-bg"></div>
               <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-field">
                   <label htmlFor="name">{t('contact.form.name')}</label>

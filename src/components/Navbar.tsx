@@ -1,14 +1,42 @@
-import { useState, MouseEvent } from 'react';
+import { useState, useEffect, MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
-import logo from '../assets/connecta-logo.png';
+import Logo from './Logo';
 import LanguageSwitcher from './LanguageSwitcher';
 import '../styles/Navbar.css';
+
+// Height (in px) the fixed navbar occupies from the top of the viewport —
+// used as the trigger line for the IntersectionObserver below.
+const NAVBAR_OFFSET = 90;
 
 function Navbar() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [isOverLight, setIsOverLight] = useState<boolean>(true);
   const location = useLocation();
+
+  useEffect(() => {
+    const heroEl = document.getElementById('home');
+
+    // No dark hero on this route — stay on the always-readable light theme.
+    if (!heroEl) {
+      setIsOverLight(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        // While the hero still intersects the area below the navbar, the dark
+        // background is behind it — keep the transparent/white theme. Once the
+        // hero scrolls past that line, switch to the opaque light theme.
+        setIsOverLight(!entry.isIntersecting);
+      },
+      { rootMargin: `-${NAVBAR_OFFSET}px 0px 0px 0px`, threshold: 0 }
+    );
+
+    observer.observe(heroEl);
+    return () => observer.disconnect();
+  }, [location.pathname]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -20,13 +48,13 @@ function Navbar() {
 
   const scrollToSection = (e: MouseEvent<HTMLAnchorElement>, id: string) => {
     e.preventDefault();
-    
+
     // If we're not on the home page, navigate to home first
     if (location.pathname !== '/') {
       window.location.href = `/#${id}`;
       return;
     }
-    
+
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -35,11 +63,11 @@ function Navbar() {
   };
 
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${isOverLight ? 'navbar-on-light' : ''}`}>
       <div className="container">
         <div className="logo">
           <Link to="/">
-            <img src={logo} alt="Connecta Logo" className="logo-image" />
+            <Logo className="logo-image" />
           </Link>
         </div>
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
@@ -48,9 +76,6 @@ function Navbar() {
         </ul>
         <div className="nav-actions">
           <LanguageSwitcher />
-          <a href="#contact" className="nav-contact-btn" onClick={(e) => scrollToSection(e, 'contact')}>
-            {t('nav.contact')}
-          </a>
           <button className="hamburger" onClick={toggleMenu}>
             <span></span>
             <span></span>

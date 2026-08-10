@@ -1,14 +1,12 @@
 import React from 'react';
 
 interface FeatureBadgeProps {
-  icon: string;
   text: string;
 }
 
-const FeatureBadge: React.FC<FeatureBadgeProps> = ({ icon, text }) => {
+const FeatureBadge: React.FC<FeatureBadgeProps> = ({ text }) => {
   return (
     <div className="feature-badge">
-      <span className="feature-badge-icon">{icon}</span>
       {text}
     </div>
   );

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Layout from './components/Layout';
 import Home from './components/Home';
-import PrivacyPolicy from './components/PrivacyPolicy';
+import DesignPreview from './components/DesignPreview';
 import './App.css';
 
 function App() {
@@ -23,8 +23,10 @@ function App() {
       });
     }, observerOptions);
 
-    // Observe all cards
-    const cards = document.querySelectorAll('.feature-card, .service-card');
+    // Observe sections as they scroll into view
+    const cards = document.querySelectorAll(
+      '.preview-header, .preview-mockup-wrapper, .feature-row, .contact-header, .contact-form-card'
+    );
     cards.forEach(card => {
       const element = card as HTMLElement;
       element.style.opacity = '0';
@@ -41,7 +43,7 @@ function App() {
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/agent-policy" element={<PrivacyPolicy />} />
+          <Route path="/design-preview" element={<DesignPreview />} />
         </Routes>
       </Layout>
     </Router>
