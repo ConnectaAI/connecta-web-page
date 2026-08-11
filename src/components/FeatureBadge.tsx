@@ -1,15 +1,16 @@
-import React from 'react';
+import { m, type Variants } from 'motion/react';
 
 interface FeatureBadgeProps {
   text: string;
+  variants?: Variants;
 }
 
-const FeatureBadge: React.FC<FeatureBadgeProps> = ({ text }) => {
+function FeatureBadge({ text, variants }: FeatureBadgeProps) {
   return (
-    <div className="feature-badge">
+    <m.div className="feature-badge" variants={variants}>
       {text}
-    </div>
+    </m.div>
   );
-};
+}
 
 export default FeatureBadge;
