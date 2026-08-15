@@ -18,8 +18,17 @@ function Navbar() {
   useEffect(() => {
     const heroEl = document.getElementById('home');
 
-    // No dark hero on this route — stay on the always-readable light theme.
+    // No hero on this route — stay on the always-readable light theme.
     if (!heroEl) {
+      setIsOverLight(true);
+      return;
+    }
+
+    // A hero declares its own theme via data-navbar-theme (defaults to dark
+    // if unset, matching medassistant's Hero). A light hero never needs the
+    // transparent/white-text treatment — stay on the opaque light theme for
+    // its entire scroll range, no observer needed.
+    if (heroEl.dataset.navbarTheme === 'light') {
       setIsOverLight(true);
       return;
     }
@@ -63,7 +72,9 @@ function Navbar() {
   };
 
   return (
-    <nav className={`navbar ${isOverLight ? 'navbar-on-light' : ''}`}>
+    <nav
+      className={`navbar ${isOverLight ? 'navbar-on-light' : ''} ${location.pathname === '/' ? 'navbar-black-text' : ''}`}
+    >
       <div className="container">
         <div className="logo">
           <Link to="/">
@@ -72,6 +83,7 @@ function Navbar() {
         </div>
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
           <li><a href="#home" onClick={(e) => scrollToSection(e, 'home')}>{t('nav.home')}</a></li>
+          <li><Link to="/medassistant" onClick={closeMenu}>{t('nav.medassistant')}</Link></li>
           <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>{t('nav.contact')}</a></li>
         </ul>
         <div className="nav-actions">

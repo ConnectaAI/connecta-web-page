@@ -1,9 +1,54 @@
 {
   "nav": {
     "home": "Inicio",
+    "medassistant": "medassistant",
     "about": "Nosotros",
     "services": "Servicios",
     "contact": "Contacto"
+  },
+  "companyHero": {
+    "corner": "Guatemala, CA",
+    "year": "Software × IA",
+    "scrollCue": "Conocer más"
+  },
+  "whatWeDo": {
+    "label": "Qué hacemos",
+    "title": "De software a medida a productos impulsados por IA",
+    "description": "Ayudamos a las empresas a adoptar IA, y construimos el software que la hace utilizable — desde cero cuando no existe nada todavía, o integrada en lo que ya tienen.",
+    "items": {
+      "software": {
+        "title": "Software a medida",
+        "description": "Construido desde cero para la operación específica de una empresa, no adaptado de una plantilla genérica."
+      },
+      "ai": {
+        "title": "Integración de IA",
+        "description": "Ayudamos a las empresas a adoptar IA dentro de los servicios y flujos de trabajo que ya usan."
+      },
+      "data": {
+        "title": "Análisis de datos",
+        "description": "Analizamos, limpiamos y organizamos datos como la base que toda decisión real necesita."
+      },
+      "automation": {
+        "title": "Automatización de procesos",
+        "description": "Convertimos datos organizados en decisiones automatizadas."
+      }
+    }
+  },
+  "values": {
+    "label": "Por qué somos un startup",
+    "quote": "Somos nuevos, y construimos así a propósito — innovación y tecnología de punta primero, usabilidad siempre.",
+    "body": "Preferimos lanzar algo considerado y un poco atrevido antes que algo seguro y olvidable. Ese es el estándar detrás de cada producto que construimos, empezando por el nuestro."
+  },
+  "products": {
+    "label": "Productos",
+    "title": "Nuestro primer producto",
+    "medassistant": {
+      "badge": "medassistant",
+      "title": "Software para clínicas de salud",
+      "description": "medassistant le da a doctores y administradores el control de su operación — cobrar a pacientes, generar facturas, gestionar pagos, y dar seguimiento a citas y pacientes, todo en un solo lugar.",
+      "cta": "Visitar medassistant"
+    },
+    "more": "Más productos, construidos sobre el mismo sistema, están en camino."
   },
   "hero": {
     "badge": "Gestión de Clínica Inteligente",
@@ -43,45 +88,6 @@
       }
     }
   },
-  "about": {
-    "title": "Acerca de Connecta",
-    "description": "Somos Connecta, la empresa de software de Guatemala. Nuestra misión es diseñar tecnología que sirva primero a las personas. Desde agentes impulsados por inteligencia artificial hasta soluciones a medida, creamos herramientas que brindan a empresas e individuos la libertad de conectar, crear y crecer.",
-    "features": {
-      "innovation": {
-        "title": "Innovación",
-        "description": "Soluciones de vanguardia para desafíos modernos"
-      },
-      "partnership": {
-        "title": "Asociación",
-        "description": "Construyendo relaciones duraderas con nuestros clientes"
-      },
-      "efficiency": {
-        "title": "Eficiencia",
-        "description": "Procesos optimizados para resultados óptimos"
-      }
-    }
-  },
-  "services": {
-    "title": "Nuestros Servicios",
-    "items": {
-      "consulting": {
-        "title": "Responde - Agente de Mensajes Inteligente para Redes Sociales",
-        "description": "Responde es el servicio de atención al cliente automatizado para Instagram y más. Nuestro agente IA responde preguntas, consulta inventario, confirma ventas y agenda citas—ahorrándote tiempo mientras aumentas ventas."
-      },
-      "solutions": {
-        "title": "Soluciones de IA para Crecimiento Empresarial",
-        "description": "Soluciones de automatización inteligente diseñadas para escalar su negocio y desbloquear nuevas oportunidades de ingresos."
-      },
-      "support": {
-        "title": "Soporte de IA 24/7",
-        "description": "Agentes de IA que manejan servicio al cliente, ventas y soporte las 24 horas, mejorando la eficiencia."
-      },
-      "technology": {
-        "title": "Integración Perfecta",
-        "description": "Soluciones de IA fáciles de implementar que se integran con sus sistemas y flujos de trabajo existentes."
-      }
-    }
-  },
   "contact": {
     "label": "Contáctanos",
     "title": "¿Listo para transformar tu clínica?",
@@ -100,6 +106,8 @@
     }
   },
   "footer": {
+    "tagline": "Una empresa de software de Guatemala que construye herramientas de IA y software a medida para múltiples industrias.",
+    "madeIn": "Hecho en Guatemala",
     "rights": "Todos los derechos reservados."
   }
 }

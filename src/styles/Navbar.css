@@ -125,6 +125,18 @@
   color: var(--primary-color);
 }
 
+/* Home page only — true black text instead of the warm-gray stone-600 used
+   elsewhere, per explicit request. */
+.navbar-black-text.navbar-on-light .logo-image,
+.navbar-black-text.navbar-on-light .nav-menu a,
+.navbar-black-text.navbar-on-light .language-switcher {
+  color: #000000;
+}
+
+.navbar-black-text.navbar-on-light .hamburger span {
+  background: #000000;
+}
+
 .hamburger {
   display: none;
   flex-direction: column;

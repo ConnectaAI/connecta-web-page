@@ -33,8 +33,18 @@
   --stone-200: #e7e5e4;
   --stone-400: #a8a29e;
   --stone-600: #57534e;
+  --stone-700: #433f3d;
   --stone-800: #292524;
   --stone-900: #1c1917;
+
+  /* Connecta's own reserved gradient (marketing hero only) — blue-to-lavender,
+     distinct from medassistant's flat blue-900 hero */
+  --lavender-500: #7c6fd6;
+  --lavender-300: #c4bbf0;
+
+  /* Rose — delight/celebratory accent only, never a primary action */
+  --rose-100: #ffe4e6;
+  --rose-500: #fb7185;
 }
 
 body {
@@ -222,12 +232,43 @@ body {
   background: var(--stone-25);
 }
 
+.footer-brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-logo {
+  height: 18px;
+  width: auto;
+  color: var(--stone-800);
+}
+
+.footer-tagline {
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  color: var(--stone-600);
+  max-width: 26rem;
+}
+
+.footer-madeIn {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--stone-400);
+}
+
 .footer-content {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 0.75rem;
   letter-spacing: 0.02em;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--stone-200);
 }
 
 @media (max-width: 768px) {

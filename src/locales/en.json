@@ -1,9 +1,54 @@
 {
   "nav": {
     "home": "Home",
+    "medassistant": "medassistant",
     "about": "About",
     "services": "Services",
     "contact": "Contact"
+  },
+  "companyHero": {
+    "corner": "Guatemala, CA",
+    "year": "Software × AI",
+    "scrollCue": "Learn more"
+  },
+  "whatWeDo": {
+    "label": "What we do",
+    "title": "From custom software to AI-driven products",
+    "description": "We help companies adopt AI, and we build the software that makes it usable — from the ground up when nothing exists yet, or woven into what's already there.",
+    "items": {
+      "software": {
+        "title": "Custom software",
+        "description": "Built from scratch for a company's specific operation, not adapted from a generic template."
+      },
+      "ai": {
+        "title": "AI integration",
+        "description": "Helping companies adopt AI inside the services and workflows they already run."
+      },
+      "data": {
+        "title": "Data analysis",
+        "description": "Analyzing, cleaning, and organizing data as the foundation any real decision needs."
+      },
+      "automation": {
+        "title": "Automation",
+        "description": "Turning organized data into automated, data-driven decisions."
+      }
+    }
+  },
+  "values": {
+    "label": "Why we're a startup",
+    "quote": "We're new, and we're building on purpose — innovation and state-of-the-art technology first, usability always.",
+    "body": "We'd rather ship something considered and a little bold than something safe and forgettable. That's the standard behind every product we build, starting with our own."
+  },
+  "products": {
+    "label": "Products",
+    "title": "Our first product",
+    "medassistant": {
+      "badge": "medassistant",
+      "title": "Software for healthcare clinics",
+      "description": "medassistant gives doctors and clinic managers control of their operation — billing patients, generating invoices, managing payments, and following up on appointments and patients, all in one place.",
+      "cta": "Visit medassistant"
+    },
+    "more": "More products, built on the same system, are on the way."
   },
   "hero": {
     "badge": "Intelligent Clinical Management",
@@ -43,45 +88,6 @@
       }
     }
   },
-  "about": {
-    "title": "About Connecta",
-    "description": "We are Connecta, the software company of Guatemala. Our mission is to design technology that serves people first. From AI-powered agents to custom-built solutions, we craft tools that give businesses and individuals the freedom to connect, create, and grow.",
-    "features": {
-      "innovation": {
-        "title": "Innovation",
-        "description": "Cutting-edge solutions for modern challenges"
-      },
-      "partnership": {
-        "title": "Partnership",
-        "description": "Building lasting relationships with our clients"
-      },
-      "efficiency": {
-        "title": "Efficiency",
-        "description": "Streamlined processes for optimal results"
-      }
-    }
-  },
-  "services": {
-    "title": "Our Services",
-    "items": {
-      "consulting": {
-        "title": "Responde - The smart Messaging Agent for Social Media",
-        "description": "Responde is the automated customer service for Instagram and more. Our AI agent answers questions, checks inventory, confirms sales, and schedules appointments—saving you time while boosting sales."
-      },
-      "solutions": {
-        "title": "AI Solutions for Business Growth",
-        "description": "Intelligent automation solutions designed to scale your business and unlock new revenue opportunities."
-      },
-      "support": {
-        "title": "24/7 AI Support",
-        "description": "AI agents that handle customer service, sales, and support around the clock, improving efficiency."
-      },
-      "technology": {
-        "title": "Seamless Integration",
-        "description": "Easy-to-implement AI solutions that integrate with your existing systems and workflows."
-      }
-    }
-  },
   "contact": {
     "label": "Contact Us",
     "title": "Ready to transform your clinic?",
@@ -100,6 +106,8 @@
     }
   },
   "footer": {
+    "tagline": "A Guatemala-based software company building AI-driven tools and custom software for multiple industries.",
+    "madeIn": "Made in Guatemala",
     "rights": "All rights reserved."
   }
 }
