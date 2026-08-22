@@ -1,0 +1,229 @@
+{
+  "artboards": [
+    {
+      "file": "Main.dc.html",
+      "x": 0,
+      "y": 0,
+      "w": 1440,
+      "h": 5300,
+      "expand": "fill"
+    },
+    {
+      "file": "Mobile.dc.html",
+      "x": 1560,
+      "y": 0,
+      "w": 390,
+      "h": 3400,
+      "expand": "fill"
+    },
+    {
+      "file": "WhatWeDo-A-Index.dc.html",
+      "x": 0,
+      "y": 5480,
+      "w": 1440,
+      "h": 1020
+    },
+    {
+      "file": "WhatWeDo-B-Blueprint.dc.html",
+      "x": 1560,
+      "y": 5480,
+      "w": 1440,
+      "h": 1020
+    },
+    {
+      "file": "WhatWeDo-C-Editorial.dc.html",
+      "x": 3120,
+      "y": 5480,
+      "w": 1440,
+      "h": 1020
+    },
+    {
+      "file": "Values-A-Manifesto.dc.html",
+      "x": 0,
+      "y": 6620,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "Values-B-Marginalia.dc.html",
+      "x": 1560,
+      "y": 6620,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "Values-C-Interview.dc.html",
+      "x": 3120,
+      "y": 6620,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "Products-A-CaseFile.dc.html",
+      "x": 0,
+      "y": 7640,
+      "w": 1440,
+      "h": 780
+    },
+    {
+      "file": "Products-B-Feature.dc.html",
+      "x": 1560,
+      "y": 7640,
+      "w": 1440,
+      "h": 780
+    },
+    {
+      "file": "Products-C-Ledger.dc.html",
+      "x": 3120,
+      "y": 7640,
+      "w": 1440,
+      "h": 780
+    },
+    {
+      "file": "WhatWeDo-B2-Storyboard.dc.html",
+      "x": 0,
+      "y": 8700,
+      "w": 1440,
+      "h": 1100
+    },
+    {
+      "file": "WhatWeDo-B3-Morph.dc.html",
+      "x": 1560,
+      "y": 8700,
+      "w": 1440,
+      "h": 5100,
+      "expand": "fill"
+    },
+    {
+      "file": "Icon-Web.dc.html",
+      "x": 0,
+      "y": 14000,
+      "w": 640,
+      "h": 640
+    },
+    {
+      "file": "Icon-AI.dc.html",
+      "x": 680,
+      "y": 14000,
+      "w": 640,
+      "h": 640
+    },
+    {
+      "file": "Icon-Data.dc.html",
+      "x": 1360,
+      "y": 14000,
+      "w": 640,
+      "h": 640
+    },
+    {
+      "file": "Icon-Apps.dc.html",
+      "x": 2040,
+      "y": 14000,
+      "w": 640,
+      "h": 640
+    },
+    {
+      "file": "WhoWeAre-A-Letter.dc.html",
+      "x": 0,
+      "y": 14780,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "WhoWeAre-B-Manifesto.dc.html",
+      "x": 1560,
+      "y": 14780,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "WhoWeAre-C-Editorial.dc.html",
+      "x": 3120,
+      "y": 14780,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "WhoWeAre-B2-ManifestoPhotos.dc.html",
+      "x": 4680,
+      "y": 14780,
+      "w": 1440,
+      "h": 900
+    },
+    {
+      "file": "WhoWeAre-D-CityMap.dc.html",
+      "x": 6240,
+      "y": 14780,
+      "w": 1440,
+      "h": 900
+    }
+  ],
+  "annotations": [
+    {
+      "id": "brief-notes",
+      "x": 0,
+      "y": -260,
+      "w": 620,
+      "text": "Redesign notes\n\n1) WhatWeDo panels no longer say \"placeholder\" — each is now a custom line-art diagram (code editor, neural mesh, data pipeline, gear train) matching your existing icon style.\n2) Hero corner frame now carries real info (location, positioning) instead of blank \"+\" marks; added a one-line mission statement below the wordmark so leads immediately know what you do.\n3) Added a slim \"How we work\" trust strip — 3 honest process claims paraphrased from your own Values copy, not fabricated client logos or stats. Swap or drop freely.\n4) Values got a 3-point manifesto row for editorial density.\n5) Products card is now a two-column spotlight with a device-frame UI placeholder instead of text-only.\n6) Added a nav CTA (\"Get in touch\") so there's one action repeated through the page, and pulled the footer's location/trust line up near the contact form.\n\nAll fonts/colors are your existing tokens (Fraunces, Geist, Geist Mono, stone/blue/rose). Mobile artboard checks the hero + What We Do + product card + contact flow at 390px."
+    },
+    {
+      "id": "wwd-variants-note",
+      "x": 0,
+      "y": 5380,
+      "w": 1300,
+      "text": "What We Do — 3 directions, each deliberately not an icon-grid: A) Index — a printed directory/spec-sheet list, no icons at all. B) Blueprint — one unified system diagram instead of 4 separate boxes, engineering-schematic feel. C) Editorial — a magazine spread with a sticky headline column and a drop-cap lead paragraph."
+    },
+    {
+      "id": "values-variants-note",
+      "x": 0,
+      "y": 6520,
+      "w": 1300,
+      "text": "Values — 3 directions, moving away from the quote+feature-grid pattern: A) Manifesto — a printed credo with roman-numeral tenets. B) Marginalia — the quote stays central, supporting points become small annotations in the margins. C) Interview — presented as an on-the-record Q&A excerpt, which reads as authored by a real person rather than marketing copy."
+    },
+    {
+      "id": "products-variants-note",
+      "x": 0,
+      "y": 7540,
+      "w": 1300,
+      "text": "Products — 3 directions, away from the glossy SaaS card: A) Case File — dossier cover with classification metadata (sector/stack/status) instead of a shadowed card. B) Editorial Feature — huge Fraunces headline carries the section, device mockup pushed to a secondary rotated backdrop. C) Ledger — a roadmap table showing medassistant live plus upcoming products in progress, which signals momentum/transparency instead of a single static card."
+    },
+    {
+      "id": "storyboard-note",
+      "x": 0,
+      "y": 8600,
+      "w": 1300,
+      "text": "Follow-up on What We Do Variant B (your pick): a storyboard of the proposed scroll-focus interaction, not yet wired up as real behavior. Key point: names + one-line descriptions stay visible in every state (frame 0) — the expanded note is a bonus for lingering visitors, not a gate a lead has to scroll through to find basic info. Keep it short and never pin/trap the scroll."
+    },
+    {
+      "id": "morph-note",
+      "x": 1560,
+      "y": 8600,
+      "w": 1300,
+      "text": "Working prototype, per your new direction — expand this artboard and scroll inside it to see it live. \"What we do?\" starts centered with all four capabilities named around it (no tapping needed to read them), then shrinks into a pinned header as you scroll while each capability takes over the stage with a large title + full description. A static \"all four at a glance\" strip sits below the scroll section as a fallback, and prefers-reduced-motion gets a plain stacked list instead of the pinned/scrubbed version."
+    },
+    {
+      "id": "icon-proposals-note",
+      "x": 0,
+      "y": 13900,
+      "w": 1300,
+      "text": "Animated line-art icon proposals for the four services — same fine-line vocabulary as the What We Do orbit graph (thin white/blue-300 strokes, dashed connector lines, mono Fig. labels on the blue-900 dot-grid). All animations loop and respect prefers-reduced-motion. Web dev: a browser frame with a code bracket and lines that type themselves in, cursor blinking. AI integration: a pulsing core with six orbiting nodes lighting up in sequence around a slow-spinning dashed ring. Data analysis: bars breathing in height under a flowing dashed trend line with pulsing data-point markers. App development: a phone frame with app tiles installing in a staggered loop and a progress ring animating around one of them."
+    },
+    {
+      "id": "whoweare-variants-note",
+      "x": 0,
+      "y": 14680,
+      "w": 1300,
+      "text": "Who We Are — replaces Values with a storytelling section, grounded only in what you told me (Guatemala City origin, two developer founders raised there, purpose = building great technology for companies, values = great design + state-of-the-art tech + unique experiences). I did not invent founder names, a founding year, or any numbers.\n\nOn photos: I deliberately did not generate fake portraits of your founders or a stock Guatemala City photo — that would be fabricating imagery of real people. Every 'photo' you see here is an honest placeholder block.\n\nA) Founder Letter — a printed-letter feel on stone-900, pull-quote + narrative, with two placeholder founder circles at the bottom. Swap the placeholders for real photos and it becomes warm/personal without any other changes.\nB) Manifesto + Coordinates — no photos at all; a fine-line Guatemala City map-pin motif (matches the hero's coordinate readout) anchors a 3-point values manifesto. Closest to your current blueprint/technical aesthetic.\nC) Editorial Photo Feature — a magazine-profile layout on light stone-25, explicitly designed to hold real photography: two founder portraits + a Guatemala City establishing shot, all clearly marked placeholders. Pick this one if you do plan to supply real photos.\n\nUpdate per your latest feedback: B's headline is now \"Built in the city where we grew up.\" and the caption line names your actual founders — Josué Us & José Pablo Rodríguez — both as clickable links (currently href=\"#\"; swap in real profile URLs when ready). B2 is the new variant: same manifesto layout, with a founder row added — two solid-color blocks stand in for real photos (deliberately not fabricated portraits) with each name still a clickable link. Drop in real photos later with no other layout changes needed."
+    },
+    {
+      "id": "citymap-note",
+      "x": 6240,
+      "y": 14680,
+      "w": 1300,
+      "text": "D) City Map — this is what the site currently ships (Variant B's manifesto layout, unchanged), with only the pin's background reworked: the dashed concentric rings + crosshair ticks are replaced by an abstracted fine-line street grid (Guatemala City's Zone 1 avenida/calle layout, not a literal traced map), faded to a soft medallion edge via a radial mask instead of a hard ring, plus one diagonal line standing in for a boulevard like Av. La Reforma. The pin marker itself is unchanged."
+    }
+  ],
+  "launch": {
+    "view": "canvas"
+  }
+}

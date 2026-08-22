@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-900: #1e3a8a; --blue-300: #93c5fd;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-mono); }
+  .frame {
+    width: 640px; height: 640px;
+    background: var(--blue-900);
+    background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 26px 26px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; color: white;
+  }
+  .tag { position: absolute; top: 28px; left: 28px; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+  .fig { position: absolute; bottom: 28px; left: 28px; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-300); }
+  .fig b { display: block; font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; text-transform: none; letter-spacing: 0; color: white; margin-top: 0.35rem; }
+
+  svg { overflow: visible; }
+  .phone { fill: none; stroke: white; stroke-width: 1.5; }
+  .home { stroke: rgba(255,255,255,0.4); stroke-width: 1.5; stroke-linecap: round; }
+
+  .cell { fill: rgba(255,255,255,0.1); stroke: rgba(255,255,255,0.5); stroke-width: 1.25; transform-box: fill-box; transform-origin: center; animation: install 3.2s ease-in-out infinite; }
+  .c1 { animation-delay: 0s; }
+  .c2 { animation-delay: 0.28s; }
+  .c3 { animation-delay: 0.56s; }
+  .c4 { animation-delay: 0.84s; }
+  .c5 { animation-delay: 1.12s; }
+  .c6 { animation-delay: 1.4s; }
+
+  @keyframes install {
+    0%, 12% { transform: scale(0.6); opacity: 0.25; }
+    28%, 78% { transform: scale(1); opacity: 1; }
+    100% { transform: scale(0.6); opacity: 0.25; }
+  }
+
+  .ring {
+    fill: none; stroke: var(--blue-300); stroke-width: 2;
+    stroke-dasharray: 44; stroke-dashoffset: 44;
+    transform-box: fill-box; transform-origin: center;
+    animation: progress 3.2s ease-in-out infinite;
+  }
+  @keyframes progress {
+    0%, 12% { stroke-dashoffset: 44; opacity: 0; }
+    28% { opacity: 1; }
+    60% { stroke-dashoffset: 0; opacity: 1; }
+    78%, 100% { stroke-dashoffset: 0; opacity: 0; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .cell, .ring { animation: none; opacity: 1; transform: none; stroke-dashoffset: 0; }
+  }
+</style>
+</helmet>
+
+<div class="frame">
+  <span class="tag">Icon proposal</span>
+  <span class="fig">Fig. 04<b>App development</b></span>
+
+  <svg width="320" height="320" viewBox="0 0 320 320">
+    <rect class="phone" x="95" y="35" width="130" height="250" rx="16" />
+    <line class="home" x1="140" y1="265" x2="180" y2="265" />
+
+    <rect class="cell c1" x="112" y="65"  width="34" height="34" rx="7" />
+    <rect class="cell c2" x="154" y="65"  width="34" height="34" rx="7" />
+    <circle class="ring" cx="171" cy="82" r="21" />
+
+    <rect class="cell c3" x="112" y="107" width="34" height="34" rx="7" />
+    <rect class="cell c4" x="154" y="107" width="34" height="34" rx="7" />
+
+    <rect class="cell c5" x="112" y="149" width="34" height="34" rx="7" />
+    <rect class="cell c6" x="154" y="149" width="34" height="34" rx="7" />
+  </svg>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

@@ -1,0 +1,528 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #2563eb;
+    --secondary: #1e40af;
+    --blue-50: #eff6ff;
+    --blue-100: #dbeafe;
+    --blue-300: #93c5fd;
+    --blue-700: #1d4ed8;
+    --blue-900: #1e3a8a;
+    --stone-25: #fafaf9;
+    --stone-100: #f5f5f4;
+    --stone-200: #e7e5e4;
+    --stone-400: #a8a29e;
+    --stone-600: #57534e;
+    --stone-700: #433f3d;
+    --stone-800: #292524;
+    --stone-900: #1c1917;
+    --rose-500: #fb7185;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-ui: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-ui); background: var(--stone-25); }
+  a { color: var(--primary); text-decoration: none; }
+  a:hover { color: var(--secondary); }
+  .page { width: 1440px; }
+
+  /* ===== NAV ===== */
+  .nav { display: flex; align-items: center; justify-content: space-between; padding: 0 3rem; height: 88px; border-bottom: 1px solid var(--stone-200); background: var(--stone-25); }
+  .nav-links { display: flex; gap: 2.25rem; list-style: none; margin: 0; padding: 0; }
+  .nav-links a { font-size: 0.95rem; color: var(--stone-600); font-weight: 500; }
+  .nav-links a.current { color: var(--stone-900); }
+  .nav-right { display: flex; align-items: center; gap: 1.5rem; }
+  .nav-lang { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--stone-400); border: 1px solid var(--stone-200); border-radius: 9999px; padding: 0.3rem 0.7rem; }
+  .nav-cta { display: inline-flex; align-items: center; gap: 0.4rem; background: var(--stone-900); color: white; font-size: 0.85rem; font-weight: 600; padding: 0.6rem 1.15rem; border-radius: 9999px; }
+  .nav-cta:hover { background: var(--primary); color: white; }
+
+  /* ===== HERO ===== */
+  .hero { position: relative; min-height: 900px; display: flex; flex-direction: column; justify-content: center; gap: 2.5rem; padding: 6rem 0 4rem; background: var(--stone-25); background-image: radial-gradient(rgba(28,25,23,0.06) 1px, transparent 1px); background-size: 28px 28px; color: var(--stone-900); overflow: hidden; }
+  .hero-glow { position: absolute; left: 50%; bottom: -8%; width: 900px; height: 900px; transform: translateX(-50%); background: radial-gradient(ellipse at center, rgba(37,99,235,0.16), rgba(124,111,214,0.10) 45%, transparent 72%); filter: blur(60px); animation: glow-pulse 8s ease-in-out infinite; pointer-events: none; }
+  @keyframes glow-pulse { 0%,100% { opacity: .7; transform: translateX(-50%) scale(1); } 50% { opacity: 1; transform: translateX(-50%) scale(1.06); } }
+  .hero-frame { position: absolute; inset: 1.5rem; border: 1px solid rgba(28,25,23,0.22); pointer-events: none; z-index: 0; }
+  .hero-frame-label { position: absolute; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-600); background: var(--stone-25); padding: 0 0.5rem; }
+  .hfl-tl { top: -0.6rem; left: 1rem; }
+  .hfl-tr { top: -0.6rem; right: 1rem; color: rgba(124,111,214,0.85); }
+  .hfl-bl { bottom: -0.6rem; left: 1rem; }
+  .hfl-br { bottom: -0.6rem; right: 1rem; }
+
+  .hero-ticker { position: relative; z-index: 1; width: 100%; overflow: hidden; padding: 1.25rem 0; mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); }
+  .hero-ticker-track { display: flex; width: max-content; animation: ticker-scroll 24s linear infinite; }
+  @keyframes ticker-scroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .hero-ticker-item { display: inline-flex; align-items: center; font-family: var(--font-mono); font-size: 0.85rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-700); white-space: nowrap; }
+  .hero-ticker-dot { color: var(--primary); margin: 0 1.75rem; }
+
+  .hero-wordmark { position: relative; z-index: 1; display: flex; flex-direction: column; align-items: center; }
+  .hero-logo { width: 62%; height: auto; color: var(--stone-900); filter: drop-shadow(0 0 70px rgba(37,99,235,0.18)); }
+  .hero-mission { margin-top: 1.75rem; max-width: 30rem; text-align: center; font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 1.4rem; line-height: 1.4; color: var(--stone-700); }
+
+  .hero-scroll-cue { position: relative; z-index: 1; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 0.6rem; color: var(--stone-700); }
+  .hero-scroll-cue-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; }
+  .hero-scroll-cue-arrow { font-size: 0.9rem; animation: cue-bounce 1.8s ease-in-out infinite; }
+  @keyframes cue-bounce { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+  /* ===== WHAT WE DO ===== */
+  .wwd { position: relative; padding: 7rem 0; background: var(--blue-900); color: white; overflow: hidden; }
+  .wwd-container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .wwd-header { text-align: center; max-width: 640px; margin: 0 auto 5rem; }
+  .wwd-label { display: inline-block; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue-300); margin-bottom: 1rem; }
+  .wwd-title { font-family: var(--font-display); font-size: 2.75rem; font-weight: 600; color: white; margin: 0 0 1rem; line-height: 1.15; }
+  .wwd-desc { font-size: 1.05rem; color: var(--blue-100); line-height: 1.65; margin: 0; }
+  .wwd-rows { display: flex; flex-direction: column; gap: 5rem; }
+  .wwd-row { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 3.5rem; }
+  .wwd-row.rev .wwd-text { order: 2; }
+  .wwd-row.rev .wwd-visual { order: 1; }
+  .wwd-index { display: block; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.06em; color: var(--blue-300); margin-bottom: 1.5rem; }
+  .wwd-chip { width: 2.75rem; height: 2.75rem; border-radius: 0.75rem; display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.16); color: white; }
+  .wwd-chip svg { width: 1.4rem; height: 1.4rem; }
+  .wwd-text h3 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 600; color: white; margin: 0 0 0.85rem; line-height: 1.2; }
+  .wwd-text p { font-size: 1rem; color: var(--blue-100); line-height: 1.6; max-width: 30rem; margin: 0; }
+  .wwd-visual { position: relative; aspect-ratio: 4/3; border: 1px solid rgba(255,255,255,0.22); border-radius: 1.25rem; background: rgba(255,255,255,0.03); background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 18px 18px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .wwd-fig { position: absolute; top: 1rem; right: 1.25rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+
+  /* ===== TRUST STRIP ===== */
+  .trust { background: var(--stone-25); padding: 4.5rem 0; border-bottom: 1px solid var(--stone-200); }
+  .trust-container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .trust-label { display: block; text-align: center; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone-400); margin-bottom: 2.5rem; }
+  .trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; }
+  .trust-item { display: flex; flex-direction: column; gap: 0.6rem; padding: 0 1rem; border-left: 1px solid var(--stone-200); padding-left: 1.5rem; }
+  .trust-item h4 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--stone-900); margin: 0; }
+  .trust-item p { font-size: 0.92rem; color: var(--stone-600); line-height: 1.55; margin: 0; }
+
+  /* ===== VALUES ===== */
+  .values { padding: 6.5rem 0; background: var(--stone-900); position: relative; }
+  .values-container { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; text-align: center; }
+  .values-label { display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--rose-500); margin-bottom: 1.5rem; }
+  .values-quote { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 2.25rem; line-height: 1.4; color: white; margin: 0 0 1.5rem; }
+  .values-body { font-size: 1.05rem; line-height: 1.65; color: var(--stone-400); margin: 0; }
+  .values-manifesto { margin-top: 3.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; text-align: left; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 2.75rem; }
+  .values-manifesto div { display: flex; flex-direction: column; gap: 0.5rem; }
+  .values-manifesto span.num { font-family: var(--font-mono); font-size: 0.75rem; color: var(--rose-500); }
+  .values-manifesto h5 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; color: white; margin: 0; }
+  .values-manifesto p { font-size: 0.88rem; color: var(--stone-400); line-height: 1.55; margin: 0; }
+
+  /* ===== PRODUCTS ===== */
+  .products { padding: 7.5rem 0; background: var(--stone-25); }
+  .products-container { max-width: 1100px; margin: 0 auto; padding: 0 1.5rem; }
+  .products-header { text-align: center; margin-bottom: 3.5rem; }
+  .products-label { display: inline-block; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone-400); margin-bottom: 1rem; }
+  .products-title { font-family: var(--font-display); font-size: 2.75rem; font-weight: 600; color: var(--stone-900); line-height: 1.15; margin: 0; }
+  .product-card { background: white; border: 1px solid var(--stone-200); border-radius: 1.75rem; padding: 0; box-shadow: 0 30px 60px -30px rgba(37,99,235,0.22); display: grid; grid-template-columns: 1fr 1fr; overflow: hidden; }
+  .product-card-content { padding: 3.5rem; display: flex; flex-direction: column; justify-content: center; }
+  .product-card-badge { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.375rem 0.75rem; border-radius: 9999px; background: var(--blue-50); border: 1px solid var(--blue-100); color: var(--blue-700); font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.25rem; width: fit-content; }
+  .product-card-title { font-family: var(--font-display); font-size: 1.9rem; font-weight: 600; color: var(--stone-900); margin: 0 0 0.85rem; }
+  .product-card-desc { font-size: 1.05rem; color: var(--stone-600); line-height: 1.65; margin: 0 0 1.9rem; }
+  .product-card-cta { display: inline-flex; align-items: center; gap: 0.5rem; padding: 0.9rem 1.85rem; border-radius: 9999px; background: var(--primary); color: white; font-weight: 600; font-size: 0.95rem; width: fit-content; }
+  .product-card-visual { position: relative; background: linear-gradient(160deg, var(--blue-900), #16244f); padding: 2.5rem; display: flex; align-items: center; justify-content: center; }
+  .device-frame { width: 100%; background: #0e1a3d; border-radius: 0.9rem; border: 1px solid rgba(255,255,255,0.14); overflow: hidden; box-shadow: 0 24px 48px -20px rgba(0,0,0,0.5); }
+  .device-bar { display: flex; align-items: center; gap: 0.4rem; padding: 0.7rem 0.9rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+  .device-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,0.25); }
+  .device-body { padding: 1.4rem; display: flex; flex-direction: column; gap: 0.75rem; }
+  .device-row { display: flex; gap: 0.75rem; }
+  .device-block { background: rgba(255,255,255,0.08); border-radius: 0.5rem; height: 46px; flex: 1; }
+  .device-block.tall { height: 96px; }
+  .device-block.accent { background: rgba(37,99,235,0.35); }
+  .device-tag { position: absolute; bottom: 1.5rem; right: 1.5rem; font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .products-more { text-align: center; font-family: var(--font-mono); font-size: 0.8rem; color: var(--stone-400); margin-top: 2.25rem; }
+
+  /* ===== CONTACT ===== */
+  .contact { position: relative; padding: 8rem 0; background: var(--blue-900); }
+  .contact-container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: start; }
+  .contact-label { color: var(--blue-300); font-family: var(--font-mono); font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.75rem; }
+  .contact-title { font-family: var(--font-display); font-size: 3rem; font-weight: 600; line-height: 1.15; color: white; margin: 0.75rem 0 1rem; }
+  .contact-desc { font-size: 1.125rem; line-height: 1.6; color: var(--blue-100); max-width: 32rem; margin: 0; }
+  .contact-about { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid rgba(255,255,255,0.15); display: flex; flex-direction: column; gap: 0.5rem; }
+  .contact-about p { font-size: 0.92rem; color: var(--blue-100); line-height: 1.6; margin: 0; max-width: 26rem; }
+  .contact-about span { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue-300); }
+  .contact-form-card { background: white; border: 1px solid var(--stone-200); padding: 2.75rem; border-radius: 1.5rem; box-shadow: 0 30px 60px -30px rgba(0,0,0,0.35); }
+  .form-field { display: flex; flex-direction: column; gap: 0.5rem; margin-bottom: 1.5rem; }
+  .form-field label { font-size: 0.875rem; font-weight: 600; color: var(--stone-800); }
+  .form-input { width: 100%; padding: 0.85rem 1rem; background: var(--stone-25); border: 1px solid var(--stone-200); border-radius: 0.75rem; font-family: var(--font-ui); font-size: 1rem; color: var(--stone-400); }
+  .form-input.tall { min-height: 120px; }
+  .contact-submit { width: 100%; display: flex; align-items: center; justify-content: center; gap: 0.5rem; padding: 1.05rem 2rem; background: var(--primary); color: white; border-radius: 9999px; font-weight: 600; font-size: 1rem; box-shadow: 0 10px 15px -3px rgba(37,99,235,0.35); }
+
+  /* ===== FOOTER ===== */
+  .footer { background: var(--stone-900); padding: 3.5rem 3rem 2.5rem; border-top: 1px solid rgba(255,255,255,0.1); }
+  .footer-inner { max-width: 1280px; margin: 0 auto; display: flex; justify-content: space-between; align-items: flex-end; gap: 2rem; }
+  .footer-logo { color: white; width: 150px; height: auto; margin-bottom: 1rem; }
+  .footer-tagline { font-size: 0.9rem; color: var(--stone-400); max-width: 26rem; line-height: 1.55; margin: 0 0 0.5rem; }
+  .footer-madein { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone-600); margin: 0; }
+  .footer-rights { font-family: var(--font-mono); font-size: 0.75rem; color: var(--stone-600); }
+</style>
+</helmet>
+
+<div class="page">
+
+  <nav class="nav">
+    <svg class="logo-nav" width="140" height="19" viewBox="0 0 177 24" style="color: var(--stone-900)">
+      <path d="m11.36 0.31c-6.08 0-10.18 4.58-10.18 10.57v1.48c0 6.66 4.99 10.81 10.18 10.81 6.83 0 10.03-3.56 10.4-9.19h-5.79c-0.32 3.11-1.62 3.98-4.2 3.98-3.1 0-4.76-2.46-4.76-5.69v-0.78c0-3.5 1.7-5.66 4.48-5.66 2.6 0 3.77 1.27 4.29 3.43h5.75c-0.81-5.68-3.96-8.95-10.17-8.95z" fill="currentColor"/>
+      <path d="m35.94 0.4c-6.62 0-11.33 4.99-11.33 11.21v0.75c0 6.42 4.61 10.9 11.2 10.9 6.62 0 11.04-4.95 11.04-11.17v-0.78c0-6.13-4.42-10.91-10.91-10.91zm0 5.68c3.29 0 5.17 2.55 5.17 5.81v0.62c0 3.21-1.88 5.22-5.08 5.22s-5.34-2.2-5.34-5.55v-0.62c0-3.25 1.96-5.48 5.25-5.48z" fill="currentColor"/>
+      <path d="m50.89 22.82h6.17l-0.09-10.95 0.14-0.07 10.4 11.02h2.51v-21.98h-5.79v10.51l-0.14 0.07-10.67-10.58h-2.53v21.98z" fill="currentColor"/>
+      <path d="m75.03 22.82h6.17l-0.09-10.95 0.14-0.07 9.92 11.02h1.99v-21.98h-5.55v10.51l-0.14 0.07-10.31-10.58h-2.13v21.98z" fill="currentColor"/>
+      <path d="m98.52 22.82h13.94v-5.43l-8.48 0.09v-3.79l7.44 0.07 0.07-4.85-7.51 0.07v-2.85l8.25 0.09v-5.38h-13.71v21.98z" fill="currentColor"/>
+      <path d="m126.9 0.4c-6.58 0-11.25 4.49-11.25 10.66v1.07c0 6.53 4.44 11.04 11.45 11.04 5.65-0.35 9.42-3.31 9.79-8.99h-5.46c-0.41 2.6-1.49 3.55-4.24 3.55-2.89 0-4.99-2.45-4.99-6.02v-0.59c0-3.31 1.65-5.41 4.66-5.41 2.46 0 3.77 1.12 4.34 3.27h5.55c-0.63-5.26-4.23-8.58-9.85-8.58z" fill="currentColor"/>
+      <path d="m144.1 22.82h5.55v-16.6l5.88 0.09 0.09-5.56-16.72-0.09-0.09 5.65 5.29-0.09v16.6z" fill="currentColor"/>
+      <path d="m154.6 22.82h5.69l1.31-3.01h8.44l1.26 3.01h4.9v-1.48l-8.81-20.68h-2.37l-10.42 20.86v1.3zm8.81-7.69 2.64-5.92 2.33 5.92h-4.97z" fill="currentColor"/>
+    </svg>
+    <ul class="nav-links">
+      <li><a class="current" href="#">Home</a></li>
+      <li><a href="#">medassistant</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="nav-right">
+      <span class="nav-lang">EN</span>
+      <a class="nav-cta" href="#">Get in touch <span>→</span></a>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-glow"></div>
+    <div class="hero-frame">
+      <span class="hero-frame-label hfl-tl">Guatemala, CA</span>
+      <span class="hero-frame-label hfl-tr">Software × AI</span>
+      <span class="hero-frame-label hfl-bl">Est. software &amp; AI studio</span>
+      <span class="hero-frame-label hfl-br">Scroll to explore</span>
+    </div>
+
+    <div class="hero-ticker">
+      <div class="hero-ticker-track">
+        <span class="hero-ticker-item">Custom software<span class="hero-ticker-dot">/</span></span>
+        <span class="hero-ticker-item">AI integration<span class="hero-ticker-dot">/</span></span>
+        <span class="hero-ticker-item">Data analysis<span class="hero-ticker-dot">/</span></span>
+        <span class="hero-ticker-item">Automation<span class="hero-ticker-dot">/</span></span>
+        <span class="hero-ticker-item">Custom software<span class="hero-ticker-dot">/</span></span>
+        <span class="hero-ticker-item">AI integration<span class="hero-ticker-dot">/</span></span>
+        <span class="hero-ticker-item">Data analysis<span class="hero-ticker-dot">/</span></span>
+        <span class="hero-ticker-item">Automation<span class="hero-ticker-dot">/</span></span>
+      </div>
+    </div>
+
+    <div class="hero-wordmark">
+      <svg class="hero-logo" viewBox="0 0 177 24">
+        <path d="m11.36 0.31c-6.08 0-10.18 4.58-10.18 10.57v1.48c0 6.66 4.99 10.81 10.18 10.81 6.83 0 10.03-3.56 10.4-9.19h-5.79c-0.32 3.11-1.62 3.98-4.2 3.98-3.1 0-4.76-2.46-4.76-5.69v-0.78c0-3.5 1.7-5.66 4.48-5.66 2.6 0 3.77 1.27 4.29 3.43h5.75c-0.81-5.68-3.96-8.95-10.17-8.95z" fill="currentColor"/>
+        <path d="m35.94 0.4c-6.62 0-11.33 4.99-11.33 11.21v0.75c0 6.42 4.61 10.9 11.2 10.9 6.62 0 11.04-4.95 11.04-11.17v-0.78c0-6.13-4.42-10.91-10.91-10.91zm0 5.68c3.29 0 5.17 2.55 5.17 5.81v0.62c0 3.21-1.88 5.22-5.08 5.22s-5.34-2.2-5.34-5.55v-0.62c0-3.25 1.96-5.48 5.25-5.48z" fill="currentColor"/>
+        <path d="m50.89 22.82h6.17l-0.09-10.95 0.14-0.07 10.4 11.02h2.51v-21.98h-5.79v10.51l-0.14 0.07-10.67-10.58h-2.53v21.98z" fill="currentColor"/>
+        <path d="m75.03 22.82h6.17l-0.09-10.95 0.14-0.07 9.92 11.02h1.99v-21.98h-5.55v10.51l-0.14 0.07-10.31-10.58h-2.13v21.98z" fill="currentColor"/>
+        <path d="m98.52 22.82h13.94v-5.43l-8.48 0.09v-3.79l7.44 0.07 0.07-4.85-7.51 0.07v-2.85l8.25 0.09v-5.38h-13.71v21.98z" fill="currentColor"/>
+        <path d="m126.9 0.4c-6.58 0-11.25 4.49-11.25 10.66v1.07c0 6.53 4.44 11.04 11.45 11.04 5.65-0.35 9.42-3.31 9.79-8.99h-5.46c-0.41 2.6-1.49 3.55-4.24 3.55-2.89 0-4.99-2.45-4.99-6.02v-0.59c0-3.31 1.65-5.41 4.66-5.41 2.46 0 3.77 1.12 4.34 3.27h5.55c-0.63-5.26-4.23-8.58-9.85-8.58z" fill="currentColor"/>
+        <path d="m144.1 22.82h5.55v-16.6l5.88 0.09 0.09-5.56-16.72-0.09-0.09 5.65 5.29-0.09v16.6z" fill="currentColor"/>
+        <path d="m154.6 22.82h5.69l1.31-3.01h8.44l1.26 3.01h4.9v-1.48l-8.81-20.68h-2.37l-10.42 20.86v1.3zm8.81-7.69 2.64-5.92 2.33 5.92h-4.97z" fill="currentColor"/>
+      </svg>
+      <p class="hero-mission">The software — and the AI inside it — that makes companies run smarter.</p>
+    </div>
+
+    <a class="hero-scroll-cue" href="#">
+      <span class="hero-scroll-cue-label">Learn more</span>
+      <span class="hero-scroll-cue-arrow">↓</span>
+    </a>
+  </section>
+
+  <!-- ===== WHAT WE DO ===== -->
+  <section class="wwd">
+    <div class="wwd-container">
+      <div class="wwd-header">
+        <span class="wwd-label">What we do</span>
+        <h2 class="wwd-title">From custom software to AI-driven products</h2>
+        <p class="wwd-desc">We help companies adopt AI, and we build the software that makes it usable — from the ground up when nothing exists yet, or woven into what's already there.</p>
+      </div>
+
+      <div class="wwd-rows">
+
+        <div class="wwd-row">
+          <div class="wwd-text">
+            <span class="wwd-index">01</span>
+            <div class="wwd-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="8 6 2 12 8 18"/><polyline points="16 6 22 12 16 18"/></svg>
+            </div>
+            <h3>We build custom software</h3>
+            <p>Built from scratch for a company's specific operation, not adapted from a generic template.</p>
+          </div>
+          <div class="wwd-visual">
+            <span class="wwd-fig">Fig. 01</span>
+            <svg width="230" height="170" viewBox="0 0 230 170" fill="none">
+              <rect x="14" y="14" width="202" height="142" rx="10" stroke="rgba(255,255,255,0.25)" stroke-width="1.25"/>
+              <line x1="14" y1="42" x2="216" y2="42" stroke="rgba(255,255,255,0.18)" stroke-width="1"/>
+              <circle cx="30" cy="28" r="3" fill="rgba(255,255,255,0.3)"/>
+              <circle cx="42" cy="28" r="3" fill="rgba(255,255,255,0.3)"/>
+              <circle cx="54" cy="28" r="3" fill="rgba(255,255,255,0.3)"/>
+              <rect x="30" y="58" width="60" height="8" rx="2" fill="rgba(147,197,253,0.6)"/>
+              <rect x="30" y="74" width="140" height="8" rx="2" fill="rgba(255,255,255,0.16)"/>
+              <rect x="46" y="90" width="120" height="8" rx="2" fill="rgba(255,255,255,0.16)"/>
+              <rect x="46" y="106" width="90" height="8" rx="2" fill="rgba(255,255,255,0.16)"/>
+              <rect x="30" y="122" width="70" height="8" rx="2" fill="rgba(147,197,253,0.6)"/>
+              <g stroke="#93c5fd" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="184 60 172 74 184 88"/>
+                <polyline points="200 60 212 74 200 88"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="wwd-row rev">
+          <div class="wwd-text">
+            <span class="wwd-index">02</span>
+            <div class="wwd-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v3M12 18v3M3 12h3M18 12h3M5.6 5.6l2.1 2.1M16.3 16.3l2.1 2.1M18.4 5.6l-2.1 2.1M7.7 16.3l-2.1 2.1"/><circle cx="12" cy="12" r="3.25"/></svg>
+            </div>
+            <h3>We build AI-powered solutions</h3>
+            <p>Helping companies adopt AI inside the services and workflows they already run.</p>
+          </div>
+          <div class="wwd-visual">
+            <span class="wwd-fig">Fig. 02</span>
+            <svg width="230" height="170" viewBox="0 0 230 170" fill="none">
+              <circle cx="115" cy="85" r="46" stroke="rgba(255,255,255,0.16)" stroke-dasharray="3 5"/>
+              <circle cx="115" cy="85" r="66" stroke="rgba(255,255,255,0.1)" stroke-dasharray="3 5"/>
+              <g stroke="rgba(147,197,253,0.55)" stroke-width="1.25">
+                <line x1="115" y1="85" x2="60" y2="50"/>
+                <line x1="115" y1="85" x2="170" y2="50"/>
+                <line x1="115" y1="85" x2="52" y2="112"/>
+                <line x1="115" y1="85" x2="178" y2="112"/>
+                <line x1="115" y1="85" x2="115" y2="30"/>
+                <line x1="115" y1="85" x2="115" y2="142"/>
+              </g>
+              <g fill="#fff">
+                <circle cx="60" cy="50" r="4"/>
+                <circle cx="170" cy="50" r="4"/>
+                <circle cx="52" cy="112" r="4"/>
+                <circle cx="178" cy="112" r="4"/>
+                <circle cx="115" cy="30" r="4"/>
+                <circle cx="115" cy="142" r="4"/>
+              </g>
+              <path d="M115 76v18M106 85h18M99.6 76.6l12.8 12.8M99.6 93.4l12.8-12.8" stroke="white" stroke-width="1.75" stroke-linecap="round"/>
+            </svg>
+          </div>
+        </div>
+
+        <div class="wwd-row">
+          <div class="wwd-text">
+            <span class="wwd-index">03</span>
+            <div class="wwd-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5.5" rx="8" ry="3"/><path d="M4 5.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/><path d="M4 11.5v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6"/></svg>
+            </div>
+            <h3>We build decisions grounded in data</h3>
+            <p>Analyzing, cleaning, and organizing data as the foundation any real decision needs.</p>
+          </div>
+          <div class="wwd-visual">
+            <span class="wwd-fig">Fig. 03</span>
+            <svg width="230" height="170" viewBox="0 0 230 170" fill="none">
+              <ellipse cx="62" cy="46" rx="34" ry="12" stroke="rgba(255,255,255,0.35)" stroke-width="1.25"/>
+              <path d="M28 46v26c0 6.6 15.2 12 34 12s34-5.4 34-12V46" stroke="rgba(255,255,255,0.35)" stroke-width="1.25"/>
+              <path d="M28 72v26c0 6.6 15.2 12 34 12s34-5.4 34-12V72" stroke="rgba(255,255,255,0.35)" stroke-width="1.25"/>
+              <path d="M96 90 h30" stroke="rgba(147,197,253,0.5)" stroke-width="1.25" stroke-dasharray="2 4"/>
+              <g fill="rgba(147,197,253,0.65)">
+                <rect x="140" y="96" width="12" height="30" rx="2"/>
+                <rect x="160" y="76" width="12" height="50" rx="2"/>
+                <rect x="180" y="56" width="12" height="70" rx="2"/>
+                <rect x="200" y="86" width="12" height="40" rx="2"/>
+              </g>
+            </svg>
+          </div>
+        </div>
+
+        <div class="wwd-row rev">
+          <div class="wwd-text">
+            <span class="wwd-index">04</span>
+            <div class="wwd-chip">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2.75"/><path d="M19.4 13.5a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V19.5a2 2 0 1 1-4 0v-.09a1.65 1.65 0 0 0-1.08-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H4.5a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 6.1 8.68a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H10.5a1.65 1.65 0 0 0 1-1.51V4.5a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09c.36.7.9 1.16 1.51 1H19.5a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+            </div>
+            <h3>We build automation end to end</h3>
+            <p>Turning organized data into automated, data-driven decisions.</p>
+          </div>
+          <div class="wwd-visual">
+            <span class="wwd-fig">Fig. 04</span>
+            <svg width="230" height="170" viewBox="0 0 230 170" fill="none">
+              <circle cx="115" cy="85" r="26" stroke="white" stroke-width="1.5"/>
+              <circle cx="115" cy="85" r="8" stroke="white" stroke-width="1.5"/>
+              <g stroke="white" stroke-width="1.5">
+                <line x1="115" y1="55" x2="115" y2="63"/>
+                <line x1="115" y1="107" x2="115" y2="115"/>
+                <line x1="85" y1="85" x2="93" y2="85"/>
+                <line x1="137" y1="85" x2="145" y2="85"/>
+                <line x1="94.8" y1="64.8" x2="100.5" y2="70.5"/>
+                <line x1="129.5" y1="99.5" x2="135.2" y2="105.2"/>
+                <line x1="135.2" y1="64.8" x2="129.5" y2="70.5"/>
+                <line x1="100.5" y1="99.5" x2="94.8" y2="105.2"/>
+              </g>
+              <circle cx="60" cy="50" r="14" stroke="rgba(147,197,253,0.55)" stroke-width="1.25"/>
+              <circle cx="60" cy="50" r="4" stroke="rgba(147,197,253,0.55)" stroke-width="1.25"/>
+              <circle cx="172" cy="122" r="14" stroke="rgba(147,197,253,0.55)" stroke-width="1.25"/>
+              <circle cx="172" cy="122" r="4" stroke="rgba(147,197,253,0.55)" stroke-width="1.25"/>
+              <path d="M78 63 L96 76" stroke="rgba(147,197,253,0.4)" stroke-width="1.25" stroke-dasharray="2 4"/>
+              <path d="M134 96 L156 111" stroke="rgba(147,197,253,0.4)" stroke-width="1.25" stroke-dasharray="2 4"/>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TRUST STRIP ===== -->
+  <section class="trust">
+    <div class="trust-container">
+      <span class="trust-label">How we work</span>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <h4>No off-the-shelf templates</h4>
+          <p>Every system is built from your operation, not adapted from someone else's.</p>
+        </div>
+        <div class="trust-item">
+          <h4>State-of-the-art, not safe</h4>
+          <p>Innovation and state-of-the-art technology first, usability always.</p>
+        </div>
+        <div class="trust-item">
+          <h4>Direct to the team</h4>
+          <p>You work with the people building your software — no account layers in between.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== VALUES ===== -->
+  <section class="values">
+    <div class="values-container">
+      <span class="values-label">Why we're a startup</span>
+      <p class="values-quote">We're new, and we're building on purpose — innovation and state-of-the-art technology first, usability always.</p>
+      <p class="values-body">We'd rather ship something considered and a little bold than something safe and forgettable. That's the standard behind every product we build, starting with our own.</p>
+
+      <div class="values-manifesto">
+        <div>
+          <span class="num">01</span>
+          <h5>Considered over safe</h5>
+          <p>Every decision gets weighed against what's actually right for the product, not what's easiest to ship.</p>
+        </div>
+        <div>
+          <span class="num">02</span>
+          <h5>State-of-the-art, applied</h5>
+          <p>New technology only earns its place once it makes the product genuinely better to use.</p>
+        </div>
+        <div>
+          <span class="num">03</span>
+          <h5>Built to be used</h5>
+          <p>Usability isn't a finishing touch — it's the standard every product is held to, starting with our own.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="products">
+    <div class="products-container">
+      <div class="products-header">
+        <span class="products-label">Products</span>
+        <h2 class="products-title">Our first product</h2>
+      </div>
+      <div class="product-card">
+        <div class="product-card-content">
+          <span class="product-card-badge">medassistant</span>
+          <h3 class="product-card-title">Software for healthcare clinics</h3>
+          <p class="product-card-desc">medassistant gives doctors and clinic managers control of their operation — billing patients, generating invoices, managing payments, and following up on appointments and patients, all in one place.</p>
+          <a class="product-card-cta" href="#">Visit medassistant <span>→</span></a>
+        </div>
+        <div class="product-card-visual">
+          <div class="device-frame">
+            <div class="device-bar">
+              <span class="device-dot"></span><span class="device-dot"></span><span class="device-dot"></span>
+            </div>
+            <div class="device-body">
+              <div class="device-row">
+                <div class="device-block accent" style="flex: 0 0 30%;"></div>
+                <div class="device-block" style="flex: 1;"></div>
+              </div>
+              <div class="device-row">
+                <div class="device-block tall"></div>
+                <div class="device-block tall"></div>
+                <div class="device-block tall"></div>
+              </div>
+              <div class="device-row">
+                <div class="device-block"></div>
+                <div class="device-block accent"></div>
+              </div>
+            </div>
+          </div>
+          <span class="device-tag">medassistant — product placeholder</span>
+        </div>
+      </div>
+      <p class="products-more">More products, built on the same system, are on the way.</p>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="contact">
+    <div class="contact-container">
+      <div class="contact-grid">
+        <div class="contact-content">
+          <span class="contact-label">Contact Us</span>
+          <h2 class="contact-title">Ready to transform your clinic?</h2>
+          <p class="contact-desc">Join hundreds of clinics that have already digitized their operation. Fill out the form and we'll get in touch with you.</p>
+          <div class="contact-about">
+            <span>About Connecta</span>
+            <p>A Guatemala-based software company building AI-driven tools and custom software for multiple industries.</p>
+          </div>
+        </div>
+        <div class="contact-form-wrapper">
+          <div class="contact-form-card">
+            <div class="form-field">
+              <label>Name</label>
+              <div class="form-input">John Doe</div>
+            </div>
+            <div class="form-field">
+              <label>Email</label>
+              <div class="form-input">john@clinic.com</div>
+            </div>
+            <div class="form-field">
+              <label>Message</label>
+              <div class="form-input tall">Tell us about your clinic...</div>
+            </div>
+            <a class="contact-submit" href="#">Send Message <span>→</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>
+        <svg class="footer-logo" viewBox="0 0 177 24">
+          <path d="m11.36 0.31c-6.08 0-10.18 4.58-10.18 10.57v1.48c0 6.66 4.99 10.81 10.18 10.81 6.83 0 10.03-3.56 10.4-9.19h-5.79c-0.32 3.11-1.62 3.98-4.2 3.98-3.1 0-4.76-2.46-4.76-5.69v-0.78c0-3.5 1.7-5.66 4.48-5.66 2.6 0 3.77 1.27 4.29 3.43h5.75c-0.81-5.68-3.96-8.95-10.17-8.95z" fill="currentColor"/>
+          <path d="m35.94 0.4c-6.62 0-11.33 4.99-11.33 11.21v0.75c0 6.42 4.61 10.9 11.2 10.9 6.62 0 11.04-4.95 11.04-11.17v-0.78c0-6.13-4.42-10.91-10.91-10.91zm0 5.68c3.29 0 5.17 2.55 5.17 5.81v0.62c0 3.21-1.88 5.22-5.08 5.22s-5.34-2.2-5.34-5.55v-0.62c0-3.25 1.96-5.48 5.25-5.48z" fill="currentColor"/>
+          <path d="m50.89 22.82h6.17l-0.09-10.95 0.14-0.07 10.4 11.02h2.51v-21.98h-5.79v10.51l-0.14 0.07-10.67-10.58h-2.53v21.98z" fill="currentColor"/>
+          <path d="m75.03 22.82h6.17l-0.09-10.95 0.14-0.07 9.92 11.02h1.99v-21.98h-5.55v10.51l-0.14 0.07-10.31-10.58h-2.13v21.98z" fill="currentColor"/>
+          <path d="m98.52 22.82h13.94v-5.43l-8.48 0.09v-3.79l7.44 0.07 0.07-4.85-7.51 0.07v-2.85l8.25 0.09v-5.38h-13.71v21.98z" fill="currentColor"/>
+          <path d="m126.9 0.4c-6.58 0-11.25 4.49-11.25 10.66v1.07c0 6.53 4.44 11.04 11.45 11.04 5.65-0.35 9.42-3.31 9.79-8.99h-5.46c-0.41 2.6-1.49 3.55-4.24 3.55-2.89 0-4.99-2.45-4.99-6.02v-0.59c0-3.31 1.65-5.41 4.66-5.41 2.46 0 3.77 1.12 4.34 3.27h5.55c-0.63-5.26-4.23-8.58-9.85-8.58z" fill="currentColor"/>
+          <path d="m144.1 22.82h5.55v-16.6l5.88 0.09 0.09-5.56-16.72-0.09-0.09 5.65 5.29-0.09v16.6z" fill="currentColor"/>
+          <path d="m154.6 22.82h5.69l1.31-3.01h8.44l1.26 3.01h4.9v-1.48l-8.81-20.68h-2.37l-10.42 20.86v1.3zm8.81-7.69 2.64-5.92 2.33 5.92h-4.97z" fill="currentColor"/>
+        </svg>
+        <p class="footer-tagline">A Guatemala-based software company building AI-driven tools and custom software for multiple industries.</p>
+        <p class="footer-madein">Made in Guatemala</p>
+      </div>
+      <p class="footer-rights">&copy; 2025 Connecta. All rights reserved.</p>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+}
+</script>
+</body>
+</html>

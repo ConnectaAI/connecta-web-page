@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-900: #1e3a8a; --blue-300: #93c5fd; --blue-100: #dbeafe; --stone-25: #fafaf9; --stone-600: #57534e;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-ui: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-ui); }
+  .frame { width: 1440px; background: var(--stone-25); padding: 5rem 6rem 6rem; }
+  .variant-tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: #a8a29e; margin-bottom: 2rem; display: block; }
+
+  .head { max-width: 820px; margin-bottom: 1.75rem; }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue-900); }
+  .title { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: #1c1917; margin: 0.6rem 0 0.9rem; line-height: 1.2; }
+  .desc { font-size: 0.98rem; color: var(--stone-600); line-height: 1.6; margin: 0; }
+  .desc b { color: #1c1917; }
+
+  .track { display: flex; align-items: center; gap: 0.5rem; margin: 2.25rem 0 2.5rem; }
+  .track-line { flex: 1; height: 1px; background: #e7e5e4; position: relative; }
+  .track-fill { position: absolute; top: 0; left: 0; height: 100%; width: 100%; background: linear-gradient(to right, var(--blue-900), var(--blue-900) 50%, transparent 50%); opacity: 0; }
+  .track-label { font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.06em; text-transform: uppercase; color: #a8a29e; white-space: nowrap; }
+
+  .strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 1.25rem; }
+  .card { background: var(--blue-900); border-radius: 1rem; overflow: hidden; position: relative; }
+  .card-inner { position: relative; padding: 1.5rem 1rem; height: 300px; display: flex; align-items: center; justify-content: center; background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 16px 16px; }
+  .card-cap { padding: 0.9rem 1rem 1.1rem; background: white; }
+  .card-cap .pos { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: #a8a29e; display: block; margin-bottom: 0.35rem; }
+  .card-cap h5 { font-family: var(--font-display); font-size: 0.95rem; font-weight: 600; color: #1c1917; margin: 0 0 0.3rem; }
+  .card-cap p { font-size: 0.78rem; color: var(--stone-600); line-height: 1.4; margin: 0; }
+
+  .callout { position: absolute; width: 108px; background: rgba(255,255,255,0.98); border-radius: 0.5rem; padding: 0.5rem 0.6rem; font-family: var(--font-mono); font-size: 0.56rem; line-height: 1.4; color: #1c1917; box-shadow: 0 8px 20px rgba(0,0,0,0.25); }
+
+  .dots { display: flex; gap: 0.3rem; justify-content: center; margin-top: 0.6rem; }
+  .dot { width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.9); }
+
+  .footnote { margin-top: 3rem; padding-top: 2rem; border-top: 1px solid #e7e5e4; font-size: 0.92rem; color: var(--stone-600); line-height: 1.65; max-width: 760px; }
+  .footnote b { color: #1c1917; }
+</style>
+</helmet>
+
+<div class="frame">
+  <span class="variant-tag">What we do — Variant B2 / Scroll-focus storyboard (concept, not yet interactive)</span>
+
+  <div class="head">
+    <span class="eyebrow">Interaction concept</span>
+    <h2 class="title">The diagram stays in view; focus moves as you scroll</h2>
+    <p class="desc">The system map from Variant B is pinned in the viewport while the section scrolls. As each capability's row passes, its node brightens and a short expanded note appears beside it. <b>Every name and one-line description stays visible at all times</b> — the animation only adds detail on top, it never hides the baseline.</p>
+  </div>
+
+  <div class="track">
+    <span class="track-label">Section start</span>
+    <div class="track-line"></div>
+    <span class="track-label">Section end</span>
+  </div>
+
+  <div class="strip">
+
+    <!-- Frame 0: idle / overview -->
+    <div class="card">
+      <div class="card-inner">
+        <svg width="100%" height="100%" viewBox="0 0 260 260" fill="none">
+          <circle cx="130" cy="130" r="34" stroke="white" stroke-width="1.25"/>
+          <text x="130" y="126" text-anchor="middle" fill="white" font-family="Fraunces" font-size="11" font-weight="600">Connecta</text>
+          <text x="130" y="139" text-anchor="middle" fill="#93c5fd" font-family="'Geist Mono'" font-size="6">CORE</text>
+          <g stroke="rgba(255,255,255,0.5)" stroke-width="1" stroke-dasharray="2 4">
+            <line x1="130" y1="96" x2="70" y2="45"/>
+            <line x1="164" y1="130" x2="220" y2="65"/>
+            <line x1="130" y1="164" x2="70" y2="215"/>
+            <line x1="96" y1="130" x2="35" y2="130"/>
+          </g>
+          <g fill="white"><circle cx="70" cy="45" r="3.5"/><circle cx="220" cy="65" r="3.5"/><circle cx="70" cy="215" r="3.5"/><circle cx="35" cy="130" r="3.5"/></g>
+          <g font-family="Fraunces" font-size="10" font-weight="600" fill="white">
+            <text x="42" y="35">Software</text><text x="190" y="55">AI</text><text x="40" y="235">Automation</text><text x="8" y="118">Data</text>
+          </g>
+        </svg>
+      </div>
+      <div class="card-cap">
+        <span class="pos">0 / 4 — idle</span>
+        <h5>Overview</h5>
+        <p>All four capabilities equal weight, nothing focused yet.</p>
+      </div>
+    </div>
+
+    <!-- Frame 1: software focused -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="callout" style="top: 18%; left: 6%;"><b>Software</b><br>Built from scratch — no template, no page builder.</div>
+        <svg width="100%" height="100%" viewBox="0 0 260 260" fill="none">
+          <circle cx="130" cy="130" r="34" stroke="white" stroke-width="1.25"/>
+          <text x="130" y="126" text-anchor="middle" fill="white" font-family="Fraunces" font-size="11" font-weight="600">Connecta</text>
+          <text x="130" y="139" text-anchor="middle" fill="#93c5fd" font-family="'Geist Mono'" font-size="6">CORE</text>
+          <line x1="130" y1="96" x2="70" y2="45" stroke="#93c5fd" stroke-width="1.75"/>
+          <g stroke="rgba(255,255,255,0.22)" stroke-width="1" stroke-dasharray="2 4">
+            <line x1="164" y1="130" x2="220" y2="65"/><line x1="130" y1="164" x2="70" y2="215"/><line x1="96" y1="130" x2="35" y2="130"/>
+          </g>
+          <circle cx="70" cy="45" r="5.5" fill="#93c5fd"/>
+          <g fill="rgba(255,255,255,0.3)"><circle cx="220" cy="65" r="3.5"/><circle cx="70" cy="215" r="3.5"/><circle cx="35" cy="130" r="3.5"/></g>
+          <text x="42" y="33" font-family="Fraunces" font-size="11" font-weight="700" fill="white">Software</text>
+          <g font-family="Fraunces" font-size="10" font-weight="600" fill="rgba(255,255,255,0.35)">
+            <text x="190" y="55">AI</text><text x="40" y="235">Automation</text><text x="8" y="118">Data</text>
+          </g>
+        </svg>
+      </div>
+      <div class="card-cap">
+        <span class="pos">1 / 4 — focused</span>
+        <h5>Software</h5>
+        <p>Ring brightens, leader line solidifies, note slides in.</p>
+      </div>
+    </div>
+
+    <!-- Frame 2: AI focused -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="callout" style="top: 16%; right: 4%;"><b>AI</b><br>Adopted inside workflows you already run — not bolted on.</div>
+        <svg width="100%" height="100%" viewBox="0 0 260 260" fill="none">
+          <circle cx="130" cy="130" r="34" stroke="white" stroke-width="1.25"/>
+          <text x="130" y="126" text-anchor="middle" fill="white" font-family="Fraunces" font-size="11" font-weight="600">Connecta</text>
+          <text x="130" y="139" text-anchor="middle" fill="#93c5fd" font-family="'Geist Mono'" font-size="6">CORE</text>
+          <line x1="164" y1="130" x2="220" y2="65" stroke="#93c5fd" stroke-width="1.75"/>
+          <g stroke="rgba(255,255,255,0.22)" stroke-width="1" stroke-dasharray="2 4">
+            <line x1="130" y1="96" x2="70" y2="45"/><line x1="130" y1="164" x2="70" y2="215"/><line x1="96" y1="130" x2="35" y2="130"/>
+          </g>
+          <circle cx="220" cy="65" r="5.5" fill="#93c5fd"/>
+          <g fill="rgba(255,255,255,0.3)"><circle cx="70" cy="45" r="3.5"/><circle cx="70" cy="215" r="3.5"/><circle cx="35" cy="130" r="3.5"/></g>
+          <text x="188" y="53" font-family="Fraunces" font-size="11" font-weight="700" fill="white">AI</text>
+          <g font-family="Fraunces" font-size="10" font-weight="600" fill="rgba(255,255,255,0.35)">
+            <text x="42" y="35">Software</text><text x="40" y="235">Automation</text><text x="8" y="118">Data</text>
+          </g>
+        </svg>
+      </div>
+      <div class="card-cap">
+        <span class="pos">2 / 4 — focused</span>
+        <h5>AI integration</h5>
+        <p>Previous node settles back to resting opacity.</p>
+      </div>
+    </div>
+
+    <!-- Frame 3: data focused -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="callout" style="bottom: 14%; left: 2%;"><b>Data</b><br>Cleaned and structured before it's trusted.</div>
+        <svg width="100%" height="100%" viewBox="0 0 260 260" fill="none">
+          <circle cx="130" cy="130" r="34" stroke="white" stroke-width="1.25"/>
+          <text x="130" y="126" text-anchor="middle" fill="white" font-family="Fraunces" font-size="11" font-weight="600">Connecta</text>
+          <text x="130" y="139" text-anchor="middle" fill="#93c5fd" font-family="'Geist Mono'" font-size="6">CORE</text>
+          <line x1="96" y1="130" x2="35" y2="130" stroke="#93c5fd" stroke-width="1.75"/>
+          <g stroke="rgba(255,255,255,0.22)" stroke-width="1" stroke-dasharray="2 4">
+            <line x1="130" y1="96" x2="70" y2="45"/><line x1="164" y1="130" x2="220" y2="65"/><line x1="130" y1="164" x2="70" y2="215"/>
+          </g>
+          <circle cx="35" cy="130" r="5.5" fill="#93c5fd"/>
+          <g fill="rgba(255,255,255,0.3)"><circle cx="70" cy="45" r="3.5"/><circle cx="220" cy="65" r="3.5"/><circle cx="70" cy="215" r="3.5"/></g>
+          <text x="4" y="116" font-family="Fraunces" font-size="11" font-weight="700" fill="white">Data</text>
+          <g font-family="Fraunces" font-size="10" font-weight="600" fill="rgba(255,255,255,0.35)">
+            <text x="42" y="35">Software</text><text x="190" y="55">AI</text><text x="40" y="235">Automation</text>
+          </g>
+        </svg>
+      </div>
+      <div class="card-cap">
+        <span class="pos">3 / 4 — focused</span>
+        <h5>Data analysis</h5>
+        <p>Same treatment, different node and note position.</p>
+      </div>
+    </div>
+
+    <!-- Frame 4: automation focused -->
+    <div class="card">
+      <div class="card-inner">
+        <div class="callout" style="bottom: 14%; right: 4%;"><b>Automation</b><br>Data becomes action without a human bottleneck.</div>
+        <svg width="100%" height="100%" viewBox="0 0 260 260" fill="none">
+          <circle cx="130" cy="130" r="34" stroke="white" stroke-width="1.25"/>
+          <text x="130" y="126" text-anchor="middle" fill="white" font-family="Fraunces" font-size="11" font-weight="600">Connecta</text>
+          <text x="130" y="139" text-anchor="middle" fill="#93c5fd" font-family="'Geist Mono'" font-size="6">CORE</text>
+          <line x1="130" y1="164" x2="70" y2="215" stroke="#93c5fd" stroke-width="1.75"/>
+          <g stroke="rgba(255,255,255,0.22)" stroke-width="1" stroke-dasharray="2 4">
+            <line x1="130" y1="96" x2="70" y2="45"/><line x1="164" y1="130" x2="220" y2="65"/><line x1="96" y1="130" x2="35" y2="130"/>
+          </g>
+          <circle cx="70" cy="215" r="5.5" fill="#93c5fd"/>
+          <g fill="rgba(255,255,255,0.3)"><circle cx="70" cy="45" r="3.5"/><circle cx="220" cy="65" r="3.5"/><circle cx="35" cy="130" r="3.5"/></g>
+          <text x="40" y="233" font-family="Fraunces" font-size="11" font-weight="700" fill="white">Automation</text>
+          <g font-family="Fraunces" font-size="10" font-weight="600" fill="rgba(255,255,255,0.35)">
+            <text x="42" y="35">Software</text><text x="190" y="55">AI</text><text x="8" y="118">Data</text>
+          </g>
+        </svg>
+      </div>
+      <div class="card-cap">
+        <span class="pos">4 / 4 — focused</span>
+        <h5>Automation</h5>
+        <p>Last node — section releases and scroll continues normally.</p>
+      </div>
+    </div>
+
+  </div>
+
+  <p class="footnote"><b>Why this avoids the "confusing for a lead" risk:</b> the labels and descriptions in the diagram itself are never hidden behind the animation — a visitor who doesn't scroll slowly, or who has motion reduced, still reads all four names and lines at a glance (frame 0). The expanded note is a bonus for whoever lingers, not a gate. Recommend keeping the whole thing short (4 short scroll-triggers, no pinning beyond the diagram's own height) so it never traps the scroll the way a long "scrollytelling" section can.</p>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

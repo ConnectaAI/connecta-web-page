@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-900: #1e3a8a; --blue-300: #93c5fd; --blue-100: #dbeafe;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-ui: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-ui); }
+  .frame { width: 1440px; background: var(--blue-900); color: white; padding: 6rem 6rem 5rem; background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 26px 26px; }
+  .variant-tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 3rem; }
+  .head { text-align: center; max-width: 640px; margin: 0 auto 3.5rem; }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue-300); }
+  .title { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; margin: 1rem 0; line-height: 1.15; }
+  .desc { font-size: 1rem; color: var(--blue-100); line-height: 1.6; margin: 0; }
+
+  .diagram-wrap { position: relative; border: 1px solid rgba(255,255,255,0.2); border-radius: 1.5rem; padding: 3rem; background: rgba(255,255,255,0.02); }
+  .diagram-tag { position: absolute; top: 1.25rem; left: 1.75rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .diagram-tag-r { position: absolute; top: 1.25rem; right: 1.75rem; font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.4); }
+  .callout { position: absolute; width: 220px; }
+  .callout .k { display: block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue-300); margin-bottom: 0.35rem; }
+  .callout .v { font-size: 0.85rem; color: rgba(255,255,255,0.75); line-height: 1.45; margin: 0; }
+  .c1 { top: 0.5rem; left: 1rem; text-align: left; }
+  .c2 { top: 0.5rem; right: 1rem; text-align: right; }
+  .c3 { bottom: 0.5rem; left: 1rem; text-align: left; }
+  .c4 { bottom: 0.5rem; right: 1rem; text-align: right; }
+</style>
+</helmet>
+
+<div class="frame">
+  <span class="variant-tag">What we do — Variant B / Systems diagram</span>
+  <div class="head">
+    <span class="eyebrow">What we do</span>
+    <h2 class="title">One system, four disciplines</h2>
+    <p class="desc">Custom software, AI, data and automation aren't separate offerings — they're stages of the same pipeline we build for every client.</p>
+  </div>
+
+  <div class="diagram-wrap">
+    <span class="diagram-tag">Fig. 01 — Capability map</span>
+    <span class="diagram-tag-r">Connecta / SW·AI·DA·AU</span>
+
+    <svg width="100%" height="480" viewBox="0 0 1200 480" fill="none">
+      <circle cx="600" cy="240" r="72" stroke="white" stroke-width="1.5"/>
+      <text x="600" y="234" text-anchor="middle" fill="white" font-family="Fraunces" font-size="22" font-weight="600">Connecta</text>
+      <text x="600" y="256" text-anchor="middle" fill="#93c5fd" font-family="'Geist Mono'" font-size="11" letter-spacing="1">CORE SYSTEM</text>
+
+      <g stroke="rgba(255,255,255,0.4)" stroke-width="1.25" stroke-dasharray="3 5">
+        <line x1="600" y1="168" x2="300" y2="80"/>
+        <line x1="672" y1="240" x2="960" y2="120"/>
+        <line x1="600" y1="312" x2="300" y2="400"/>
+        <line x1="528" y1="240" x2="240" y2="240"/>
+      </g>
+
+      <g fill="white">
+        <circle cx="300" cy="80" r="5"/>
+        <circle cx="960" cy="120" r="5"/>
+        <circle cx="300" cy="400" r="5"/>
+        <circle cx="240" cy="240" r="5"/>
+      </g>
+
+      <g font-family="Fraunces" font-size="19" font-weight="600" fill="white">
+        <text x="200" y="60">Software</text>
+        <text x="860" y="100">AI</text>
+        <text x="180" y="425">Automation</text>
+        <text x="60" y="220">Data</text>
+      </g>
+      <g font-family="'Geist Mono'" font-size="10.5" fill="#93c5fd" letter-spacing="0.5">
+        <text x="200" y="80">01 · GROUND-UP BUILD</text>
+        <text x="860" y="120">02 · APPLIED IN WORKFLOW</text>
+        <text x="180" y="445">04 · END TO END</text>
+        <text x="60" y="240">03 · STRUCTURED FIRST</text>
+      </g>
+    </svg>
+
+    <div class="callout c1"><span class="k">01 / Software</span><p>Built for one operation, not a template.</p></div>
+    <div class="callout c2"><span class="k">02 / AI</span><p>Adopted inside real workflows, not bolted on.</p></div>
+    <div class="callout c3"><span class="k">04 / Automation</span><p>Data becomes decisions without a human bottleneck.</p></div>
+    <div class="callout c4"><span class="k">03 / Data</span><p>Cleaned and organized before it's trusted.</p></div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

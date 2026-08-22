@@ -114,7 +114,14 @@
   "contact": {
     "label": "Contact Us",
     "title": "Ready to transform your company?",
-    "description": "Fill out the form and we'll get in touch with you.",
+    "description": "Fill out the form and we'll get in touch with you,",
+    "emailNote": "or send us and email to:",
+    "socials": {
+      "label": "Follow us",
+      "facebook": "Follow us on Facebook",
+      "instagram": "Follow us on Instagram",
+      "linkedin": "Follow us on LinkedIn"
+    },
     "form": {
       "name": "Name",
       "namePlaceholder": "John Doe",

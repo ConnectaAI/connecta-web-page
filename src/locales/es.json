@@ -114,7 +114,14 @@
   "contact": {
     "label": "Contáctanos",
     "title": "¿Listo para transformar tu operación?",
-    "description": "Llena el formulario y nos pondremos en contacto contigo.",
+    "description": "Llena el formulario y nos pondremos en contacto contigo,",
+    "emailNote": "o envíanos un correo a:",
+    "socials": {
+      "label": "Síguenos",
+      "facebook": "Síguenos en Facebook",
+      "instagram": "Síguenos en Instagram",
+      "linkedin": "Síguenos en LinkedIn"
+    },
     "form": {
       "name": "Nombre",
       "namePlaceholder": "Juan Pérez",

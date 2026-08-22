@@ -56,6 +56,59 @@
   max-width: 32rem;
 }
 
+.contact-email-link {
+  color: var(--blue-300);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(147, 197, 253, 0.4);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.contact-email-link:hover {
+  color: white;
+  border-color: white;
+}
+
+.contact-socials {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.contact-socials-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue-300);
+}
+
+.contact-socials-row {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.contact-social-link {
+  width: 2.25rem;
+  height: 2.25rem;
+  display: inline-block;
+  background-color: white;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: 58%;
+  mask-size: 58%;
+  border-radius: 9999px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-social-link:hover {
+  background-color: var(--blue-300);
+  transform: translateY(-2px);
+}
+
 .contact-form-wrapper {
   width: 100%;
 }

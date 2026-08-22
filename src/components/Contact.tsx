@@ -10,6 +10,12 @@ interface FormData {
   message: string;
 }
 
+const SOCIALS = [
+  { key: 'facebook', href: 'https://www.facebook.com/profile.php?id=61577365362299', icon: '/fb.svg' },
+  { key: 'instagram', href: 'https://www.instagram.com/connecta_gt/', icon: '/ig.svg' },
+  { key: 'linkedin', href: 'https://www.linkedin.com/company/connectagt', icon: '/linkedin.svg' },
+] as const;
+
 function Contact() {
   const { t } = useTranslation();
   const [formData, setFormData] = useState<FormData>({
@@ -93,7 +99,28 @@ function Contact() {
             <Reveal className="contact-header">
               <span className="contact-label">{t('contact.label')}</span>
               <h2 className="contact-title">{t('contact.title')}</h2>
-              <p className="contact-description">{t('contact.description')}</p>
+              <p className="contact-description">
+                {t('contact.description')}{' '}
+                {t('contact.emailNote')}{' '}
+                <a href="mailto:soporte@connectaia.com" className="contact-email-link">soporte@connectaia.com</a>
+              </p>
+
+              <div className="contact-socials">
+                <span className="contact-socials-label">{t('contact.socials.label')}</span>
+                <div className="contact-socials-row">
+                  {SOCIALS.map((social) => (
+                    <a
+                      key={social.key}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contact-social-link"
+                      aria-label={t(`contact.socials.${social.key}`)}
+                      style={{ WebkitMaskImage: `url(${social.icon})`, maskImage: `url(${social.icon})` }}
+                    />
+                  ))}
+                </div>
+              </div>
             </Reveal>
           </div>
           <div className="contact-form-wrapper">
