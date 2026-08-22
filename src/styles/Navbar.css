@@ -1,34 +1,60 @@
-/* Glass Morphism Navbar — transparent over the dark hero by default,
-   switches to an opaque light pill once the dark hero scrolls out from behind it
-   (see Navbar.tsx: IntersectionObserver toggles the .navbar-on-light class). */
+/* Full-width bar at the top of the page; contracts into the floating glass
+   pill once scrolled (Navbar.tsx toggles .navbar-scrolled on scroll — same
+   behavior at every breakpoint). Transparent by default so it blends over a
+   dark hero; .navbar-on-light swaps it opaque for a light hero or any
+   non-hero route (see Navbar.tsx's isOverLight logic). */
 .navbar {
   position: fixed;
-  top: 1.5rem;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  padding: 0;
+  transition: top 0.3s ease, padding 0.3s ease;
+}
+
+.navbar.navbar-scrolled {
+  top: 1.5rem;
   padding: 0 1rem;
-  transition: all 0.3s ease;
 }
 
 .navbar .container {
   max-width: 1280px;
   margin: 0 auto;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 1.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s ease, border-color 0.3s ease, border-radius 0.3s ease,
+    box-shadow 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  box-sizing: border-box;
+}
+
+.navbar-on-light .container {
+  background: var(--stone-25);
+  border-bottom-color: var(--stone-200);
+}
+
+.navbar-scrolled .container {
   background: rgba(255, 255, 255, 0.01);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   border-radius: 9999px;
+  border-bottom-color: transparent;
   padding: 0.75rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: background 0.3s ease, box-shadow 0.3s ease;
-  border: none;
-  box-sizing: border-box;
 }
 
-.navbar-on-light .container {
+.navbar-scrolled.navbar-on-light .container {
   background: rgba(255, 255, 255, 0.9);
 }
 
@@ -90,6 +116,43 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+/* "Get in touch" pill CTA, matching the approved design's .nav-cta —
+   solid dark pill by default (readable on both the transparent dark-hero
+   navbar and the opaque light one), primary blue on hover. */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--stone-900);
+  color: white;
+  text-decoration: none;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.15rem;
+  border-radius: 9999px;
+  transition: background 0.3s ease;
+}
+
+.nav-cta:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.nav-cta span {
+  transition: transform 0.3s ease;
+}
+
+.nav-cta:hover span {
+  transform: translateX(2px);
+}
+
+/* The mobile-menu copy of the CTA only makes sense inside the collapsed
+   sheet — hidden on desktop where .nav-cta-desktop already covers it. */
+.nav-cta-mobile-item {
+  display: none;
 }
 
 .language-switcher {
@@ -161,12 +224,16 @@
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .navbar {
+  .navbar .container {
+    padding: 1.15rem 1.25rem;
+  }
+
+  .navbar.navbar-scrolled {
     top: 1rem;
     padding: 0 0.75rem;
   }
 
-  .navbar .container {
+  .navbar-scrolled .container {
     padding: 0.75rem 1rem;
   }
 
@@ -215,6 +282,25 @@
   .language-switcher {
     padding: 0.5rem 0.75rem;
     font-size: 0.8rem;
+  }
+
+  /* Too tight to sit next to the language switcher and hamburger on a
+     narrow bar — moves into the collapsed menu sheet instead. */
+  .nav-cta-desktop {
+    display: none;
+  }
+
+  .nav-cta-mobile-item {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .nav-menu .nav-cta {
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
   }
 
   .logo-image {

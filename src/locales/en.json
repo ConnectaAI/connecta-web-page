@@ -1,54 +1,78 @@
 {
   "nav": {
     "home": "Home",
+    "products": "Products",
     "medassistant": "medassistant",
     "about": "About",
     "services": "Services",
-    "contact": "Contact"
+    "getInTouch": "Get in touch"
   },
   "companyHero": {
-    "corner": "Guatemala, CA",
-    "year": "Software × AI",
+    "corner": "Guatemala, C.A.",
+    "mission": "The software that makes companies run smarter.",
     "scrollCue": "Learn more"
   },
   "whatWeDo": {
     "label": "What we do",
+    "question": "What we do?",
     "title": "From custom software to AI-driven products",
     "description": "We help companies adopt AI, and we build the software that makes it usable — from the ground up when nothing exists yet, or woven into what's already there.",
     "items": {
       "software": {
-        "title": "Custom software",
+        "title": "Web development",
+        "headline": "We build custom web platforms",
         "description": "Built from scratch for a company's specific operation, not adapted from a generic template."
       },
       "ai": {
         "title": "AI integration",
-        "description": "Helping companies adopt AI inside the services and workflows they already run."
+        "headline": "We build AI-powered solutions",
+        "description": "Helping companies adopt AI inside the services and workflows they already run — including using AI to automate the manual processes slowing them down."
       },
       "data": {
         "title": "Data analysis",
+        "headline": "We build decisions grounded in data",
         "description": "Analyzing, cleaning, and organizing data as the foundation any real decision needs."
       },
-      "automation": {
-        "title": "Automation",
-        "description": "Turning organized data into automated, data-driven decisions."
+      "apps": {
+        "title": "App development",
+        "headline": "We build custom apps",
+        "description": "Mobile and desktop apps built around how your team actually works, not a generic template."
       }
     }
   },
-  "values": {
-    "label": "Why we're a startup",
-    "quote": "We're new, and we're building on purpose — innovation and state-of-the-art technology first, usability always.",
-    "body": "We'd rather ship something considered and a little bold than something safe and forgettable. That's the standard behind every product we build, starting with our own."
+  "whoWeAre": {
+    "eyebrow": "Who we are",
+    "headline": "Built in the city where we grew up.",
+    "body": "We founded Connecta in Guatemala City to build the technology we always wished existed — for companies that deserve better than a template. Great design and state-of-the-art technology aren't features we add later; they're the standard we hold every product to, starting with our own.",
+    "coordinates": "14.6349° N, 90.5069° W",
+    "city": "Guatemala City",
+    "tenets": {
+      "design": {
+        "title": "Great design",
+        "description": "Design is part of the engineering, not a finishing touch."
+      },
+      "stateOfTheArt": {
+        "title": "State-of-the-art",
+        "description": "We reach for what's genuinely new, not what's safest to ship."
+      },
+      "unique": {
+        "title": "Unique experiences",
+        "description": "Every product should feel like nothing else on the market."
+      }
+    },
+    "founders": {
+      "role": "Co-founder"
+    }
   },
   "products": {
-    "label": "Products",
-    "title": "Our first product",
+    "title": "Our products",
     "medassistant": {
       "badge": "medassistant",
       "title": "Software for healthcare clinics",
-      "description": "medassistant gives doctors and clinic managers control of their operation — billing patients, generating invoices, managing payments, and following up on appointments and patients, all in one place.",
-      "cta": "Visit medassistant"
-    },
-    "more": "More products, built on the same system, are on the way."
+      "description": "Medassistant gives doctors and clinic managers control of their operation. From billing patients, generating invoices, managing payments, to following up on appointments and patients, all in one place.",
+      "cta": "Visit Medassistant",
+      "mockupCaption": "medassistant — dashboard preview"
+    }
   },
   "hero": {
     "badge": "Intelligent Clinical Management",
@@ -90,8 +114,8 @@
   },
   "contact": {
     "label": "Contact Us",
-    "title": "Ready to transform your clinic?",
-    "description": "Join hundreds of clinics that have already digitized their operation. Fill out the form and we'll get in touch with you.",
+    "title": "Ready to transform your company?",
+    "description": "Fill out the form and we'll get in touch with you.",
     "form": {
       "name": "Name",
       "namePlaceholder": "John Doe",
@@ -106,7 +130,7 @@
     }
   },
   "footer": {
-    "tagline": "A Guatemala-based software company building AI-driven tools and custom software for multiple industries.",
+    "tagline": "A tech company.",
     "madeIn": "Made in Guatemala",
     "rights": "All rights reserved."
   }

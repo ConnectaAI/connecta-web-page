@@ -9,11 +9,40 @@ import '../styles/Navbar.css';
 // used as the trigger line for the IntersectionObserver below.
 const NAVBAR_OFFSET = 90;
 
+// Scroll distance (in px) after which the full-width bar contracts into the
+// floating pill. Small enough to feel responsive, large enough that a stray
+// wheel tick doesn't flicker it.
+const SCROLLED_THRESHOLD = 24;
+
 function Navbar() {
   const { t } = useTranslation();
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const [isOverLight, setIsOverLight] = useState<boolean>(true);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const location = useLocation();
+
+  // Full-width bar at the top of the page, floating pill once scrolled —
+  // same behavior on every screen size and every route.
+  useEffect(() => {
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      setIsScrolled(window.scrollY > SCROLLED_THRESHOLD);
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    update();
+
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
 
   useEffect(() => {
     const heroEl = document.getElementById('home');
@@ -73,7 +102,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`navbar ${isOverLight ? 'navbar-on-light' : ''} ${location.pathname === '/' ? 'navbar-black-text' : ''}`}
+      className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${isOverLight ? 'navbar-on-light' : ''} ${location.pathname === '/' ? 'navbar-black-text' : ''}`}
     >
       <div className="container">
         <div className="logo">
@@ -83,11 +112,21 @@ function Navbar() {
         </div>
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
           <li><a href="#home" onClick={(e) => scrollToSection(e, 'home')}>{t('nav.home')}</a></li>
+          <li><a href="#products" onClick={(e) => scrollToSection(e, 'products')}>{t('nav.products')}</a></li>
           <li><Link to="/medassistant" onClick={closeMenu}>{t('nav.medassistant')}</Link></li>
-          <li><a href="#contact" onClick={(e) => scrollToSection(e, 'contact')}>{t('nav.contact')}</a></li>
+          <li className="nav-cta-mobile-item">
+            <a href="#contact" className="nav-cta" onClick={(e) => scrollToSection(e, 'contact')}>
+              {t('nav.getInTouch')}
+              <span>→</span>
+            </a>
+          </li>
         </ul>
         <div className="nav-actions">
           <LanguageSwitcher />
+          <a href="#contact" className="nav-cta nav-cta-desktop" onClick={(e) => scrollToSection(e, 'contact')}>
+            {t('nav.getInTouch')}
+            <span>→</span>
+          </a>
           <button className="hamburger" onClick={toggleMenu}>
             <span></span>
             <span></span>

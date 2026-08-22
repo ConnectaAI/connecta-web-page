@@ -13,7 +13,7 @@ const wordmarkVariants: Variants = {
   },
 };
 
-const TICKER_KEYS = ['software', 'ai', 'data', 'automation'] as const;
+const TICKER_KEYS = ['software', 'ai', 'data', 'apps'] as const;
 
 function CompanyHero() {
   const { t } = useTranslation();
@@ -32,12 +32,8 @@ function CompanyHero() {
   return (
     <section id="home" className="company-hero" data-navbar-theme="light">
       <div className="company-hero-glow" aria-hidden="true" />
-      <div className="company-hero-frame" aria-hidden="true">
-        <span className="company-hero-frame-mark company-hero-frame-mark-tl">+</span>
-        <span className="company-hero-frame-mark company-hero-frame-mark-tr">+</span>
-        <span className="company-hero-frame-mark company-hero-frame-mark-bl">+</span>
-        <span className="company-hero-frame-mark company-hero-frame-mark-br">+</span>
-      </div>
+      <div className="company-hero-frame" aria-hidden="true" />
+      <span className="company-hero-location">{t('companyHero.corner')}</span>
 
       <div className="company-hero-ticker" aria-hidden="true">
         <div className={`company-hero-ticker-track${shouldReduceMotion ? ' company-hero-ticker-track-static' : ''}`}>
@@ -57,9 +53,7 @@ function CompanyHero() {
         variants={wordmarkVariants}
       >
         <Logo className="company-hero-wordmark-logo" />
-        <p className="company-hero-wordmark-caption">
-          {t('companyHero.corner')} — {t('companyHero.year')}
-        </p>
+        <p className="company-hero-wordmark-mission">{t('companyHero.mission')}</p>
       </m.div>
 
       <a href="#what-we-do" className="company-hero-scroll-cue" onClick={scrollToNext}>

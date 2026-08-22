@@ -1,6 +1,6 @@
 import CompanyHero from './CompanyHero';
 import WhatWeDo from './WhatWeDo';
-import Values from './Values';
+import WhoWeAre from './WhoWeAre';
 import Products from './Products';
 import Contact from './Contact';
 
@@ -9,7 +9,7 @@ function CompanyHome() {
     <>
       <CompanyHero />
       <WhatWeDo />
-      <Values />
+      <WhoWeAre />
       <Products />
       <Contact />
     </>

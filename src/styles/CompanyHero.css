@@ -33,8 +33,17 @@
 }
 
 @keyframes company-hero-glow-pulse {
-  0%, 100% { opacity: 0.7; transform: translateX(-50%) scale(1); }
-  50% { opacity: 1; transform: translateX(-50%) scale(1.06); }
+
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.06);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -45,41 +54,36 @@
 
 /* Blueprint/viewfinder frame — a technical-precision device (the corner-mark
    trick used by dev-tool brands like Vercel/Linear) to read as engineering,
-   not editorial/fashion. */
+   not editorial/fashion. Plain border now; the one label it carries sits at
+   bottom-center, below. */
 .company-hero-frame {
   position: absolute;
-  inset: 1.25rem;
+  /* Starts below the floating navbar pill (fixed, ~82px tall at its lowest)
+     instead of overlapping it near the very top of the section. */
+  top: 6rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  left: 1.25rem;
   border: 1px solid rgba(28, 25, 23, 0.22);
   pointer-events: none;
   z-index: 0;
 }
 
-.company-hero-frame-mark {
+.company-hero-location {
   position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
   font-family: var(--font-mono);
-  font-size: 0.9rem;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   line-height: 1;
-  color: rgba(124, 111, 214, 0.7);
-}
-
-.company-hero-frame-mark-tl {
-  top: -0.55rem;
-  left: -0.55rem;
-}
-
-.company-hero-frame-mark-tr {
-  top: -0.55rem;
-  right: -0.55rem;
-}
-
-.company-hero-frame-mark-bl {
-  bottom: -0.55rem;
-  left: -0.55rem;
-}
-
-.company-hero-frame-mark-br {
-  bottom: -0.55rem;
-  right: -0.55rem;
+  color: var(--stone-700);
+  background: var(--stone-25);
+  padding: 0 0.5rem;
+  white-space: nowrap;
 }
 
 /* Scrolling capability ticker — fills the void between the tagline and the
@@ -109,8 +113,13 @@
 }
 
 @keyframes company-hero-ticker-scroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 .company-hero-ticker-item {
@@ -145,16 +154,25 @@
   filter: drop-shadow(0 0 70px rgba(37, 99, 235, 0.18));
 }
 
-/* Consolidates what used to be two separate corner labels into one line,
-   directly under the mark it describes — no scattered text with no reading
-   order. */
-.company-hero-wordmark-caption {
-  margin-top: 1rem;
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
+/* One-line mission statement — the corner labels above now carry the
+   location/positioning meta, so this space says what Connecta actually
+   builds, in plain language, for a lead skimming the hero. */
+.company-hero-wordmark-mission {
+  margin-top: 1.75rem;
+  max-width: 30rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.4;
   color: var(--stone-700);
+}
+
+@media (min-width: 768px) {
+  .company-hero-wordmark-mission {
+    font-size: 1.4rem;
+  }
 }
 
 /* Scroll cue — the only affordance telling a visitor there's more below,
@@ -194,8 +212,15 @@
 }
 
 @keyframes company-hero-scroll-cue-bounce {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(5px); }
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
 }
 
 @media (min-width: 1024px) {

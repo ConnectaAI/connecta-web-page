@@ -1,54 +1,78 @@
 {
   "nav": {
     "home": "Inicio",
+    "products": "Productos",
     "medassistant": "medassistant",
     "about": "Nosotros",
     "services": "Servicios",
-    "contact": "Contacto"
+    "getInTouch": "Contáctanos"
   },
   "companyHero": {
-    "corner": "Guatemala, CA",
-    "year": "Software × IA",
+    "corner": "Guatemala, C.A.",
+    "mission": "Construimos el software que transforma tu operación.",
     "scrollCue": "Conocer más"
   },
   "whatWeDo": {
     "label": "Qué hacemos",
+    "question": "¿Qué hacemos?",
     "title": "De software a medida a productos impulsados por IA",
     "description": "Ayudamos a las empresas a adoptar IA, y construimos el software que la hace utilizable — desde cero cuando no existe nada todavía, o integrada en lo que ya tienen.",
     "items": {
       "software": {
-        "title": "Software a medida",
-        "description": "Construido desde cero para la operación específica de una empresa, no adaptado de una plantilla genérica."
+        "title": "Desarrollo web",
+        "headline": "Construimos plataformas web a la medida",
+        "description": "Desde crear tu sitio web para acercarte a tus clientes hasta herramientas web que te permitirán modernizar tu operación."
       },
       "ai": {
         "title": "Integración de IA",
-        "description": "Ayudamos a las empresas a adoptar IA dentro de los servicios y flujos de trabajo que ya usan."
+        "headline": "Construimos soluciones con IA",
+        "description": "Ayudamos a las empresas a adoptar IA dentro de los servicios y flujos de trabajo que ya usan — incluyendo el uso de IA para automatizar los procesos manuales que las ralentizan."
       },
       "data": {
         "title": "Análisis de datos",
-        "description": "Analizamos, limpiamos y organizamos datos como la base que toda decisión real necesita."
+        "headline": "Construimos decisiones basadas en datos",
+        "description": "Analizamos, limpiamos y organizamos datos para que puedas tomar las mejores decisiones de tu negocio."
       },
-      "automation": {
-        "title": "Automatización de procesos",
-        "description": "Convertimos datos organizados en decisiones automatizadas."
+      "apps": {
+        "title": "Apps",
+        "headline": "Construimos aplicaciones a la medida",
+        "description": "Trabaja desde cualquier lugar desde la palma de tu mano, construimos apps adaptadas a tus necesidades."
       }
     }
   },
-  "values": {
-    "label": "Por qué somos un startup",
-    "quote": "Somos nuevos, y construimos así a propósito — innovación y tecnología de punta primero, usabilidad siempre.",
-    "body": "Preferimos lanzar algo considerado y un poco atrevido antes que algo seguro y olvidable. Ese es el estándar detrás de cada producto que construimos, empezando por el nuestro."
+  "whoWeAre": {
+    "eyebrow": "Quiénes somos",
+    "headline": "Desde la ciudad donde crecimos.",
+    "body": "Fundamos Connecta en la Ciudad de Guatemala para crear la tecnología que siempre quisimos que existiera. Creemos en el talento de la región, y la capacidad para desarrollar tecnología de punta, integrado en cada producto que construimos.",
+    "coordinates": "14.6349° N, 90.5069° O",
+    "city": "Ciudad de Guatemala",
+    "tenets": {
+      "design": {
+        "title": "Diseño",
+        "description": "Fundamental en cada experiencia, el diseño transforma nuestra tecnología en las herramientas que querrás utilizar todos los días."
+      },
+      "stateOfTheArt": {
+        "title": "Tecnología de punta",
+        "description": "Producimos tecnología de vanguardia, permitiendo a nuestros clientes acceder a herramientas más capaces, expandiendo el alcance de las soluciones."
+      },
+      "unique": {
+        "title": "Experiencias únicas",
+        "description": "Cada producto se siente distinto a todo lo demás en el mercado."
+      }
+    },
+    "founders": {
+      "role": "Cofundador"
+    }
   },
   "products": {
-    "label": "Productos",
-    "title": "Nuestro primer producto",
+    "title": "Nuestros productos",
     "medassistant": {
-      "badge": "medassistant",
+      "badge": "Medassistant",
       "title": "Software para clínicas de salud",
-      "description": "medassistant le da a doctores y administradores el control de su operación — cobrar a pacientes, generar facturas, gestionar pagos, y dar seguimiento a citas y pacientes, todo en un solo lugar.",
-      "cta": "Visitar medassistant"
-    },
-    "more": "Más productos, construidos sobre el mismo sistema, están en camino."
+      "description": "Medassistant le da a doctores y administradores el control de su operación. Desde cobrar a pacientes, generar facturas, gestionar pagos, y dar seguimiento, todo en un solo lugar.",
+      "cta": "Visita Medassistant",
+      "mockupCaption": "Medassistant — vista previa del panel"
+    }
   },
   "hero": {
     "badge": "Gestión de Clínica Inteligente",
@@ -90,8 +114,8 @@
   },
   "contact": {
     "label": "Contáctanos",
-    "title": "¿Listo para transformar tu clínica?",
-    "description": "Únete a cientos de clínicas que ya digitalizaron su operación. Llena el formulario y nos pondremos en contacto contigo.",
+    "title": "¿Listo para transformar tu operación?",
+    "description": "Llena el formulario y nos pondremos en contacto contigo.",
     "form": {
       "name": "Nombre",
       "namePlaceholder": "Juan Pérez",
@@ -106,7 +130,7 @@
     }
   },
   "footer": {
-    "tagline": "Una empresa de software de Guatemala que construye herramientas de IA y software a medida para múltiples industrias.",
+    "tagline": "Una empresa de tecnología.",
     "madeIn": "Hecho en Guatemala",
     "rights": "Todos los derechos reservados."
   }
