@@ -3,11 +3,13 @@ import Layout from './components/Layout';
 import CompanyHome from './components/CompanyHome';
 import Home from './components/Home';
 import DesignPreview from './components/DesignPreview';
+import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<CompanyHome />} />

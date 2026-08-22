@@ -111,9 +111,24 @@ function Navbar() {
           </Link>
         </div>
         <ul className={`nav-menu ${isOpen ? 'active' : ''}`}>
-          <li><a href="#home" onClick={(e) => scrollToSection(e, 'home')}>{t('nav.home')}</a></li>
-          <li><a href="#products" onClick={(e) => scrollToSection(e, 'products')}>{t('nav.products')}</a></li>
-          <li><Link to="/medassistant" onClick={closeMenu}>{t('nav.medassistant')}</Link></li>
+          <li>
+            <a
+              href="#home"
+              className={location.pathname === '/' ? 'active' : ''}
+              onClick={(e) => scrollToSection(e, 'home')}
+            >
+              {t('nav.home')}
+            </a>
+          </li>
+          <li>
+            <Link
+              to="/medassistant"
+              className={location.pathname === '/medassistant' ? 'active' : ''}
+              onClick={closeMenu}
+            >
+              {t('nav.medassistant')}
+            </Link>
+          </li>
           <li className="nav-cta-mobile-item">
             <a href="#contact" className="nav-cta" onClick={(e) => scrollToSection(e, 'contact')}>
               {t('nav.getInTouch')}

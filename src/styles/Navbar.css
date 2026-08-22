@@ -104,11 +104,19 @@
   color: var(--blue-300);
 }
 
+.nav-menu a.active {
+  color: var(--blue-300);
+}
+
 .navbar-on-light .nav-menu a {
   color: var(--stone-600);
 }
 
 .navbar-on-light .nav-menu a:hover {
+  color: var(--primary-color);
+}
+
+.navbar-on-light .nav-menu a.active {
   color: var(--primary-color);
 }
 
@@ -200,6 +208,10 @@
   background: #000000;
 }
 
+.navbar-black-text.navbar-on-light .nav-menu a.active {
+  color: var(--primary-color);
+}
+
 .hamburger {
   display: none;
   flex-direction: column;
@@ -268,6 +280,10 @@
   }
 
   .nav-menu a:hover {
+    color: var(--primary-color);
+  }
+
+  .nav-menu a.active {
     color: var(--primary-color);
   }
 

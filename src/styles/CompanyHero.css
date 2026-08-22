@@ -26,7 +26,7 @@
   max-width: 900px;
   max-height: 900px;
   transform: translateX(-50%);
-  background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.16), rgba(124, 111, 214, 0.1) 45%, transparent 72%);
+  background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.26), rgba(124, 111, 214, 0.16) 45%, transparent 72%);
   filter: blur(60px);
   animation: company-hero-glow-pulse 8s ease-in-out infinite;
   pointer-events: none;
@@ -151,7 +151,7 @@
   max-width: none;
   height: auto;
   color: var(--stone-900);
-  filter: drop-shadow(0 0 70px rgba(37, 99, 235, 0.18));
+  filter: drop-shadow(0 0 70px rgba(37, 99, 235, 0.3));
 }
 
 /* One-line mission statement — the corner labels above now carry the
