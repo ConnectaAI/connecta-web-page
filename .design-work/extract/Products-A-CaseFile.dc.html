@@ -1,0 +1,84 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone-25: #fafaf9; --stone-200: #e7e5e4; --stone-400: #a8a29e; --stone-600: #57534e; --stone-900: #1c1917;
+    --primary: #2563eb;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-ui: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-ui); }
+  .frame { width: 1440px; background: var(--stone-25); padding: 6rem; }
+  .variant-tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-400); margin-bottom: 3rem; display: block; }
+  .products-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone-400); display: block; margin-bottom: 1rem; }
+  .products-title { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--stone-900); margin: 0 0 3.5rem; }
+
+  .file { border: 1px solid var(--stone-900); border-radius: 0.25rem; padding: 3rem; }
+  .file-top { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 1px solid var(--stone-200); padding-bottom: 2rem; margin-bottom: 2rem; }
+  .file-num { font-family: var(--font-display); font-size: 3.5rem; font-style: italic; font-weight: 500; color: var(--stone-900); line-height: 1; }
+  .meta { display: flex; gap: 3rem; }
+  .meta div { text-align: right; }
+  .meta span.k { display: block; font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-400); margin-bottom: 0.35rem; }
+  .meta span.v { font-family: var(--font-mono); font-size: 0.82rem; color: var(--stone-900); }
+  .meta span.v.live { color: #16a34a; }
+
+  .file-body { display: grid; grid-template-columns: 1fr 340px; gap: 3rem; }
+  .file-body h3 { font-family: var(--font-display); font-size: 2rem; font-weight: 600; color: var(--stone-900); margin: 0 0 1rem; }
+  .file-body p { font-size: 1.02rem; color: var(--stone-600); line-height: 1.7; margin: 0 0 2rem; max-width: 34rem; }
+  .stamp { display: inline-flex; align-items: center; gap: 0.5rem; border: 1.5px solid var(--primary); color: var(--primary); font-family: var(--font-mono); font-size: 0.8rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; padding: 0.7rem 1.25rem; transform: rotate(-1deg); }
+
+  .thumb { border: 1px solid var(--stone-200); background: white; padding: 1rem; }
+  .thumb-row { display: flex; gap: 0.5rem; margin-bottom: 0.5rem; }
+  .thumb-block { background: var(--stone-100, #f5f5f4); border-radius: 0.3rem; height: 34px; flex: 1; }
+  .thumb-block.accent { background: #dbeafe; }
+  .thumb-cap { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone-400); margin-top: 0.75rem; }
+</style>
+</helmet>
+
+<div class="frame">
+  <span class="variant-tag">Products — Variant A / Case file</span>
+  <span class="products-label">Products</span>
+  <h2 class="products-title">Our first product</h2>
+
+  <div class="file">
+    <div class="file-top">
+      <span class="file-num">N.01</span>
+      <div class="meta">
+        <div><span class="k">Sector</span><span class="v">Healthcare</span></div>
+        <div><span class="k">Stack</span><span class="v">Web · Billing</span></div>
+        <div><span class="k">Status</span><span class="v live">● Live</span></div>
+      </div>
+    </div>
+    <div class="file-body">
+      <div>
+        <h3>medassistant — Software for healthcare clinics</h3>
+        <p>Gives doctors and clinic managers control of their operation — billing patients, generating invoices, managing payments, and following up on appointments and patients, all in one place.</p>
+        <span class="stamp">Visit medassistant →</span>
+      </div>
+      <div class="thumb">
+        <div class="thumb-row"><div class="thumb-block accent" style="flex: 0 0 40%"></div><div class="thumb-block"></div></div>
+        <div class="thumb-row"><div class="thumb-block"></div><div class="thumb-block"></div><div class="thumb-block"></div></div>
+        <div class="thumb-row"><div class="thumb-block accent"></div><div class="thumb-block"></div></div>
+        <span class="thumb-cap">medassistant — dashboard, placeholder</span>
+      </div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

@@ -12,7 +12,6 @@ const Features: React.FC = () => {
 
   const featuresData = [
     {
-      badgeIcon: '✉️',
       badgeText: t('features.items.visitSummaries.badge'),
       title: t('features.items.visitSummaries.title'),
       description: t('features.items.visitSummaries.description'),
@@ -21,7 +20,6 @@ const Features: React.FC = () => {
       imageLeft: false,
     },
     {
-      badgeIcon: '🔍',
       badgeText: t('features.items.profileAccess.badge'),
       title: t('features.items.profileAccess.title'),
       description: t('features.items.profileAccess.description'),
@@ -30,7 +28,6 @@ const Features: React.FC = () => {
       imageLeft: true,
     },
     {
-      badgeIcon: '💳',
       badgeText: t('features.items.paymentManagement.badge'),
       title: t('features.items.paymentManagement.title'),
       description: t('features.items.paymentManagement.description'),
@@ -46,7 +43,6 @@ const Features: React.FC = () => {
         {featuresData.map((feature, index) => (
           <FeatureRow
             key={index}
-            badgeIcon={feature.badgeIcon}
             badgeText={feature.badgeText}
             title={feature.title}
             description={feature.description}

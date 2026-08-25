@@ -1,0 +1,63 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone-25: #fafaf9; --stone-200: #e7e5e4; --stone-400: #a8a29e; --stone-600: #57534e; --stone-900: #1c1917;
+    --primary: #2563eb;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-ui: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-ui); }
+  .frame { width: 1440px; background: var(--stone-25); padding: 6rem; display: flex; justify-content: center; }
+  .variant-tag { position: absolute; top: 6rem; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-400); }
+  .clip { width: 780px; border-top: 3px solid var(--stone-900); border-bottom: 3px solid var(--stone-900); padding: 3.5rem 0; }
+  .eyebrow { display: block; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--primary); margin-bottom: 2rem; }
+  .qa { display: grid; grid-template-columns: 60px 1fr; gap: 1.25rem; margin-bottom: 2.25rem; }
+  .qa .tag { font-family: var(--font-mono); font-size: 0.85rem; font-weight: 600; color: var(--stone-400); }
+  .qa.a .tag { color: var(--stone-900); }
+  .qa p { margin: 0; }
+  .qa.q p { font-family: var(--font-ui); font-size: 1.1rem; font-weight: 500; color: var(--stone-700, #433f3d); }
+  .qa.a p { font-family: var(--font-display); font-size: 1.85rem; line-height: 1.5; color: var(--stone-900); }
+  .qa.a p.follow { font-family: var(--font-ui); font-size: 1.05rem; line-height: 1.65; color: var(--stone-600); margin-top: 1.25rem; }
+  .byline { margin-top: 2.5rem; padding-top: 1.75rem; border-top: 1px solid var(--stone-200); font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone-400); }
+</style>
+</helmet>
+
+<div class="frame">
+  <span class="variant-tag">Values — Variant C / Interview</span>
+  <div class="clip">
+    <span class="eyebrow">On the record</span>
+
+    <div class="qa q">
+      <span class="tag">Q.</span>
+      <p>Why call yourselves a startup instead of just a software company?</p>
+    </div>
+    <div class="qa a">
+      <span class="tag">A.</span>
+      <div>
+        <p>"We're new, and we're building on purpose — innovation and state-of-the-art technology first, usability always."</p>
+        <p class="follow">We'd rather ship something considered and a little bold than something safe and forgettable. That's the standard behind every product we build, starting with our own.</p>
+      </div>
+    </div>
+
+    <div class="byline">— Connecta, on why we started · Guatemala</div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

@@ -1,29 +1,61 @@
-/* Glass Morphism Navbar */
+/* Full-width bar at the top of the page; contracts into the floating glass
+   pill once scrolled (Navbar.tsx toggles .navbar-scrolled on scroll — same
+   behavior at every breakpoint). Transparent by default so it blends over a
+   dark hero; .navbar-on-light swaps it opaque for a light hero or any
+   non-hero route (see Navbar.tsx's isOverLight logic). */
 .navbar {
   position: fixed;
-  top: 1.5rem;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
+  padding: 0;
+  transition: top 0.3s ease, padding 0.3s ease;
+}
+
+.navbar.navbar-scrolled {
+  top: 1.5rem;
   padding: 0 1rem;
-  transition: all 0.3s ease;
 }
 
 .navbar .container {
   max-width: 1280px;
   margin: 0 auto;
-  background: rgba(255, 255, 255, 0.85);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  padding: 1.5rem 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: background 0.3s ease, border-color 0.3s ease, border-radius 0.3s ease,
+    box-shadow 0.3s ease, backdrop-filter 0.3s ease, padding 0.3s ease;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  box-sizing: border-box;
+}
+
+.navbar-on-light .container {
+  background: var(--stone-25);
+  border-bottom-color: var(--stone-200);
+}
+
+.navbar-scrolled .container {
+  background: rgba(255, 255, 255, 0.01);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   border-radius: 9999px;
+  border-bottom-color: transparent;
   padding: 0.75rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  transition: all 0.3s ease;
-  border: none;
-  box-sizing: border-box;
+}
+
+.navbar-scrolled.navbar-on-light .container {
+  background: rgba(255, 255, 255, 0.9);
 }
 
 .logo {
@@ -32,9 +64,21 @@
   gap: 0.5rem;
 }
 
+.logo a {
+  display: flex;
+  align-items: center;
+}
+
 .logo-image {
-  height: 30px;
+  display: block;
+  height: 24px;
   width: auto;
+  color: white;
+  transition: color 0.3s ease;
+}
+
+.navbar-on-light .logo-image {
+  color: var(--stone-900);
 }
 
 .nav-menu {
@@ -46,14 +90,33 @@
 }
 
 .nav-menu a {
-  color: #475569;
+  color: white;
   text-decoration: none;
+  font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 0.875rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
   transition: color 0.3s ease;
 }
 
 .nav-menu a:hover {
+  color: var(--blue-300);
+}
+
+.nav-menu a.active {
+  color: var(--blue-300);
+}
+
+.navbar-on-light .nav-menu a {
+  color: var(--stone-600);
+}
+
+.navbar-on-light .nav-menu a:hover {
+  color: var(--primary-color);
+}
+
+.navbar-on-light .nav-menu a.active {
   color: var(--primary-color);
 }
 
@@ -63,35 +126,53 @@
   gap: 1rem;
 }
 
-.nav-contact-btn {
-  background: var(--primary-color);
+/* "Get in touch" pill CTA, matching the approved design's .nav-cta —
+   solid dark pill by default (readable on both the transparent dark-hero
+   navbar and the opaque light one), primary blue on hover. */
+.nav-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--stone-900);
   color: white;
-  border: none;
-  padding: 0.5rem 1.25rem;
-  border-radius: 9999px;
-  font-size: 0.875rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 15px -3px rgba(37, 99, 235, 0.2);
   text-decoration: none;
-  display: inline-block;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 1.15rem;
+  border-radius: 9999px;
+  transition: background 0.3s ease;
 }
 
-.nav-contact-btn:hover {
-  background: var(--secondary-color);
-  transform: translateY(-1px);
-  box-shadow: 0 15px 25px -5px rgba(37, 99, 235, 0.25);
+.nav-cta:hover {
+  background: var(--primary-color);
+  color: white;
+}
+
+.nav-cta span {
+  transition: transform 0.3s ease;
+}
+
+.nav-cta:hover span {
+  transform: translateX(2px);
+}
+
+/* The mobile-menu copy of the CTA only makes sense inside the collapsed
+   sheet — hidden on desktop where .nav-cta-desktop already covers it. */
+.nav-cta-mobile-item {
+  display: none;
 }
 
 .language-switcher {
   background: transparent;
-  color: #475569;
-  border: 1px solid #e2e8f0;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 0.5rem 1rem;
   border-radius: 9999px;
-  font-size: 0.875rem;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
   font-weight: 500;
+  letter-spacing: 0.02em;
   cursor: pointer;
   transition: all 0.3s ease;
   display: flex;
@@ -100,8 +181,34 @@
 }
 
 .language-switcher:hover {
-  background: #f1f5f9;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: white;
+}
+
+.navbar-on-light .language-switcher {
+  color: var(--stone-600);
+  border-color: var(--stone-200);
+}
+
+.navbar-on-light .language-switcher:hover {
+  background: var(--stone-100);
   border-color: var(--primary-color);
+  color: var(--primary-color);
+}
+
+/* Home page only — true black text instead of the warm-gray stone-600 used
+   elsewhere, per explicit request. */
+.navbar-black-text.navbar-on-light .logo-image,
+.navbar-black-text.navbar-on-light .nav-menu a,
+.navbar-black-text.navbar-on-light .language-switcher {
+  color: #000000;
+}
+
+.navbar-black-text.navbar-on-light .hamburger span {
+  background: #000000;
+}
+
+.navbar-black-text.navbar-on-light .nav-menu a.active {
   color: var(--primary-color);
 }
 
@@ -117,20 +224,28 @@
 .hamburger span {
   width: 25px;
   height: 2px;
-  background: #475569;
+  background: white;
   margin: 3px 0;
   transition: 0.3s;
   border-radius: 2px;
 }
 
+.navbar-on-light .hamburger span {
+  background: var(--stone-600);
+}
+
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .navbar {
+  .navbar .container {
+    padding: 1.15rem 1.25rem;
+  }
+
+  .navbar.navbar-scrolled {
     top: 1rem;
     padding: 0 0.75rem;
   }
 
-  .navbar .container {
+  .navbar-scrolled .container {
     padding: 0.75rem 1rem;
   }
 
@@ -156,9 +271,20 @@
     left: 0;
   }
 
+  /* The open mobile panel is always an opaque white sheet, regardless of
+     navbar theme, so its links must always stay dark to stay readable. */
   .nav-menu a {
+    color: var(--stone-600);
     font-size: 1rem;
     padding: 0.5rem 0;
+  }
+
+  .nav-menu a:hover {
+    color: var(--primary-color);
+  }
+
+  .nav-menu a.active {
+    color: var(--primary-color);
   }
 
   .nav-actions {
@@ -169,23 +295,31 @@
     display: flex;
   }
 
-  .nav-contact-btn {
-    padding: 0.5rem 1rem;
-    font-size: 0.8rem;
-  }
-
   .language-switcher {
     padding: 0.5rem 0.75rem;
     font-size: 0.8rem;
   }
 
+  /* Too tight to sit next to the language switcher and hamburger on a
+     narrow bar — moves into the collapsed menu sheet instead. */
+  .nav-cta-desktop {
+    display: none;
+  }
+
+  .nav-cta-mobile-item {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+  }
+
+  .nav-menu .nav-cta {
+    justify-content: center;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
   .logo-image {
     height: 32px;
-  }
-}
-
-@media (max-width: 480px) {
-  .nav-contact-btn {
-    display: none;
   }
 }

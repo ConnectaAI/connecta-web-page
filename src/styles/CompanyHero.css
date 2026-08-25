@@ -1,0 +1,240 @@
+/* Connecta's own hero — light theme test. The wordmark itself is still the
+   punch (JARCOS-style: a huge logotype anchoring the section), just on a
+   warm-white field instead of cold near-black. blue-600 stays the one
+   accent (eyebrow, CTA, glow, ticker dot). */
+.company-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  padding: 8rem 0 5rem;
+  background: var(--stone-25);
+  background-image: radial-gradient(rgba(28, 25, 23, 0.05) 1px, transparent 1px);
+  background-size: 28px 28px;
+  color: var(--stone-900);
+  overflow: hidden;
+}
+
+.company-hero-glow {
+  position: absolute;
+  left: 50%;
+  bottom: -10%;
+  width: 60vw;
+  height: 60vw;
+  max-width: 900px;
+  max-height: 900px;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(37, 99, 235, 0.26), rgba(124, 111, 214, 0.16) 45%, transparent 72%);
+  filter: blur(60px);
+  animation: company-hero-glow-pulse 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes company-hero-glow-pulse {
+
+  0%,
+  100% {
+    opacity: 0.7;
+    transform: translateX(-50%) scale(1);
+  }
+
+  50% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .company-hero-glow {
+    animation: none;
+  }
+}
+
+/* Blueprint/viewfinder frame — a technical-precision device (the corner-mark
+   trick used by dev-tool brands like Vercel/Linear) to read as engineering,
+   not editorial/fashion. Plain border now; the one label it carries sits at
+   bottom-center, below. */
+.company-hero-frame {
+  position: absolute;
+  /* Starts below the floating navbar pill (fixed, ~82px tall at its lowest)
+     instead of overlapping it near the very top of the section. */
+  top: 6rem;
+  right: 1.25rem;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  border: 1px solid rgba(28, 25, 23, 0.22);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.company-hero-location {
+  position: absolute;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+  color: var(--stone-700);
+  background: var(--stone-25);
+  padding: 0 0.5rem;
+  white-space: nowrap;
+}
+
+/* Scrolling capability ticker — fills the void between the tagline and the
+   wordmark, and names what we actually build (reuses the What We Do copy)
+   instead of leaving that space to empty black. */
+.company-hero-ticker {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  overflow: hidden;
+  padding: 1.5rem 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
+
+.company-hero-ticker-track {
+  display: flex;
+  width: max-content;
+  animation: company-hero-ticker-scroll 24s linear infinite;
+}
+
+.company-hero-ticker-track-static {
+  animation: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0 1.5rem;
+}
+
+@keyframes company-hero-ticker-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.company-hero-ticker-item {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--stone-700);
+  white-space: nowrap;
+}
+
+.company-hero-ticker-dot {
+  color: var(--primary-color);
+  margin: 0 1.75rem;
+}
+
+.company-hero-wordmark {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.company-hero-wordmark-logo {
+  width: 112%;
+  max-width: none;
+  height: auto;
+  color: var(--stone-900);
+  filter: drop-shadow(0 0 70px rgba(37, 99, 235, 0.3));
+}
+
+/* One-line mission statement — the corner labels above now carry the
+   location/positioning meta, so this space says what Connecta actually
+   builds, in plain language, for a lead skimming the hero. */
+.company-hero-wordmark-mission {
+  margin-top: 1.75rem;
+  max-width: 30rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.15rem;
+  line-height: 1.4;
+  color: var(--stone-700);
+}
+
+@media (min-width: 768px) {
+  .company-hero-wordmark-mission {
+    font-size: 1.4rem;
+  }
+}
+
+/* Scroll cue — the only affordance telling a visitor there's more below,
+   now that the hero has no CTA of its own. Given real breathing room below
+   the wordmark instead of being crammed at the viewport edge. */
+.company-hero-scroll-cue {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+  color: var(--stone-700);
+  transition: color 0.3s ease;
+}
+
+.company-hero-scroll-cue:hover {
+  color: var(--primary-color);
+}
+
+.company-hero-scroll-cue-label {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.company-hero-scroll-cue-arrow {
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.company-hero-scroll-cue-arrow-animated {
+  animation: company-hero-scroll-cue-bounce 1.8s ease-in-out infinite;
+}
+
+@keyframes company-hero-scroll-cue-bounce {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(5px);
+  }
+}
+
+@media (min-width: 1024px) {
+  .company-hero-wordmark-logo {
+    width: 78%;
+  }
+}
+
+@media (max-width: 768px) {
+  .company-hero {
+    padding-top: 7rem;
+  }
+
+  .company-hero-wordmark-logo {
+    width: 150%;
+  }
+}

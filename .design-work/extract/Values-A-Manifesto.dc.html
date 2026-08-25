@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone-900: #1c1917; --stone-400: #a8a29e; --rose-500: #fb7185;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-ui: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-ui); }
+  .frame { width: 1440px; background: var(--stone-900); color: white; padding: 6rem 6rem 7rem; display: flex; justify-content: center; }
+  .variant-tag { position: absolute; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+  .doc { width: 620px; }
+  .doc-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rose-500); display: block; margin-bottom: 3rem; }
+  .tenet { display: flex; gap: 1.75rem; padding: 1.9rem 0; border-top: 1px solid rgba(255,255,255,0.14); }
+  .tenet:last-of-type { border-bottom: 1px solid rgba(255,255,255,0.14); }
+  .roman { font-family: var(--font-mono); font-size: 0.85rem; color: rgba(255,255,255,0.35); padding-top: 0.35rem; width: 2.5rem; flex-shrink: 0; }
+  .tenet h4 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; margin: 0; line-height: 1.35; }
+  .closing { margin-top: 3.5rem; }
+  .closing p { font-size: 0.98rem; color: var(--stone-400); line-height: 1.7; margin: 0; }
+  .sig { margin-top: 2.5rem; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+</style>
+</helmet>
+
+<div class="frame">
+  <span class="variant-tag" style="top: 6rem;">Values — Variant A / Manifesto</span>
+  <div class="doc">
+    <span class="doc-label">Credo — Why we're a startup</span>
+
+    <div class="tenet"><span class="roman">I.</span><h4>We're new, and we're building on purpose.</h4></div>
+    <div class="tenet"><span class="roman">II.</span><h4>Innovation and state-of-the-art technology first.</h4></div>
+    <div class="tenet"><span class="roman">III.</span><h4>Usability, always — not as an afterthought.</h4></div>
+    <div class="tenet"><span class="roman">IV.</span><h4>Considered and a little bold beats safe and forgettable.</h4></div>
+
+    <div class="closing">
+      <p>That's the standard behind every product we build, starting with our own.</p>
+    </div>
+    <span class="sig">— Connecta, Guatemala</span>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

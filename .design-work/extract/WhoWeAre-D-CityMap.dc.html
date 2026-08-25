@@ -1,0 +1,160 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-900: #1e3a8a; --blue-300: #93c5fd; --blue-100: #dbeafe;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-ui: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-ui); }
+  .frame {
+    width: 1440px; background: var(--blue-900); color: white;
+    background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+    background-size: 26px 26px;
+    padding: 7rem 6rem 6rem;
+  }
+  .variant-tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); margin-bottom: 3rem; display: block; }
+
+  .grid { display: grid; grid-template-columns: 340px 1fr; gap: 4rem; align-items: start; }
+
+  .pin-wrap { display: flex; flex-direction: column; align-items: center; padding-top: 1rem; }
+  .pin-coords { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--blue-300); margin-top: 1.25rem; text-align: center; }
+  .pin-city { font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; margin-top: 0.4rem; }
+
+  .eyebrow { display: block; font-family: var(--font-mono); font-size: 0.7rem; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; color: var(--blue-300); margin-bottom: 1.5rem; }
+  h2 { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; line-height: 1.15; margin: 0 0 1.5rem; }
+  .body { font-size: 1.05rem; line-height: 1.75; color: var(--blue-100); margin: 0; max-width: 34rem; }
+
+  .tenets { margin-top: 3.5rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5rem; border-top: 1px solid rgba(255,255,255,0.14); padding-top: 2.75rem; }
+  .tenet span.num { display: block; font-family: var(--font-mono); font-size: 0.72rem; color: var(--blue-300); margin-bottom: 0.75rem; }
+  .tenet h4 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; margin: 0 0 0.5rem; }
+  .tenet p { font-size: 0.9rem; color: var(--blue-100); line-height: 1.55; margin: 0; }
+
+  .footer-line { margin-top: 3rem; font-family: var(--font-mono); font-size: 0.75rem; letter-spacing: 0.04em; color: rgba(255,255,255,0.45); }
+  .footer-line a { color: var(--blue-300); text-decoration: none; border-bottom: 1px solid rgba(147,197,253,0.4); transition: color 0.2s ease, border-color 0.2s ease; }
+  .footer-line a:hover { color: white; border-color: white; }
+</style>
+</helmet>
+
+<div class="frame">
+  <span class="variant-tag">Who we are — Variant D / Same as B, pin background swapped for a fine-line abstraction of downtown Guatemala City's actual street pattern (tilted grid + diagonal boulevards converging on a traffic circle) instead of the dashed concentric rings</span>
+
+  <div class="grid">
+    <div class="pin-wrap">
+      <svg width="220" height="220" viewBox="0 0 220 220" fill="none">
+        <defs>
+          <radialGradient id="mapFade" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="white" stop-opacity="1"/>
+            <stop offset="68%" stop-color="white" stop-opacity="1"/>
+            <stop offset="100%" stop-color="white" stop-opacity="0"/>
+          </radialGradient>
+          <mask id="mapMask">
+            <circle cx="110" cy="110" r="100" fill="url(#mapFade)"/>
+          </mask>
+          <radialGradient id="pinHalo" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="white" stop-opacity="0.16"/>
+            <stop offset="100%" stop-color="white" stop-opacity="0"/>
+          </radialGradient>
+        </defs>
+
+        <!-- Abstracted from a real map of downtown Guatemala City: a tilted
+             orthogonal grid (Zone 1's avenidas/calles run NNW-SSE, not
+             true north) plus the diagonal boulevards that break the grid
+             and converge on traffic circles — the city's actual signature,
+             not a generic street grid. Masked into a soft-edged medallion
+             instead of a hard ring. -->
+        <g mask="url(#mapMask)" stroke="white">
+          <g transform="rotate(-8 110 110)">
+            <line x1="14" y1="-20" x2="14" y2="240" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="32" y1="-20" x2="32" y2="240" stroke-opacity="0.14" stroke-width="1"/>
+            <line x1="50" y1="-20" x2="50" y2="240" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="68" y1="-20" x2="68" y2="240" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="86" y1="-20" x2="86" y2="240" stroke-opacity="0.14" stroke-width="1"/>
+            <line x1="104" y1="-20" x2="104" y2="240" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="122" y1="-20" x2="122" y2="240" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="140" y1="-20" x2="140" y2="240" stroke-opacity="0.14" stroke-width="1"/>
+            <line x1="158" y1="-20" x2="158" y2="240" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="176" y1="-20" x2="176" y2="240" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="194" y1="-20" x2="194" y2="240" stroke-opacity="0.14" stroke-width="1"/>
+
+            <line x1="-20" y1="14" x2="240" y2="14" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="-20" y1="32" x2="240" y2="32" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="-20" y1="50" x2="240" y2="50" stroke-opacity="0.14" stroke-width="1"/>
+            <line x1="-20" y1="68" x2="240" y2="68" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="-20" y1="86" x2="240" y2="86" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="-20" y1="104" x2="240" y2="104" stroke-opacity="0.14" stroke-width="1"/>
+            <line x1="-20" y1="122" x2="240" y2="122" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="-20" y1="140" x2="240" y2="140" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="-20" y1="158" x2="240" y2="158" stroke-opacity="0.14" stroke-width="1"/>
+            <line x1="-20" y1="176" x2="240" y2="176" stroke-opacity="0.09" stroke-width="1"/>
+            <line x1="-20" y1="194" x2="240" y2="194" stroke-opacity="0.09" stroke-width="1"/>
+          </g>
+
+          <!-- Diagonal boulevards radiating from the traffic circle the pin
+               sits on — the star-shaped intersections that break the grid
+               in the reference photo, not a single straight cut-through. -->
+          <line x1="110" y1="99" x2="93" y2="5" stroke-opacity="0.28" stroke-width="1.25"/>
+          <line x1="110" y1="99" x2="164" y2="21" stroke="#93c5fd" stroke-opacity="0.55" stroke-width="1.4"/>
+          <line x1="110" y1="99" x2="204" y2="82" stroke-opacity="0.28" stroke-width="1.25"/>
+          <line x1="110" y1="99" x2="188" y2="153" stroke-opacity="0.24" stroke-width="1.1"/>
+          <line x1="110" y1="99" x2="126" y2="193" stroke="#93c5fd" stroke-opacity="0.55" stroke-width="1.4"/>
+          <line x1="110" y1="99" x2="21" y2="131" stroke-opacity="0.24" stroke-width="1.1"/>
+
+          <!-- The small traffic circle itself, at the convergence -->
+          <circle cx="110" cy="99" r="13" stroke-opacity="0.4" stroke-width="1"/>
+        </g>
+
+        <!-- Pin marker, unchanged from Variant B -->
+        <circle cx="110" cy="99" r="34" fill="url(#pinHalo)"/>
+        <path d="M110 70c-16.5 0-30 13.2-30 29.5 0 22 30 50.5 30 50.5s30-28.5 30-50.5c0-16.3-13.5-29.5-30-29.5z" stroke="white" stroke-width="1.5"/>
+        <circle cx="110" cy="99" r="10" stroke="white" stroke-width="1.5"/>
+      </svg>
+      <span class="pin-coords">14.6349° N, 90.5069° W</span>
+      <span class="pin-city">Guatemala City</span>
+    </div>
+
+    <div>
+      <span class="eyebrow">Who we are</span>
+      <h2>Built in the city where we grew up.</h2>
+      <p class="body">We founded Connecta in Guatemala City to build the technology we always wished existed — for companies that deserve better than a template. Great design and state-of-the-art technology aren't features we add later; they're the standard we hold every product to, starting with our own.</p>
+
+      <div class="tenets">
+        <div class="tenet">
+          <span class="num">01</span>
+          <h4>Great design</h4>
+          <p>Design is part of the engineering, not a finishing touch.</p>
+        </div>
+        <div class="tenet">
+          <span class="num">02</span>
+          <h4>State-of-the-art</h4>
+          <p>We reach for what's genuinely new, not what's safest to ship.</p>
+        </div>
+        <div class="tenet">
+          <span class="num">03</span>
+          <h4>Unique experiences</h4>
+          <p>Every product should feel like nothing else on the market.</p>
+        </div>
+      </div>
+
+      <p class="footer-line">Founded by <a href="#">Josué Us</a> &amp; <a href="#">José Pablo Rodríguez</a></p>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

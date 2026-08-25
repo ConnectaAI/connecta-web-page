@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone-25: #fafaf9; --stone-200: #e7e5e4; --stone-400: #a8a29e; --stone-600: #57534e; --stone-900: #1c1917;
+    --primary: #2563eb;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-ui: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-ui); }
+  .frame { width: 1440px; background: var(--stone-25); padding: 6rem; }
+  .variant-tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-400); margin-bottom: 4rem; display: block; }
+  .layout { display: grid; grid-template-columns: 220px 1fr 220px; gap: 3rem; align-items: center; }
+  .quote-col { text-align: center; }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-400); display: block; margin-bottom: 1.5rem; }
+  .quote { font-family: var(--font-display); font-style: italic; font-weight: 500; font-size: 2.1rem; line-height: 1.42; color: var(--stone-900); margin: 0 0 1.75rem; }
+  .body { font-size: 1rem; color: var(--stone-600); line-height: 1.65; margin: 0; max-width: 32rem; margin-left: auto; margin-right: auto; }
+
+  .margin { display: flex; flex-direction: column; gap: 2.25rem; }
+  .margin.right { align-items: flex-start; }
+  .margin.left { align-items: flex-end; text-align: right; }
+  .note { display: flex; gap: 0.6rem; align-items: baseline; }
+  .margin.left .note { flex-direction: row-reverse; }
+  .note .n { font-family: var(--font-mono); font-size: 0.68rem; color: var(--primary); }
+  .note p { font-family: var(--font-mono); font-size: 0.75rem; line-height: 1.55; color: var(--stone-600); margin: 0; max-width: 180px; }
+</style>
+</helmet>
+
+<div class="frame">
+  <span class="variant-tag">Values — Variant B / Marginalia</span>
+
+  <div class="layout">
+    <div class="margin left">
+      <div class="note"><span class="n">*1</span><p>Founded on the idea that "new" doesn't mean "unfinished."</p></div>
+      <div class="note"><span class="n">*2</span><p>State-of-the-art is a floor here, not a pitch.</p></div>
+    </div>
+
+    <div class="quote-col">
+      <span class="eyebrow">Why we're a startup</span>
+      <p class="quote">"We're new, and we're building on purpose — innovation and state-of-the-art technology first, usability always."</p>
+      <p class="body">We'd rather ship something considered and a little bold than something safe and forgettable. That's the standard behind every product we build, starting with our own.</p>
+    </div>
+
+    <div class="margin right">
+      <div class="note"><span class="n">*3</span><p>Usability isn't traded away for ambition — both, always.</p></div>
+      <div class="note"><span class="n">*4</span><p>Our own product is held to this first.</p></div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

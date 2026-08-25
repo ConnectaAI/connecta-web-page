@@ -1,10 +1,77 @@
 {
   "nav": {
     "home": "Home",
+    "medassistant": "medassistant",
     "about": "About",
     "services": "Services",
-    "contact": "Contact",
-    "privacy": "Responde - Privacy Policy"
+    "getInTouch": "Get in touch"
+  },
+  "companyHero": {
+    "corner": "Guatemala, C.A.",
+    "mission": "The software that makes companies run smarter.",
+    "scrollCue": "Learn more"
+  },
+  "whatWeDo": {
+    "label": "What we do",
+    "question": "What we do?",
+    "title": "From custom software to AI-driven products",
+    "description": "We help companies adopt AI, and we build the software that makes it usable — from the ground up when nothing exists yet, or woven into what's already there.",
+    "items": {
+      "software": {
+        "title": "Web development",
+        "headline": "We build custom web platforms",
+        "description": "From building your website to bring you closer to your customers, to web tools that let you modernize your operation."
+      },
+      "ai": {
+        "title": "AI integration",
+        "headline": "We build AI-powered solutions",
+        "description": "We help companies adopt AI inside the services and workflows they already use, use AI to automate the manual processes slowing them down."
+      },
+      "data": {
+        "title": "Data analysis",
+        "headline": "We build decisions grounded in data",
+        "description": "We analyze, clean, and organize data so you can make the best decisions for your business."
+      },
+      "apps": {
+        "title": "App development",
+        "headline": "We build custom apps",
+        "description": "Work from anywhere, right from the palm of your hand, we build apps tailored to your needs."
+      }
+    }
+  },
+  "whoWeAre": {
+    "eyebrow": "Who we are",
+    "headline": "Built in the city where we grew up.",
+    "body": "We founded Connecta in Guatemala City to build the technology we always wished existed — for companies that deserve better than a template. Great design and state-of-the-art technology aren't features we add later; they're the standard we hold every product to, starting with our own.",
+    "coordinates": "14.6349° N, 90.5069° W",
+    "city": "Guatemala City",
+    "tenets": {
+      "design": {
+        "title": "Great design",
+        "description": "Design turns our technology into tools you'll actually want to use every day."
+      },
+      "stateOfTheArt": {
+        "title": "Innovation",
+        "description": "We believe innovation is the core driver of growth."
+      },
+      "unique": {
+        "title": "Unique experiences",
+        "description": "We build custom technology that feels unique and just works, right from day one."
+      }
+    },
+    "founders": {
+      "role": "Co-founder"
+    }
+  },
+  "products": {
+    "title": "Our products",
+    "medassistant": {
+      "badge": "medassistant",
+      "title": "Software for healthcare clinics",
+      "description": "Medassistant gives doctors and clinic managers control of their operation. From billing patients, generating invoices, managing payments, to following up on appointments and patients, all in one place.",
+      "cta": "Visit Medassistant",
+      "mockupCaption": "medassistant — dashboard preview"
+    }
   },
   "hero": {
     "badge": "Intelligent Clinical Management",
@@ -44,49 +111,17 @@
       }
     }
   },
-  "about": {
-    "title": "About Connecta",
-    "description": "We are Connecta, the software company of Guatemala. Our mission is to design technology that serves people first. From AI-powered agents to custom-built solutions, we craft tools that give businesses and individuals the freedom to connect, create, and grow.",
-    "features": {
-      "innovation": {
-        "title": "Innovation",
-        "description": "Cutting-edge solutions for modern challenges"
-      },
-      "partnership": {
-        "title": "Partnership",
-        "description": "Building lasting relationships with our clients"
-      },
-      "efficiency": {
-        "title": "Efficiency",
-        "description": "Streamlined processes for optimal results"
-      }
-    }
-  },
-  "services": {
-    "title": "Our Services",
-    "items": {
-      "consulting": {
-        "title": "Responde - The smart Messaging Agent for Social Media",
-        "description": "Responde is the automated customer service for Instagram and more. Our AI agent answers questions, checks inventory, confirms sales, and schedules appointments—saving you time while boosting sales."
-      },
-      "solutions": {
-        "title": "AI Solutions for Business Growth",
-        "description": "Intelligent automation solutions designed to scale your business and unlock new revenue opportunities."
-      },
-      "support": {
-        "title": "24/7 AI Support",
-        "description": "AI agents that handle customer service, sales, and support around the clock, improving efficiency."
-      },
-      "technology": {
-        "title": "Seamless Integration",
-        "description": "Easy-to-implement AI solutions that integrate with your existing systems and workflows."
-      }
-    }
-  },
   "contact": {
     "label": "Contact Us",
-    "title": "Ready to transform your clinic?",
-    "description": "Join hundreds of clinics that have already digitized their operation. Fill out the form and we'll get in touch with you.",
+    "title": "Ready to transform your company?",
+    "description": "Fill out the form and we'll get in touch with you,",
+    "emailNote": "or send us and email to:",
+    "socials": {
+      "label": "Follow us",
+      "facebook": "Follow us on Facebook",
+      "instagram": "Follow us on Instagram",
+      "linkedin": "Follow us on LinkedIn"
+    },
     "form": {
       "name": "Name",
       "namePlaceholder": "John Doe",
@@ -101,116 +136,8 @@
     }
   },
   "footer": {
+    "tagline": "A tech company.",
+    "madeIn": "Made in Guatemala",
     "rights": "All rights reserved."
-  },
-  "privacy": {
-    "title": "Privacy Policy — Responde",
-    "lastUpdated": "Last updated: October 2025",
-    "intro": "Responde is an AI Agent service developed and operated by Connecta (\"we,\" \"our,\" \"us\"). Responde allows businesses (\"clients\") to provide automated and intelligent responses through Meta platforms such as Instagram Direct Messages (DMs).",
-    "introAgreement": "This Privacy Policy explains how Responde collects, uses, and protects personal information when interacting with users on behalf of our clients.",
-    "agreementText": "By sending messages to or interacting with a business using Responde, you agree to the collection and use of information in accordance with this Privacy Policy.",
-    "sections": {
-      "informationCollect": {
-        "title": "1. Information We Collect",
-        "description": "We collect and process information provided through Meta's APIs and user interactions with the AI Agent.",
-        "personalData": {
-          "title": "a. Personal Data",
-          "items": [
-            "Name and username obtained from Meta (Instagram) profiles.",
-            "Message content or data that the user voluntarily shares via DMs."
-          ]
-        },
-        "usageData": {
-          "title": "b. Usage Data",
-          "items": [
-            "Session length, number of interactions, and message exchanges to improve service efficiency and accuracy."
-          ]
-        },
-        "clientData": {
-          "title": "c. Data from Clients",
-          "items": [
-            "Clients may have access to aggregated and anonymized summaries derived from conversations for analytical or service-improvement purposes."
-          ]
-        },
-        "noTracking": {
-          "title": "d. No Device or Tracking Data",
-          "items": [
-            "Responde does not collect device information (such as IP address, browser, or location).",
-            "Responde does not use cookies or tracking pixels."
-          ]
-        }
-      },
-      "howWeUse": {
-        "title": "2. How We Use the Information",
-        "description": "We use the collected data to:",
-        "items": [
-          "Enable the AI Agent to provide automated assistance and respond to user messages on behalf of our clients.",
-          "Generate anonymized data analysis to identify trends and patterns that help clients improve their customer interactions.",
-          "Enhance the AI model's performance and accuracy over time.",
-          "Support client business operations by improving service and communication."
-        ],
-        "note": "All analytics data used for insights is aggregated and anonymized before being processed or shared with clients."
-      },
-      "dataSharing": {
-        "title": "3. Data Sharing",
-        "description": "Responde may share limited, anonymized message data with:",
-        "items": [
-          "Large Language Models (LLMs) or AI processing systems to generate relevant responses or insights. These services process data only to provide responses or analytics and do not receive identifiable personal information."
-        ],
-        "note": "Responde does not sell, rent, or share user data with third parties for advertising or unrelated purposes."
-      },
-      "dataRetention": {
-        "title": "4. Data Retention",
-        "items": [
-          "User data is retained for the duration of the client's active relationship with Connecta or until a deletion request is received.",
-          "Data is not deleted automatically after a fixed period, to ensure service continuity and learning accuracy."
-        ]
-      },
-      "dataDeletion": {
-        "title": "5. Data Deletion Requests",
-        "description": "Users can request deletion of their data at any time by following these steps:",
-        "steps": [
-          "Send an email to connectaguatemala@gmail.com",
-          "Use the subject line: \"Request of data deletion\"",
-          "Include your Instagram username in the message body."
-        ],
-        "note": "Once verified, your personal data and message history will be permanently deleted from our systems and excluded from future analytics."
-      },
-      "dataSecurity": {
-        "title": "6. Data Security",
-        "items": [
-          "Connecta applies reasonable technical and organizational safeguards to protect information from unauthorized access, alteration, or misuse.",
-          "However, as no online or API-based communication is completely secure, we cannot guarantee absolute protection."
-        ]
-      },
-      "childrenPrivacy": {
-        "title": "7. Children's Privacy",
-        "items": [
-          "Responde is not intended for children under 13 years of age, and we do not knowingly collect personal information from them.",
-          "If we become aware that we have inadvertently collected data from a child, we will delete it promptly."
-        ]
-      },
-      "internationalTransfers": {
-        "title": "8. International Data Transfers",
-        "items": [
-          "Data may be processed on servers located outside your country.",
-          "By interacting with Responde, you consent to such transfers, provided they comply with applicable data protection standards."
-        ]
-      },
-      "policyChanges": {
-        "title": "9. Changes to This Policy",
-        "items": [
-          "We may update this Privacy Policy periodically.",
-          "All updates will be available at: http://connectaia.com/agent-policy",
-          "The \"Last updated\" date at the top will reflect the most recent version."
-        ]
-      },
-      "contactUs": {
-        "title": "10. Contact Us",
-        "description": "For any questions, requests, or concerns about this Privacy Policy or our data practices, please contact us at:",
-        "email": "📧 connectaguatemala@gmail.com",
-        "website": "🌐 http://connectaia.com"
-      }
-    }
   }
 }

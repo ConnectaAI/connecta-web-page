@@ -1,0 +1,213 @@
+/* Connecta Design System v0.1 — hero type/color exploration
+   Scoped entirely under .dp-page so it never leaks into the live site. */
+
+.dp-page {
+  --dp-blue-50: #eff6ff;
+  --dp-blue-100: #dbeafe;
+  --dp-blue-300: #93c5fd;
+  --dp-blue-500: #3b82f6;
+  --dp-blue-600: #2563eb;
+  --dp-blue-700: #1d4ed8;
+  --dp-blue-900: #1e3a8a;
+
+  --dp-stone-25: #fafaf9;
+  --dp-stone-100: #f5f5f4;
+  --dp-stone-200: #e7e5e4;
+  --dp-stone-400: #a8a29e;
+  --dp-stone-600: #57534e;
+  --dp-stone-800: #292524;
+  --dp-stone-900: #1c1917;
+
+  --dp-rose-100: #ffe4e6;
+  --dp-rose-500: #fb7185;
+
+  --dp-font-display: 'Fraunces', 'Georgia', serif;
+  --dp-font-ui: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --dp-font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+
+  background: var(--dp-stone-25);
+  font-family: var(--dp-font-ui);
+  color: var(--dp-stone-800);
+}
+
+.dp-mono {
+  font-family: var(--dp-font-mono);
+}
+
+/* Shared hero primitives */
+.dp-title {
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  margin-bottom: 1rem;
+}
+
+.dp-title-serif {
+  font-family: var(--dp-font-display);
+  font-optical-sizing: auto;
+}
+
+.dp-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-family: var(--dp-font-ui);
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+.dp-btn-arrow {
+  transition: transform 0.25s ease;
+}
+
+.dp-btn:hover .dp-btn-arrow {
+  transform: translateX(4px);
+}
+
+/* ============================= */
+/* Bolder — Fraunces-forward, flat committed color */
+/* ============================= */
+
+.dp-hero-bold {
+  padding: 10rem 1.5rem 0;
+  background: var(--dp-blue-900);
+  color: white;
+  overflow: hidden;
+}
+
+.dp-hero-bold-inner {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.dp-bold-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--dp-blue-100);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 0.4rem 0.9rem;
+  border-radius: 9999px;
+  margin-bottom: 1.75rem;
+}
+
+.dp-title-bold {
+  font-size: 3.25rem;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 1.5rem;
+}
+
+.dp-subtitle-bold {
+  font-family: var(--dp-font-ui);
+  color: var(--dp-blue-100);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 34rem;
+  margin: 0 auto 2.5rem;
+}
+
+.dp-buttons-bold {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+
+.dp-btn-light {
+  background: white;
+  color: var(--dp-blue-900);
+}
+
+.dp-btn-light:hover {
+  background: var(--dp-blue-50);
+}
+
+.dp-btn-outline-light {
+  background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+}
+
+.dp-btn-outline-light:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.dp-bold-stats {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  padding-top: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.dp-bold-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.dp-bold-stat-value {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: white;
+}
+
+.dp-bold-stat-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--dp-blue-300);
+}
+
+.dp-bold-screenshot-wrapper {
+  position: relative;
+  max-width: 1100px;
+  margin: 3.5rem auto 0;
+  padding: 0 1rem;
+}
+
+.dp-bold-screenshot-glow {
+  position: absolute;
+  inset: -10% 8% 0;
+  background: radial-gradient(ellipse at 50% 30%, rgba(59, 130, 246, 0.45), transparent 70%);
+  filter: blur(40px);
+  z-index: 0;
+}
+
+.dp-bold-screenshot {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 1rem 1rem 0 0;
+  box-shadow:
+    0 -1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 30px 60px -20px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+  /* fade the bottom edge into the section below rather than hard-cropping */
+  mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 82%, transparent 100%);
+}
+
+@media (min-width: 768px) {
+  .dp-hero-bold {
+    padding-top: 12rem;
+  }
+  .dp-title-bold {
+    font-size: 4.5rem;
+  }
+  .dp-bold-screenshot-wrapper {
+    margin-top: 4.5rem;
+  }
+}

@@ -1,12 +1,20 @@
 import { useState, ChangeEvent, FormEvent } from 'react';
 import { useTranslation } from 'react-i18next';
+import { m } from 'motion/react';
 import '../styles/Contact.css';
+import Reveal from './Reveal';
 
 interface FormData {
   name: string;
   email: string;
   message: string;
 }
+
+const SOCIALS = [
+  { key: 'facebook', href: 'https://www.facebook.com/profile.php?id=61577365362299', icon: '/fb.svg' },
+  { key: 'instagram', href: 'https://www.instagram.com/connecta_gt/', icon: '/ig.svg' },
+  { key: 'linkedin', href: 'https://www.linkedin.com/company/connectagt', icon: '/linkedin.svg' },
+] as const;
 
 function Contact() {
   const { t } = useTranslation();
@@ -85,19 +93,38 @@ function Contact() {
 
   return (
     <section id="contact" className="contact-section">
-      <div className="contact-bg"></div>
       <div className="contact-container">
         <div className="contact-grid">
           <div className="contact-content">
-            <div className="contact-header">
+            <Reveal className="contact-header">
               <span className="contact-label">{t('contact.label')}</span>
               <h2 className="contact-title">{t('contact.title')}</h2>
-              <p className="contact-description">{t('contact.description')}</p>
-            </div>
+              <p className="contact-description">
+                {t('contact.description')}{' '}
+                {t('contact.emailNote')}{' '}
+                <a href="mailto:soporte@connectaia.com" className="contact-email-link">soporte@connectaia.com</a>
+              </p>
+
+              <div className="contact-socials">
+                <span className="contact-socials-label">{t('contact.socials.label')}</span>
+                <div className="contact-socials-row">
+                  {SOCIALS.map((social) => (
+                    <a
+                      key={social.key}
+                      href={social.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="contact-social-link"
+                      aria-label={t(`contact.socials.${social.key}`)}
+                      style={{ WebkitMaskImage: `url(${social.icon})`, maskImage: `url(${social.icon})` }}
+                    />
+                  ))}
+                </div>
+              </div>
+            </Reveal>
           </div>
           <div className="contact-form-wrapper">
-            <div className="contact-form-card">
-              <div className="contact-form-bg"></div>
+            <Reveal className="contact-form-card" x={24} y={0} delay={0.1}>
               <form className="contact-form" onSubmit={handleSubmit}>
                 <div className="form-field">
                   <label htmlFor="name">{t('contact.form.name')}</label>
@@ -140,12 +167,17 @@ function Contact() {
                     {status.message}
                   </div>
                 )}
-                <button type="submit" className="contact-submit-btn" disabled={isLoading}>
+                <m.button
+                  type="submit"
+                  className="contact-submit-btn"
+                  disabled={isLoading}
+                  whileTap={{ scale: 0.97 }}
+                >
                   {isLoading ? t('contact.form.sending') : t('contact.form.submit')}
                   <span className="btn-arrow">→</span>
-                </button>
+                </m.button>
               </form>
-            </div>
+            </Reveal>
           </div>
         </div>
       </div>

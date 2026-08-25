@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-900: #1e3a8a; --blue-300: #93c5fd;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-mono); }
+  .frame {
+    width: 640px; height: 640px;
+    background: var(--blue-900);
+    background-image: radial-gradient(rgba(255,255,255,0.06) 1px, transparent 1px);
+    background-size: 26px 26px;
+    display: flex; align-items: center; justify-content: center;
+    position: relative; color: white;
+  }
+  .tag { position: absolute; top: 28px; left: 28px; font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
+  .fig { position: absolute; bottom: 28px; left: 28px; font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-300); }
+  .fig b { display: block; font-family: var(--font-display); font-size: 1.2rem; font-weight: 600; text-transform: none; letter-spacing: 0; color: white; margin-top: 0.35rem; }
+
+  svg { overflow: visible; }
+  .axis { stroke: rgba(255,255,255,0.28); stroke-width: 1.25; }
+  .bar { fill: rgba(255,255,255,0.14); stroke: white; stroke-width: 1.25; transform-box: fill-box; transform-origin: bottom; animation: grow 2.8s ease-in-out infinite; }
+  .b1 { animation-delay: 0s; }
+  .b2 { animation-delay: 0.25s; }
+  .b3 { animation-delay: 0.5s; }
+  .b4 { animation-delay: 0.75s; }
+  .b5 { animation-delay: 1s; }
+
+  @keyframes grow {
+    0%, 100% { transform: scaleY(0.86); }
+    50% { transform: scaleY(1); }
+  }
+
+  .trend {
+    fill: none; stroke: var(--blue-300); stroke-width: 1.75; stroke-linecap: round; stroke-linejoin: round;
+    stroke-dasharray: 6 6;
+    animation: flow 1.6s linear infinite;
+  }
+  @keyframes flow { to { stroke-dashoffset: -24; } }
+
+  .marker { fill: var(--blue-300); animation: pulse 2.8s ease-in-out infinite; transform-box: fill-box; transform-origin: center; }
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+  }
+  .m1 { animation-delay: 0s; } .m2 { animation-delay: 0.35s; } .m3 { animation-delay: 0.7s; }
+  .m4 { animation-delay: 1.05s; } .m5 { animation-delay: 1.4s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .bar, .trend, .marker { animation: none; }
+  }
+</style>
+</helmet>
+
+<div class="frame">
+  <span class="tag">Icon proposal</span>
+  <span class="fig">Fig. 03<b>Data analysis</b></span>
+
+  <svg width="320" height="320" viewBox="0 0 320 320">
+    <line class="axis" x1="55" y1="230" x2="265" y2="230" />
+
+    <rect class="bar b1" x="65" y="150" width="26" height="80" rx="2" />
+    <rect class="bar b2" x="107" y="110" width="26" height="120" rx="2" />
+    <rect class="bar b3" x="149" y="170" width="26" height="60" rx="2" />
+    <rect class="bar b4" x="191" y="90"  width="26" height="140" rx="2" />
+    <rect class="bar b5" x="233" y="130" width="26" height="100" rx="2" />
+
+    <path class="trend" d="M78 140 L120 95 L162 155 L204 70 L246 115" />
+
+    <circle class="marker m1" cx="78" cy="140" r="4" />
+    <circle class="marker m2" cx="120" cy="95" r="4" />
+    <circle class="marker m3" cx="162" cy="155" r="4" />
+    <circle class="marker m4" cx="204" cy="70" r="4" />
+    <circle class="marker m5" cx="246" cy="115" r="4" />
+  </svg>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

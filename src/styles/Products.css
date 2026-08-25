@@ -1,0 +1,183 @@
+.products {
+  padding: 7rem 0;
+  background: var(--stone-25);
+}
+
+.products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  position: relative;
+}
+
+.products-header {
+  margin-bottom: 4rem;
+}
+
+.products-title {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--stone-900);
+  line-height: 1.15;
+  margin: 0;
+}
+
+/* Editorial feature spotlight — one huge Fraunces headline carries the
+   section instead of a small title inside a shadowed card; the product's
+   own dashboard gets a secondary rotated backdrop instead of top billing. */
+.product-feature {
+  position: relative;
+  padding-bottom: 2rem;
+}
+
+.product-feature-badge {
+  display: inline-flex;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--stone-900);
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--stone-900);
+  margin-bottom: 1.75rem;
+}
+
+.product-feature-huge {
+  font-family: var(--font-display);
+  font-size: 2.5rem;
+  font-weight: 600;
+  line-height: 1.05;
+  color: var(--stone-900);
+  margin: 0 0 1.5rem;
+  max-width: 15ch;
+}
+
+.product-feature-sub {
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+  color: var(--stone-600);
+  line-height: 1.7;
+  max-width: 34rem;
+  margin: 0 0 2rem;
+}
+
+.product-feature-link {
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+  display: inline-flex;
+  gap: 0.4rem;
+  align-items: center;
+  text-decoration: none;
+  border-bottom: 1.5px solid var(--primary-color);
+  padding-bottom: 0.2rem;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.product-feature-link:hover {
+  color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+
+.product-feature-link-arrow {
+  transition: transform 0.3s ease;
+}
+
+.product-feature-link:hover .product-feature-link-arrow {
+  transform: translateX(4px);
+}
+
+.product-feature-backdrop {
+  margin-top: 3rem;
+  opacity: 0.94;
+}
+
+/* Low-gravity drift, matching the WhatWeDo icons — a separate layer from
+   .product-feature-backdrop's own static position/rotate so the two
+   transforms never fight over the same element. */
+.product-feature-float {
+  animation: product-feature-float 9s ease-in-out infinite;
+}
+
+@keyframes product-feature-float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  22% { transform: translate(6px, -10px) rotate(1deg); }
+  45% { transform: translate(-6px, -4px) rotate(-0.8deg); }
+  68% { transform: translate(-8px, 7px) rotate(-1.2deg); }
+  86% { transform: translate(5px, 6px) rotate(0.6deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .product-feature-float {
+    animation: none;
+  }
+}
+
+.product-feature-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.9rem;
+  box-shadow: 0 40px 80px -30px rgba(30, 58, 138, 0.35);
+}
+
+.product-feature-caption {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--stone-400);
+  margin-top: 1rem;
+}
+
+.products-more {
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--stone-400);
+  margin-top: 3rem;
+}
+
+@media (min-width: 768px) {
+  .products-title {
+    font-size: 2.75rem;
+  }
+
+  .product-feature-huge {
+    font-size: 5.5rem;
+  }
+
+  .product-feature-sub {
+    font-size: 1.15rem;
+  }
+}
+
+/* Below this, stay stacked (see the base rules above). At and above it the
+   480px backdrop floats bottom-right — `padding-right` on the text column
+   reserves its width so text wraps clear of it regardless of viewport
+   width, instead of relying on each text element's own max-width to
+   happen to leave enough room. */
+@media (min-width: 1024px) {
+  .product-feature {
+    padding-right: 500px;
+  }
+
+  .product-feature-backdrop {
+    position: absolute;
+    right: -1rem;
+    bottom: -4rem;
+    width: 480px;
+    margin-top: 0;
+    transform: rotate(2deg);
+  }
+
+  /* The backdrop hangs 4rem below the text column's own bottom edge —
+     give the line below it enough clearance to not run under it. */
+  .products-more {
+    margin-top: 7rem;
+  }
+}

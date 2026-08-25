@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone-25: #fafaf9; --stone-200: #e7e5e4; --stone-400: #a8a29e; --stone-600: #57534e; --stone-900: #1c1917;
+    --primary: #2563eb; --blue-900: #1e3a8a;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-ui: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-ui); }
+  .frame { width: 1440px; background: var(--stone-25); padding: 6rem; position: relative; overflow: hidden; }
+  .variant-tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-400); margin-bottom: 3rem; display: block; }
+  .products-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone-400); display: block; margin-bottom: 1rem; }
+  .products-title { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--stone-900); margin: 0 0 4rem; }
+
+  .feature { position: relative; padding-bottom: 2rem; }
+  .badge { display: inline-flex; padding: 0.3rem 0.7rem; border: 1px solid var(--stone-900); font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-900); margin-bottom: 1.75rem; }
+  .huge { font-family: var(--font-display); font-size: 5.5rem; font-weight: 600; line-height: 0.98; color: var(--stone-900); margin: 0 0 2rem; max-width: 15ch; }
+  .sub { font-size: 1.15rem; color: var(--stone-600); line-height: 1.7; max-width: 34rem; margin: 0 0 2rem; }
+  .link { font-family: var(--font-ui); font-size: 1rem; font-weight: 600; color: var(--primary); display: inline-flex; gap: 0.4rem; align-items: center; border-bottom: 1.5px solid var(--primary); padding-bottom: 0.2rem; }
+
+  .backdrop { position: absolute; right: -2rem; bottom: -4rem; width: 480px; opacity: 0.94; }
+  .mini-device { background: #0e1a3d; border-radius: 0.9rem; border: 1px solid rgba(30,58,138,0.3); padding: 1.5rem; box-shadow: 0 40px 80px -30px rgba(30,58,138,0.35); transform: rotate(2deg); }
+  .mini-row { display: flex; gap: 0.6rem; margin-bottom: 0.6rem; }
+  .mini-block { background: rgba(255,255,255,0.08); border-radius: 0.4rem; height: 40px; flex: 1; }
+  .mini-block.accent { background: rgba(37,99,235,0.4); }
+  .fig { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone-400); margin-top: 1rem; }
+</style>
+</helmet>
+
+<div class="frame">
+  <span class="variant-tag">Products — Variant B / Editorial feature</span>
+  <span class="products-label">Products</span>
+  <h2 class="products-title">Our first product</h2>
+
+  <div class="feature">
+    <span class="badge">medassistant</span>
+    <h3 class="huge">Software for healthcare clinics.</h3>
+    <p class="sub">medassistant gives doctors and clinic managers control of their operation — billing, invoices, payments, and follow-ups, all in one place.</p>
+    <a class="link" href="#">Visit medassistant →</a>
+
+    <div class="backdrop">
+      <div class="mini-device">
+        <div class="mini-row"><div class="mini-block accent" style="flex: 0 0 35%"></div><div class="mini-block"></div></div>
+        <div class="mini-row"><div class="mini-block"></div><div class="mini-block"></div></div>
+        <div class="mini-row"><div class="mini-block accent"></div></div>
+      </div>
+      <span class="fig">medassistant — dashboard, placeholder</span>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

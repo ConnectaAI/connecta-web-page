@@ -1,0 +1,207 @@
+/* "Who we are" — replaces the old quote-only Values section with an
+   editorial storytelling block: a fine-line Guatemala City map-pin motif
+   (echoes the hero's coordinate readout), the origin/purpose narrative, a
+   3-point values manifesto, and the two founders with a photo placeholder
+   each (swap for real photos later — no other markup changes needed). */
+.who-we-are {
+  padding: 7rem 0;
+  background: var(--blue-900);
+  color: white;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.who-we-are-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.who-we-are-grid {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.who-we-are-pin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 0.5rem;
+}
+
+/* Same low-gravity ambient drift as the panel illustrations in "What we
+   do" — a separate element from Reveal's own entrance transform above, so
+   the two never fight over the same property. */
+.who-we-are-pin-float {
+  animation: who-we-are-pin-float 8s ease-in-out infinite;
+}
+
+@keyframes who-we-are-pin-float {
+  0% { transform: translate(0, 0) rotate(0deg); }
+  22% { transform: translate(6px, -9px) rotate(1.4deg); }
+  45% { transform: translate(-5px, -3px) rotate(-1deg); }
+  68% { transform: translate(-7px, 6px) rotate(-1.6deg); }
+  86% { transform: translate(4px, 5px) rotate(0.8deg); }
+  100% { transform: translate(0, 0) rotate(0deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .who-we-are-pin-float {
+    animation: none;
+  }
+}
+
+.who-we-are-coords {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.06em;
+  color: var(--blue-300);
+  margin-top: 1.25rem;
+  text-align: center;
+}
+
+.who-we-are-city {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: 0.4rem;
+}
+
+.who-we-are-eyebrow {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue-300);
+  margin-bottom: 1.5rem;
+}
+
+.who-we-are-headline {
+  font-family: var(--font-display);
+  font-size: 2.25rem;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 1.5rem;
+}
+
+.who-we-are-body {
+  font-family: var(--font-ui);
+  font-size: 1.05rem;
+  line-height: 1.75;
+  color: var(--blue-100);
+  margin: 0;
+  max-width: 34rem;
+}
+
+.who-we-are-tenets {
+  margin-top: 3.5rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: 2.75rem;
+}
+
+.who-we-are-tenet-num {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--blue-300);
+  margin-bottom: 0.75rem;
+}
+
+.who-we-are-tenet h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 600;
+  margin: 0 0 0.5rem;
+}
+
+.who-we-are-tenet p {
+  font-family: var(--font-ui);
+  font-size: 0.9rem;
+  color: var(--blue-100);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.who-we-are-founders {
+  margin-top: 3.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  padding-top: 2.75rem;
+}
+
+.who-we-are-founder {
+  display: flex;
+  align-items: center;
+  gap: 1.1rem;
+}
+
+.who-we-are-founder-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 0.85rem;
+  flex-shrink: 0;
+  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.who-we-are-founder-name {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+.who-we-are-founder-name a {
+  color: white;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+
+.who-we-are-founder-name a:hover {
+  color: var(--blue-300);
+  border-color: var(--blue-300);
+}
+
+.who-we-are-founder-role {
+  display: block;
+  margin-top: 0.3rem;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--blue-300);
+}
+
+@media (max-width: 900px) {
+  .who-we-are-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .who-we-are-pin {
+    padding-top: 0;
+  }
+
+  .who-we-are-headline {
+    font-size: 1.9rem;
+  }
+
+  .who-we-are-tenets {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+
+  .who-we-are-founders {
+    flex-direction: column;
+    gap: 1.75rem;
+  }
+}

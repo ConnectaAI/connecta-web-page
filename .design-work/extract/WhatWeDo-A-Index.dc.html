@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone-25: #fafaf9; --stone-200: #e7e5e4; --stone-400: #a8a29e; --stone-600: #57534e; --stone-900: #1c1917;
+    --primary: #2563eb; --blue-700: #1d4ed8;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-ui: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-ui); }
+  .frame { width: 1440px; background: var(--stone-25); padding: 6rem 6rem 5rem; }
+  .variant-tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-400); margin-bottom: 3rem; }
+  .head { display: flex; justify-content: space-between; align-items: flex-end; border-bottom: 1px solid var(--stone-900); padding-bottom: 1.75rem; margin-bottom: 0.5rem; }
+  .eyebrow { font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-600); }
+  .title { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--stone-900); margin: 0.6rem 0 0; max-width: 30rem; line-height: 1.15; }
+  .desc { font-size: 0.98rem; color: var(--stone-600); max-width: 20rem; line-height: 1.55; text-align: right; }
+
+  .rows { }
+  .row { display: grid; grid-template-columns: 100px 1fr 380px 140px; align-items: start; gap: 2rem; padding: 2.75rem 0; border-bottom: 1px solid var(--stone-200); }
+  .num { font-family: var(--font-display); font-style: italic; font-size: 2.75rem; font-weight: 500; color: var(--stone-400); line-height: 1; }
+  .name h3 { font-family: var(--font-display); font-size: 1.75rem; font-weight: 600; color: var(--stone-900); margin: 0; }
+  .name span { display: block; font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--primary); margin-top: 0.6rem; }
+  .row p { font-size: 0.98rem; color: var(--stone-600); line-height: 1.6; margin: 0.35rem 0 0; }
+  .code { font-family: var(--font-mono); font-size: 0.78rem; color: var(--stone-400); text-align: right; padding-top: 0.4rem; }
+  .code b { color: var(--stone-900); display: block; font-size: 0.78rem; margin-bottom: 0.3rem; }
+</style>
+</helmet>
+
+<div class="frame">
+  <span class="variant-tag">What we do — Variant A / Index</span>
+  <div class="head">
+    <div>
+      <span class="eyebrow">What we do</span>
+      <h2 class="title">From custom software to AI-driven products</h2>
+    </div>
+    <p class="desc">We help companies adopt AI, and we build the software that makes it usable.</p>
+  </div>
+
+  <div class="rows">
+    <div class="row">
+      <span class="num">01</span>
+      <div class="name"><h3>Custom software</h3><span>We build custom software</span></div>
+      <p>Built from scratch for a company's specific operation, not adapted from a generic template.</p>
+      <div class="code"><b>CN—SW</b>Ground-up build</div>
+    </div>
+    <div class="row">
+      <span class="num">02</span>
+      <div class="name"><h3>AI integration</h3><span>We build AI-powered solutions</span></div>
+      <p>Helping companies adopt AI inside the services and workflows they already run.</p>
+      <div class="code"><b>CN—AI</b>Applied, in-workflow</div>
+    </div>
+    <div class="row">
+      <span class="num">03</span>
+      <div class="name"><h3>Data analysis</h3><span>We build decisions grounded in data</span></div>
+      <p>Analyzing, cleaning, and organizing data as the foundation any real decision needs.</p>
+      <div class="code"><b>CN—DA</b>Structured first</div>
+    </div>
+    <div class="row">
+      <span class="num">04</span>
+      <div class="name"><h3>Automation</h3><span>We build automation end to end</span></div>
+      <p>Turning organized data into automated, data-driven decisions.</p>
+      <div class="code"><b>CN—AU</b>End to end</div>
+    </div>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>

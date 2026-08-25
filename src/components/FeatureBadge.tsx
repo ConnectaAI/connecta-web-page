@@ -1,17 +1,16 @@
-import React from 'react';
+import { m, type Variants } from 'motion/react';
 
 interface FeatureBadgeProps {
-  icon: string;
   text: string;
+  variants?: Variants;
 }
 
-const FeatureBadge: React.FC<FeatureBadgeProps> = ({ icon, text }) => {
+function FeatureBadge({ text, variants }: FeatureBadgeProps) {
   return (
-    <div className="feature-badge">
-      <span className="feature-badge-icon">{icon}</span>
+    <m.div className="feature-badge" variants={variants}>
       {text}
-    </div>
+    </m.div>
   );
-};
+}
 
 export default FeatureBadge;

@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-900: #1e3a8a; --blue-950: #16244f; --blue-300: #93c5fd; --blue-100: #dbeafe;
+    --stone-25: #fafaf9; --stone-600: #57534e; --stone-400: #a8a29e; --stone-900: #1c1917;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-ui: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; font-family: var(--font-ui); background: var(--stone-25); }
+
+  .intro { padding: 3.5rem 4rem 2.5rem; max-width: 900px; }
+  .variant-tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-400); display: block; margin-bottom: 1.5rem; }
+  .intro h2 { font-family: var(--font-display); font-size: 1.9rem; font-weight: 600; color: var(--stone-900); margin: 0 0 0.9rem; line-height: 1.25; }
+  .intro p { font-size: 0.98rem; color: var(--stone-600); line-height: 1.65; margin: 0; }
+  .intro b { color: var(--stone-900); }
+  .scroll-hint { margin-top: 1.75rem; display: inline-flex; align-items: center; gap: 0.5rem; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--blue-900); }
+  .scroll-hint .arrow { animation: bob 1.6s ease-in-out infinite; }
+  @keyframes bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(5px); } }
+
+  /* ===== The scroll rail ===== */
+  .rail { position: relative; height: 500vh; background: linear-gradient(180deg, var(--blue-900), var(--blue-950)); }
+  .sticky { position: sticky; top: 0; height: 100vh; overflow: hidden; display: flex; align-items: center; justify-content: center; background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px); background-size: 26px 26px; }
+
+  .header { position: absolute; left: 50%; font-family: var(--font-display); font-weight: 600; color: white; white-space: nowrap; will-change: transform, font-size, top, color; }
+
+  .orbit { position: absolute; left: 50%; top: 50%; width: 640px; height: 640px; transform: translate(-50%, -50%); will-change: opacity; }
+  .orbit-ring { position: absolute; inset: 210px; border: 1px solid rgba(255,255,255,0.22); border-radius: 50%; }
+  .orbit svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+  .node { position: absolute; transform: translate(-50%, -50%); text-align: center; font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: white; }
+  .node span { display: block; font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 0.07em; text-transform: uppercase; color: var(--blue-300); margin-top: 0.3rem; font-weight: 500; }
+  .n-sw { top: 60px; left: 50%; }
+  .n-ai { top: 50%; left: 580px; }
+  .n-da { top: 580px; left: 50%; }
+  .n-au { top: 50%; left: 60px; }
+
+  .panels { position: absolute; left: 50%; top: 54%; transform: translate(-50%, -50%); width: 620px; text-align: center; opacity: 0; }
+  .panel { position: absolute; inset: 0; opacity: 0; transform: translateY(24px); transition: opacity 0.55s cubic-bezier(.22,.61,.36,1), transform 0.55s cubic-bezier(.22,.61,.36,1); pointer-events: none; }
+  .panel.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+  .panel .idx { display: block; font-family: var(--font-mono); font-size: 0.72rem; letter-spacing: 0.1em; color: var(--blue-300); margin-bottom: 1rem; }
+  .panel h3 { font-family: var(--font-display); font-size: 3.1rem; font-weight: 600; color: white; margin: 0 0 1rem; line-height: 1.08; }
+  .panel p { font-size: 1.05rem; color: var(--blue-100); line-height: 1.65; margin: 0 auto; max-width: 34rem; }
+
+  .dots { position: absolute; bottom: 56px; left: 50%; transform: translate(-50%, 0); display: flex; gap: 2.5rem; opacity: 0; }
+  .dot { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+  .dot i { width: 7px; height: 7px; border-radius: 50%; background: rgba(255,255,255,0.28); transition: background 0.4s ease, transform 0.4s ease; }
+  .dot span { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.4); transition: color 0.4s ease; }
+  .dot.active i { background: var(--blue-300); transform: scale(1.5); }
+  .dot.active span { color: white; }
+
+  /* ===== Fallback summary strip (always present, so a fast scroller / reduced-motion visitor still sees everything at a glance) ===== */
+  .summary { background: var(--stone-25); padding: 5rem 4rem; }
+  .summary-label { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-400); display: block; margin-bottom: 2rem; }
+  .summary-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2rem; }
+  .summary-grid div h4 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 600; color: var(--stone-900); margin: 0 0 0.5rem; }
+  .summary-grid div p { font-size: 0.85rem; color: var(--stone-600); line-height: 1.5; margin: 0; }
+
+  /* ===== Reduced motion: skip the pinned/scrubbed rail entirely ===== */
+  @media (prefers-reduced-motion: reduce) {
+    .rail { height: auto; }
+    .sticky { position: static; height: auto; padding: 4rem 2rem; flex-direction: column; gap: 3rem; }
+    .header { position: static; transform: none !important; font-size: 0.85rem !important; letter-spacing: 0.08em; text-transform: uppercase; color: var(--blue-300) !important; top: auto !important; }
+    .orbit { display: none; }
+    .panels { position: static; transform: none; opacity: 1 !important; width: 100%; display: flex; flex-direction: column; gap: 3rem; }
+    .panel { position: static; opacity: 1 !important; transform: none !important; pointer-events: auto; }
+    .dots { display: none; }
+  }
+</style>
+</helmet>
+
+<div class="intro">
+  <span class="variant-tag">What we do — Variant B3 / Morph on scroll (working prototype — scroll inside this frame)</span>
+  <h2>"What we do?" becomes the header as you scroll</h2>
+  <p>The center label and its four labeled points are readable immediately — no tapping required. As you scroll, "What we do?" shrinks into a pinned header and each capability takes over the stage in turn with a large title and its full description. <b>A static summary of all four sits below the scroll section too</b>, so nothing is only reachable by scrolling slowly.</p>
+  <span class="scroll-hint">Scroll to see it animate <span class="arrow">↓</span></span>
+</div>
+
+<div class="rail" id="rail">
+  <div class="sticky">
+    <div class="header" id="header">What we do?</div>
+
+    <div class="orbit" id="orbit">
+      <div class="orbit-ring"></div>
+      <svg viewBox="0 0 640 640" fill="none">
+        <line x1="320" y1="320" x2="320" y2="95" stroke="rgba(255,255,255,0.35)" stroke-dasharray="3 5"/>
+        <line x1="320" y1="320" x2="545" y2="320" stroke="rgba(255,255,255,0.35)" stroke-dasharray="3 5"/>
+        <line x1="320" y1="320" x2="320" y2="545" stroke="rgba(255,255,255,0.35)" stroke-dasharray="3 5"/>
+        <line x1="320" y1="320" x2="95" y2="320" stroke="rgba(255,255,255,0.35)" stroke-dasharray="3 5"/>
+      </svg>
+      <div class="node n-sw">Software<span>01</span></div>
+      <div class="node n-ai">AI Integrations<span>02</span></div>
+      <div class="node n-da">Data Analytics<span>03</span></div>
+      <div class="node n-au">Automation<span>04</span></div>
+    </div>
+
+    <div class="panels" id="panels">
+      <div class="panel" data-i="1">
+        <span class="idx">01 / 04 — Software</span>
+        <h3>Software</h3>
+        <p>We build custom software — built from scratch for a company's specific operation, not adapted from a generic template.</p>
+      </div>
+      <div class="panel" data-i="2">
+        <span class="idx">02 / 04 — AI Integrations</span>
+        <h3>AI Integrations</h3>
+        <p>We build AI-powered solutions — helping companies adopt AI inside the services and workflows they already run.</p>
+      </div>
+      <div class="panel" data-i="3">
+        <span class="idx">03 / 04 — Data Analytics</span>
+        <h3>Data Analytics</h3>
+        <p>We build decisions grounded in data — analyzing, cleaning, and organizing data as the foundation any real decision needs.</p>
+      </div>
+      <div class="panel" data-i="4">
+        <span class="idx">04 / 04 — Automation</span>
+        <h3>Automation</h3>
+        <p>We build automation end to end — turning organized data into automated, data-driven decisions.</p>
+      </div>
+    </div>
+
+    <div class="dots" id="dots">
+      <div class="dot" data-i="1"><i></i><span>Software</span></div>
+      <div class="dot" data-i="2"><i></i><span>AI</span></div>
+      <div class="dot" data-i="3"><i></i><span>Data</span></div>
+      <div class="dot" data-i="4"><i></i><span>Automation</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="summary">
+  <span class="summary-label">All four, at a glance</span>
+  <div class="summary-grid">
+    <div><h4>01 — Software</h4><p>Built from scratch for a company's specific operation.</p></div>
+    <div><h4>02 — AI Integrations</h4><p>Adopted inside the workflows a company already runs.</p></div>
+    <div><h4>03 — Data Analytics</h4><p>Cleaned and organized as the foundation for real decisions.</p></div>
+    <div><h4>04 — Automation</h4><p>Turning organized data into automated, data-driven action.</p></div>
+  </div>
+</div>
+
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic {
+  renderVals() { return {}; }
+
+  componentDidMount() {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduce) return;
+
+    const rail = document.getElementById('rail');
+    const header = document.getElementById('header');
+    const orbit = document.getElementById('orbit');
+    const panelsWrap = document.getElementById('panels');
+    const panels = Array.from(panelsWrap.querySelectorAll('.panel'));
+    const dotsWrap = document.getElementById('dots');
+    const dots = Array.from(dotsWrap.querySelectorAll('.dot'));
+
+    const clamp = (v, a, b) => Math.max(a, Math.min(b, v));
+    const lerp = (a, b, t) => a + (b - a) * t;
+
+    let ticking = false;
+
+    const update = () => {
+      ticking = false;
+      const rect = rail.getBoundingClientRect();
+      const vh = window.innerHeight;
+      const total = rail.offsetHeight - vh;
+      const scrolled = clamp(-rect.top, 0, total);
+      const t = total > 0 ? scrolled / total : 0;
+
+      const introT = clamp(t / 0.2, 0, 1);
+      const fontSize = lerp(3, 0.85, introT);
+      const topPos = lerp(50, 9, introT);
+      header.style.top = topPos + '%';
+      header.style.transform = 'translate(-50%, ' + (introT < 1 ? '-50%' : '0%') + ')';
+      header.style.fontSize = fontSize + 'rem';
+      header.style.letterSpacing = lerp(0, 0.08, introT) + 'em';
+      header.style.color = introT > 0.7 ? '#93c5fd' : '#ffffff';
+      header.style.textTransform = introT > 0.7 ? 'uppercase' : 'none';
+
+      orbit.style.opacity = String(clamp(1 - introT * 1.3, 0, 1));
+
+      const panelsOpacity = clamp((t - 0.14) / 0.06, 0, 1);
+      panelsWrap.style.opacity = String(panelsOpacity);
+      dotsWrap.style.opacity = String(panelsOpacity);
+
+      const activeIndex = t < 0.2 ? 0 : Math.min(4, Math.floor((t - 0.2) / 0.2) + 1);
+      panels.forEach((p) => p.classList.toggle('active', Number(p.dataset.i) === activeIndex));
+      dots.forEach((d) => d.classList.toggle('active', Number(d.dataset.i) === activeIndex));
+    };
+
+    const onScroll = () => {
+      if (!ticking) {
+        ticking = true;
+        requestAnimationFrame(update);
+      }
+    };
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    update();
+  }
+}
+</script>
+</body>
+</html>

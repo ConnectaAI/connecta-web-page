@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..700;1,9..144,300..700&family=Geist:wght@400..700&family=Geist+Mono:wght@400..600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --stone-25: #fafaf9; --stone-200: #e7e5e4; --stone-400: #a8a29e; --stone-600: #57534e; --stone-900: #1c1917;
+    --primary: #2563eb;
+    --font-display: 'Fraunces', Georgia, serif;
+    --font-ui: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --font-mono: 'Geist Mono', 'SFMono-Regular', Menlo, monospace;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-ui); }
+  .frame { width: 1440px; background: var(--stone-25); padding: 6rem; }
+  .variant-tag { font-family: var(--font-mono); font-size: 0.68rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-400); margin-bottom: 3rem; display: block; }
+  .products-label { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--stone-400); display: block; margin-bottom: 1rem; }
+  .products-title { font-family: var(--font-display); font-size: 2.5rem; font-weight: 600; color: var(--stone-900); margin: 0 0 3.5rem; }
+
+  .ledger-head { display: grid; grid-template-columns: 90px 1fr 180px 160px 200px; gap: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--stone-900); font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--stone-400); }
+  .ledger-row { display: grid; grid-template-columns: 90px 1fr 180px 160px 200px; gap: 1.5rem; align-items: center; padding: 2.25rem 0; border-bottom: 1px solid var(--stone-200); }
+  .ledger-row.upcoming { opacity: 0.5; }
+  .l-num { font-family: var(--font-display); font-style: italic; font-size: 1.5rem; color: var(--stone-400); }
+  .l-name h4 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--stone-900); margin: 0 0 0.4rem; }
+  .l-name p { font-size: 0.9rem; color: var(--stone-600); line-height: 1.55; margin: 0; max-width: 30rem; }
+  .l-cat { font-family: var(--font-mono); font-size: 0.8rem; color: var(--stone-600); }
+  .l-status { font-family: var(--font-mono); font-size: 0.78rem; display: flex; align-items: center; gap: 0.5rem; }
+  .dot { width: 6px; height: 6px; border-radius: 50%; }
+  .dot.live { background: #16a34a; }
+  .dot.dev { background: var(--stone-400); }
+  .l-cta { text-align: right; }
+  .l-cta a { font-family: var(--font-ui); font-size: 0.88rem; font-weight: 600; color: var(--primary); }
+  .footnote { margin-top: 2.5rem; font-family: var(--font-mono); font-size: 0.78rem; color: var(--stone-400); }
+</style>
+</helmet>
+
+<div class="frame">
+  <span class="variant-tag">Products — Variant C / Ledger</span>
+  <span class="products-label">Products</span>
+  <h2 class="products-title">What we've built — and what's next</h2>
+
+  <div class="ledger-head">
+    <span>No.</span><span>Product</span><span>Category</span><span>Status</span><span></span>
+  </div>
+
+  <div class="ledger-row">
+    <span class="l-num">01</span>
+    <div class="l-name">
+      <h4>medassistant</h4>
+      <p>Software for healthcare clinics — billing, invoices, payments, and follow-ups in one place.</p>
+    </div>
+    <span class="l-cat">Healthcare</span>
+    <span class="l-status"><span class="dot live"></span>Live</span>
+    <span class="l-cta"><a href="#">Visit →</a></span>
+  </div>
+
+  <div class="ledger-row upcoming">
+    <span class="l-num">—</span>
+    <div class="l-name">
+      <h4>More on the way</h4>
+      <p>More products, built on the same system, are on the way.</p>
+    </div>
+    <span class="l-cat">—</span>
+    <span class="l-status"><span class="dot dev"></span>Unannounced</span>
+    <span class="l-cta"></span>
+  </div>
+</div>
+</x-dc>
+<script data-dc-script data-props='{}'>
+class Component extends DCLogic { renderVals() { return {}; } }
+</script>
+</body>
+</html>
