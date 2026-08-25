@@ -13,7 +13,7 @@ function Footer() {
           <p className="footer-madeIn">{t('footer.madeIn')}</p>
         </div>
         <div className="footer-content">
-          <p>&copy; 2025 Connecta. {t('footer.rights')}</p>
+          <p>&copy; 2026 Connecta. {t('footer.rights')}</p>
         </div>
       </div>
     </footer>

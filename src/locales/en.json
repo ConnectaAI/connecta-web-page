@@ -20,22 +20,22 @@
       "software": {
         "title": "Web development",
         "headline": "We build custom web platforms",
-        "description": "Built from scratch for a company's specific operation, not adapted from a generic template."
+        "description": "From building your website to bring you closer to your customers, to web tools that let you modernize your operation."
       },
       "ai": {
         "title": "AI integration",
         "headline": "We build AI-powered solutions",
-        "description": "Helping companies adopt AI inside the services and workflows they already run — including using AI to automate the manual processes slowing them down."
+        "description": "We help companies adopt AI inside the services and workflows they already use, use AI to automate the manual processes slowing them down."
       },
       "data": {
         "title": "Data analysis",
         "headline": "We build decisions grounded in data",
-        "description": "Analyzing, cleaning, and organizing data as the foundation any real decision needs."
+        "description": "We analyze, clean, and organize data so you can make the best decisions for your business."
       },
       "apps": {
         "title": "App development",
         "headline": "We build custom apps",
-        "description": "Mobile and desktop apps built around how your team actually works, not a generic template."
+        "description": "Work from anywhere, right from the palm of your hand, we build apps tailored to your needs."
       }
     }
   },
@@ -48,15 +48,15 @@
     "tenets": {
       "design": {
         "title": "Great design",
-        "description": "Design is part of the engineering, not a finishing touch."
+        "description": "Design turns our technology into tools you'll actually want to use every day."
       },
       "stateOfTheArt": {
-        "title": "State-of-the-art",
-        "description": "We reach for what's genuinely new, not what's safest to ship."
+        "title": "Innovation",
+        "description": "We believe innovation is the core driver of growth."
       },
       "unique": {
         "title": "Unique experiences",
-        "description": "Every product should feel like nothing else on the market."
+        "description": "We build custom technology that feels unique and just works, right from day one."
       }
     },
     "founders": {

@@ -20,22 +20,22 @@
       "software": {
         "title": "Desarrollo web",
         "headline": "Construimos plataformas web a la medida",
-        "description": "Desde crear tu sitio web para acercarte a tus clientes hasta herramientas web que te permitirán modernizar tu operación."
+        "description": "Desde crear tu sitio web hasta herramientas web que te permitirán dar un mejor servicio y modernizar tu empresa."
       },
       "ai": {
         "title": "Integración de IA",
         "headline": "Construimos soluciones con IA",
-        "description": "Ayudamos a las empresas a adoptar IA dentro de los servicios y flujos de trabajo que ya usan — incluyendo el uso de IA para automatizar los procesos manuales que las ralentizan."
+        "description": "Te ayudamos a integrar IA en tus procesos, automatizando tareas y acelarando tu empresa, implementa las herramientas más nuevas del mercado."
       },
       "data": {
         "title": "Análisis de datos",
         "headline": "Construimos decisiones basadas en datos",
-        "description": "Analizamos, limpiamos y organizamos datos para que puedas tomar las mejores decisiones de tu negocio."
+        "description": "Te ayudamos a tromar decisiones basads en datos, organizamos y transormamos la información en insights que te permitirán comprender mejor al mercado."
       },
       "apps": {
         "title": "Apps",
         "headline": "Construimos aplicaciones a la medida",
-        "description": "Trabaja desde cualquier lugar desde la palma de tu mano, construimos apps adaptadas a tus necesidades."
+        "description": "Trabaja desde cualquier lugar desde la palma de tu mano, construimos apps adaptadas a tus necesidades y a tu negocio."
       }
     }
   },
@@ -48,15 +48,15 @@
     "tenets": {
       "design": {
         "title": "Diseño",
-        "description": "Fundamental en cada experiencia, el diseño transforma nuestra tecnología en las herramientas que querrás utilizar todos los días."
+        "description": "El diseño transforma nuestra tecnología en las herramientas que querrás utilizar todos los días."
       },
       "stateOfTheArt": {
-        "title": "Tecnología de punta",
-        "description": "Producimos tecnología de vanguardia, permitiendo a nuestros clientes acceder a herramientas más capaces, expandiendo el alcance de las soluciones."
+        "title": "Innovación",
+        "description": "Creemos en la innovación como base fundamental para el desarrollo."
       },
       "unique": {
         "title": "Experiencias únicas",
-        "description": "Cada producto se siente distinto a todo lo demás en el mercado."
+        "description": "Desde una interfaz intuitiva, creamos tecnología a la medida que se siente única y funciona, desde el primer día."
       }
     },
     "founders": {
