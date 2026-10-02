@@ -16,8 +16,7 @@ const app = (
 )
 
 i18n.changeLanguage(langFromPath(window.location.pathname)).then(() => {
-  // Prerendered pages are hydrated; the 404.html shell (unknown routes,
-  // /design-preview) and the dev server start empty and render from scratch.
+  // Prerendered pages are hydrated; the 404.html shell (unknown routes) and the dev server start empty and render from scratch.
   if (root.firstElementChild) {
     hydrateRoot(root, app)
   } else {

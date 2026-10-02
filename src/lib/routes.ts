@@ -4,11 +4,10 @@ export const SITE_URL = 'https://connectaia.com';
 export const LANGS: Lang[] = ['es', 'en'];
 
 // Spanish is the default language and lives at the root; English lives
-// under /en. `indexable: false` pages are served client-side only.
+// under /en. `indexable: false` pages would be served client-side only.
 export const PAGES = [
   { path: '/', key: 'home', indexable: true },
   { path: '/medassistant', key: 'medassistant', indexable: true },
-  { path: '/design-preview', key: 'designPreview', indexable: false },
 ] as const;
 
 export type Page = (typeof PAGES)[number];

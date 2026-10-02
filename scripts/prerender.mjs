@@ -33,7 +33,7 @@ for (const page of PAGES.filter((p) => p.indexable)) {
   }
 }
 
-// Shell for unknown routes and client-only pages (/design-preview).
+// Shell for unknown routes
 await writeFile(join(dist, '404.html'), fill('', shellHead(), 'es'));
 
 const loc = (path, lng) => {
