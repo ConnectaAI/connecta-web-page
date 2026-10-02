@@ -312,6 +312,14 @@
     margin-top: 0.5rem;
   }
 
+  .navbar .nav-menu a.nav-cta,
+  .navbar .nav-menu a.nav-cta:hover,
+  .navbar .nav-menu a.nav-cta.active,
+  .navbar-black-text.navbar-on-light .nav-menu a.nav-cta,
+  .navbar-on-light .nav-menu a.nav-cta:hover {
+    color: white;
+  }
+
   .nav-menu .nav-cta {
     justify-content: center;
     width: 100%;

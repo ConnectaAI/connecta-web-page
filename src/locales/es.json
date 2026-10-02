@@ -78,7 +78,7 @@
     "titleLine1": "Tu clínica",
     "titleLine2": "en un solo lugar",
     "subtitle": "Administra tu clínica y toma decisiones inteligentes. Todo integrado, todo simple.",
-    "cta": "Unirme a la waitlist",
+    "cta": "Solicitar Demo",
     "ctaSecondary": "Conocer más",
     "feature1": "Fácil de usar",
     "feature2": "Configúralo en 5 minutos",
@@ -139,5 +139,15 @@
     "tagline": "Una empresa de tecnología.",
     "madeIn": "Hecho en Guatemala",
     "rights": "Todos los derechos reservados."
+  },
+  "seo": {
+    "home": {
+      "title": "Connecta — Software a medida y soluciones con IA en Guatemala",
+      "description": "Construimos el software que transforma tu operación: desarrollo web, integración de IA, análisis de datos y apps a la medida para empresas."
+    },
+    "medassistant": {
+      "title": "MedAssistant — Software de gestión para clínicas | Connecta",
+      "description": "Administra tu clínica y toma decisiones inteligentes con MedAssistant. Todo integrado, todo simple. Solicita una demo."
+    }
   }
 }

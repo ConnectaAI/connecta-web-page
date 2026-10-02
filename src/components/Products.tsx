@@ -1,11 +1,12 @@
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Reveal from './Reveal';
+import { localizedPath } from '../lib/routes';
 import dashboardImage from '../assets/dashboard.jpg';
 import '../styles/Products.css';
 
 function Products() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   return (
     <section id="products" className="products">
@@ -18,7 +19,7 @@ function Products() {
           <span className="product-feature-badge">{t('products.medassistant.badge')}</span>
           <h3 className="product-feature-huge">{t('products.medassistant.title')}</h3>
           <p className="product-feature-sub">{t('products.medassistant.description')}</p>
-          <Link to="/medassistant" className="product-feature-link">
+          <Link to={localizedPath('/medassistant', i18n.language === 'en' ? 'en' : 'es')} className="product-feature-link">
             {t('products.medassistant.cta')}
             <span className="product-feature-link-arrow">→</span>
           </Link>

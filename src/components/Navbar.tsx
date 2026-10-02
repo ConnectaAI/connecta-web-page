@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Link, useLocation } from 'react-router-dom';
 import Logo from './Logo';
 import LanguageSwitcher from './LanguageSwitcher';
+import { langFromPath, localizedPath, stripLang } from '../lib/routes';
 import '../styles/Navbar.css';
 
 // Height (in px) the fixed navbar occupies from the top of the viewport —
@@ -20,6 +21,9 @@ function Navbar() {
   const [isOverLight, setIsOverLight] = useState<boolean>(true);
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const location = useLocation();
+  const lng = langFromPath(location.pathname);
+  const basePath = stripLang(location.pathname);
+  const homePath = localizedPath('/', lng);
 
   // Full-width bar at the top of the page, floating pill once scrolled —
   // same behavior on every screen size and every route.
@@ -74,7 +78,7 @@ function Navbar() {
 
     observer.observe(heroEl);
     return () => observer.disconnect();
-  }, [location.pathname]);
+  }, [basePath]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -88,8 +92,8 @@ function Navbar() {
     e.preventDefault();
 
     // If we're not on the home page, navigate to home first
-    if (location.pathname !== '/') {
-      window.location.href = `/#${id}`;
+    if (basePath !== '/') {
+      window.location.href = `${homePath}#${id}`;
       return;
     }
 
@@ -102,11 +106,11 @@ function Navbar() {
 
   return (
     <nav
-      className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${isOverLight ? 'navbar-on-light' : ''} ${location.pathname === '/' ? 'navbar-black-text' : ''}`}
+      className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${isOverLight ? 'navbar-on-light' : ''} ${basePath === '/' ? 'navbar-black-text' : ''}`}
     >
       <div className="container">
         <div className="logo">
-          <Link to="/">
+          <Link to={homePath}>
             <Logo className="logo-image" />
           </Link>
         </div>
@@ -114,7 +118,7 @@ function Navbar() {
           <li>
             <a
               href="#home"
-              className={location.pathname === '/' ? 'active' : ''}
+              className={basePath === '/' ? 'active' : ''}
               onClick={(e) => scrollToSection(e, 'home')}
             >
               {t('nav.home')}
@@ -122,8 +126,8 @@ function Navbar() {
           </li>
           <li>
             <Link
-              to="/medassistant"
-              className={location.pathname === '/medassistant' ? 'active' : ''}
+              to={localizedPath('/medassistant', lng)}
+              className={basePath === '/medassistant' ? 'active' : ''}
               onClick={closeMenu}
             >
               {t('nav.medassistant')}
