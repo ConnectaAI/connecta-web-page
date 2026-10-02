@@ -35,9 +35,17 @@ function Hero() {
   const { t } = useTranslation();
   const shouldReduceMotion = useReducedMotion();
 
-  const scrollToContact = (e: MouseEvent<HTMLAnchorElement>) => {
+  const scrollToPreview = (e: MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     const element = document.getElementById('preview');
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  const scrollToContact = (e: MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const element = document.getElementById('contact');
     if (element) {
       element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
@@ -61,11 +69,11 @@ function Hero() {
         </m.h1>
         <m.p className="hero-subtitle" variants={itemVariants}>{t('hero.subtitle')}</m.p>
         <m.div className="hero-buttons" variants={itemVariants}>
-          <a href="https://form.typeform.com/to/JOG8UsAA" className="hero-btn hero-btn-primary" target="_blank" rel="noopener noreferrer">
+          <a className="hero-btn hero-btn-primary" onClick={scrollToContact}>
             {t('hero.cta')}
             <span className="hero-btn-arrow">→</span>
           </a>
-          <a href="#contact" className="hero-btn hero-btn-secondary" onClick={scrollToContact}>
+          <a className="hero-btn hero-btn-secondary" onClick={scrollToPreview}>
             {t('hero.ctaSecondary')}
           </a>
         </m.div>
