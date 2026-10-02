@@ -6,7 +6,7 @@
   "homepage": "https://connectaia.com",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc --noEmit && vite build && vite build --ssr src/entry-server.tsx --outDir dist/server && node scripts/prerender.mjs",
     "lint": "eslint .",
     "preview": "vite preview",
     "predeploy": "npm run build",

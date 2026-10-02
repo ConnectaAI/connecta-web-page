@@ -139,5 +139,15 @@
     "tagline": "A tech company.",
     "madeIn": "Made in Guatemala",
     "rights": "All rights reserved."
+  },
+  "seo": {
+    "home": {
+      "title": "Connecta — Custom software and AI solutions from Guatemala",
+      "description": "We build the software that transforms your operation: web development, AI integration, data analytics and custom apps for businesses."
+    },
+    "medassistant": {
+      "title": "MedAssistant — Clinic management software | Connecta",
+      "description": "Manage your clinic and make intelligent decisions with MedAssistant. All integrated, all simple. Request a demo."
+    }
   }
 }
