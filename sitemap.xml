@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://connectaia.com/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectaia.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectaia.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectaia.com/" />
+  </url>
+  <url>
+    <loc>https://connectaia.com/en/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectaia.com/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectaia.com/en/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectaia.com/" />
+  </url>
+  <url>
+    <loc>https://connectaia.com/medassistant/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectaia.com/medassistant/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectaia.com/en/medassistant/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectaia.com/medassistant/" />
+  </url>
+  <url>
+    <loc>https://connectaia.com/en/medassistant/</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://connectaia.com/medassistant/" />
+    <xhtml:link rel="alternate" hreflang="en" href="https://connectaia.com/en/medassistant/" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://connectaia.com/medassistant/" />
+  </url>
+</urlset>
