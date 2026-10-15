@@ -1,0 +1,104 @@
+/* Privacy policy and terms of service: a single readable column on the
+   warm-neutral surface. The navbar is fixed, so the page clears it. */
+.legal {
+  background: var(--stone-25);
+  color: var(--stone-800);
+  padding: 8rem 1.5rem 5rem;
+}
+
+.legal-container {
+  max-width: 46rem;
+  margin: 0 auto;
+  font-family: var(--font-ui);
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.legal h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 2.75rem);
+  line-height: 1.15;
+  color: var(--stone-900);
+  margin-bottom: 0.75rem;
+}
+
+.legal h2 {
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  line-height: 1.3;
+  color: var(--stone-900);
+  margin: 2.5rem 0 0.75rem;
+  scroll-margin-top: 7rem;
+}
+
+.legal p,
+.legal ul,
+.legal .legal-table-wrap {
+  margin-bottom: 1rem;
+}
+
+.legal ul {
+  padding-left: 1.25rem;
+}
+
+.legal li + li {
+  margin-top: 0.5rem;
+}
+
+.legal a {
+  color: var(--primary-color);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+
+.legal-updated {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--stone-600);
+  margin-bottom: 1.5rem;
+}
+
+.legal-note {
+  font-size: 0.9rem;
+  color: var(--stone-600);
+  border-left: 3px solid var(--stone-200);
+  padding-left: 0.75rem;
+}
+
+.legal-table-wrap {
+  overflow-x: auto;
+}
+
+.legal table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.legal th,
+.legal td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--stone-200);
+}
+
+.legal thead th {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--stone-600);
+}
+
+.legal tbody th {
+  font-weight: 600;
+  width: 32%;
+}
+
+@media (max-width: 768px) {
+  .legal {
+    padding: 6.5rem 1rem 3.5rem;
+  }
+}
