@@ -261,6 +261,26 @@ body {
   color: var(--stone-400);
 }
 
+.footer-links {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  font-family: var(--font-ui);
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+
+.footer-links a {
+  color: var(--stone-600);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.footer-links a:hover {
+  color: var(--stone-900);
+}
+
 .footer-content {
   display: flex;
   justify-content: center;

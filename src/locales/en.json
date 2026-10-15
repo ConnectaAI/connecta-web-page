@@ -138,7 +138,9 @@
   "footer": {
     "tagline": "A tech company.",
     "madeIn": "Made in Guatemala",
-    "rights": "All rights reserved."
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service"
   },
   "seo": {
     "home": {
@@ -148,6 +150,14 @@
     "medassistant": {
       "title": "MedAssistant — Clinic management software | Connecta",
       "description": "Manage your clinic and make intelligent decisions with MedAssistant. All integrated, all simple. Request a demo."
+    },
+    "privacy": {
+      "title": "Privacy Policy | Connecta",
+      "description": "How Connecta handles data in its WhatsApp assistant: what data we use, who we share it with and how to request deletion."
+    },
+    "terms": {
+      "title": "Terms of Service | Connecta",
+      "description": "Terms of use for Connecta's WhatsApp assistant and inbox for businesses, organizations and professionals."
     }
   }
 }

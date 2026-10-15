@@ -5,11 +5,14 @@ import { useLocation } from 'react-router-dom';
 // clicking a link while scrolled down on one page lands at that same pixel
 // offset on the next page instead of its top.
 function ScrollToTop() {
-  const { pathname } = useLocation();
+  const { pathname, hash } = useLocation();
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+    // Honor in-page anchors (e.g. /privacidad#eliminacion-de-datos).
+    const target = hash ? document.getElementById(decodeURIComponent(hash.slice(1))) : null;
+    if (target) target.scrollIntoView();
+    else window.scrollTo(0, 0);
+  }, [pathname, hash]);
 
   return null;
 }
