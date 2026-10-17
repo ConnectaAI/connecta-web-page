@@ -1,7 +1,7 @@
 import { MouseEvent } from 'react';
 import { useTranslation } from 'react-i18next';
 import { m, useReducedMotion, type Variants } from 'motion/react';
-import previewImage from '../assets/preview.png';
+import previewImage from '../assets/preview.webp';
 import '../styles/Hero.css';
 
 const easeOutExpo = [0.16, 1, 0.3, 1] as const;
@@ -59,41 +59,45 @@ function Hero() {
         animate="visible"
         variants={containerVariants}
       >
-        <m.div className="hero-badge" variants={itemVariants}>
-          {t('hero.badge')}
-        </m.div>
-        <m.h1 className="hero-title" variants={itemVariants}>
-          {t('hero.titleLine1')}
-          <br />
-          {t('hero.titleLine2')}
-        </m.h1>
-        <m.p className="hero-subtitle" variants={itemVariants}>{t('hero.subtitle')}</m.p>
-        <m.div className="hero-buttons" variants={itemVariants}>
-          <a className="hero-btn hero-btn-primary" onClick={scrollToContact}>
-            {t('hero.cta')}
-            <span className="hero-btn-arrow">→</span>
-          </a>
-          <a className="hero-btn hero-btn-secondary" onClick={scrollToPreview}>
-            {t('hero.ctaSecondary')}
-          </a>
-        </m.div>
-        <m.div className="hero-stats" variants={itemVariants}>
-          <div className="hero-stat">
-            <span className="hero-stat-value">5 min</span>
-            <span className="hero-stat-label">{t('hero.feature2')}</span>
-          </div>
-          <div className="hero-stat">
-            <span className="hero-stat-value">100%</span>
-            <span className="hero-stat-label">{t('hero.feature1')}</span>
-          </div>
-        </m.div>
-        <m.div className="hero-screenshot-wrapper" variants={screenshotVariants}>
+        <div className="hero-copy">
+          <m.div className="hero-badge" variants={itemVariants}>
+            {t('hero.badge')}
+          </m.div>
+          <m.h1 className="hero-title" variants={itemVariants}>
+            {t('hero.titleLine1')}
+            <br />
+            {t('hero.titleLine2')}
+          </m.h1>
+          <m.p className="hero-subtitle" variants={itemVariants}>{t('hero.subtitle')}</m.p>
+          <m.div className="hero-buttons" variants={itemVariants}>
+            <a className="hero-btn hero-btn-primary" onClick={scrollToContact}>
+              {t('hero.cta')}
+              <span className="hero-btn-arrow">→</span>
+            </a>
+            <a className="hero-btn hero-btn-secondary" onClick={scrollToPreview}>
+              {t('hero.ctaSecondary')}
+            </a>
+          </m.div>
+          <m.div className="hero-stats" variants={itemVariants}>
+            <div className="hero-stat">
+              <span className="hero-stat-value">5 min</span>
+              <span className="hero-stat-label">{t('hero.feature2')}</span>
+            </div>
+            <div className="hero-stat">
+              <span className="hero-stat-value">100%</span>
+              <span className="hero-stat-label">{t('hero.feature1')}</span>
+            </div>
+          </m.div>
+        </div>
+        <m.div className="hero-visual" variants={screenshotVariants}>
           <div className="hero-screenshot-glow"></div>
-          <img
-            src={previewImage}
-            alt={t('preview.imageAlt')}
-            className="hero-screenshot"
-          />
+          <div className="hero-screenshot-float">
+            <img
+              src={previewImage}
+              alt={t('preview.imageAlt')}
+              className="hero-screenshot"
+            />
+          </div>
         </m.div>
       </m.div>
     </section>

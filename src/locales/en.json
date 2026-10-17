@@ -77,7 +77,7 @@
     "badge": "Intelligent Clinical Management",
     "titleLine1": "Your clinic",
     "titleLine2": "One place",
-    "subtitle": "The software that would allow you to manage your clinic and make intelligent decisions. All integrated, all simple.",
+    "subtitle": "Manage appointments, patients, sales and more.",
     "cta": "Request Demo",
     "ctaSecondary": "Learn More",
     "feature1": "Easy to use",
@@ -85,8 +85,8 @@
     "imageAlt": "Doctor using tablet in a modern and bright clinic"
   },
   "preview": {
-    "title": "Your Medical Ecosystem, Unified and Intelligent",
-    "description": "An interface designed for humans, powered by data. Visualize everything that matters at a glance.",
+    "title": "Medassistant",
+    "description": "An interface built for everyday work.",
     "imageAlt": "Connecta Dashboard Preview"
   },
   "features": {
@@ -94,13 +94,13 @@
       "visitSummaries": {
         "badge": "Direct Communication",
         "title": "Automated Visit Summaries",
-        "description": "Instantly send a complete visit summary to your patient's email after the consultation. Improve patient adherence and keep them informed with a single click.",
+        "description": "Send a complete visit summary to your patient's email after the appointment. Informed patients in a single click.",
         "imageAlt": "Automated email summary interface"
       },
       "profileAccess": {
         "badge": "Quick Access",
-        "title": "Instant Profile Access",
-        "description": "Specific patient details are just a keystroke away. Access full history, allergies, and notes in seconds without digging through physical files.",
+        "title": "Instant access to the clinical history",
+        "description": "Patient-specific details. Access the full history, allergies and notes in seconds without digging through paper files.",
         "imageAlt": "Patient profile search interface"
       },
       "paymentManagement": {
@@ -109,6 +109,39 @@
         "description": "Handle clinic finances with ease. Record full or partial payments, track outstanding balances, and manage invoices directly within the patient's file.",
         "imageAlt": "Payment management interface"
       }
+    }
+  },
+  "whatsapp": {
+    "eyebrow": "WhatsApp assistant",
+    "badge": "Coming soon",
+    "title": "Answer your patients on WhatsApp, even when the clinic is closed",
+    "subtitle": "The AI assistant answers your patients' most common questions in seconds, and your team steps in whenever needed. Never miss a message.",
+    "items": {
+      "answers": {
+        "title": "Answers the usual questions",
+        "description": "Hours, services, prices, payment methods and location, using the information you loaded. Your patients get a reply at any hour."
+      },
+      "schedule": {
+        "title": "Coordinates appointments",
+        "description": "You'll be able to book and coordinate appointments directly in your clinic's calendar, with no phone calls or back and forth."
+      },
+      "control": {
+        "title": "You stay in control",
+        "description": "Take over any conversation whenever you want, reply from the same inbox and hand it back to the assistant when you're done. You can also turn it off or choose which topics it answers."
+      }
+    },
+    "chat": {
+      "header": "Your clinic",
+      "status": "Assistant active",
+      "statusTeam": "Your team is replying",
+      "ai": "AI assistant",
+      "m1": "Hi, what time do you open tomorrow?",
+      "m2": "Hi! Tomorrow we're open from 8:00 to 17:00. Would you like me to share the location and payment methods?",
+      "m3": "My chest hurts a lot today, what can I take?",
+      "m4": "That needs a person's attention. I've already alerted our team so they can write to you right away.",
+      "handoff": "Your team took over the conversation",
+      "m5": "Hi, this is the front desk. Tell us how you're feeling and we'll help you right now.",
+      "typing": "The assistant is typing"
     }
   },
   "contact": {

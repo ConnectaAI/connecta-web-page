@@ -2,6 +2,7 @@ import { m, useReducedMotion, type Variants } from 'motion/react';
 import FeatureBadge from './FeatureBadge';
 
 interface FeatureRowProps {
+  index: number;
   badgeText: string;
   title: string;
   description: string;
@@ -15,6 +16,12 @@ const easeOutExpo = [0.16, 1, 0.3, 1] as const;
 const rowVariants: Variants = {
   hidden: {},
   visible: { transition: { staggerChildren: 0.1 } },
+};
+
+// Hairline above each row draws in from the left as the row enters.
+const ruleVariants: Variants = {
+  hidden: { scaleX: 0 },
+  visible: { scaleX: 1, transition: { duration: 0.8, ease: easeOutExpo } },
 };
 
 // Text and image slide in from opposite sides, toward each other — direction
@@ -34,6 +41,7 @@ function imageVariants(imageLeft: boolean): Variants {
 }
 
 function FeatureRow({
+  index,
   badgeText,
   title,
   description,
@@ -53,8 +61,9 @@ function FeatureRow({
       viewport={{ once: true, margin: '-80px' }}
       variants={rowVariants}
     >
+      <m.span className="feature-rule" aria-hidden="true" variants={ruleVariants} />
       <div className="feature-content">
-        <FeatureBadge text={badgeText} variants={text} />
+        <FeatureBadge index={index} text={badgeText} variants={text} />
         <m.h3 className="feature-title" variants={text}>{title}</m.h3>
         <m.p className="feature-description" variants={text}>{description}</m.p>
       </div>

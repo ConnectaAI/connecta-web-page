@@ -77,7 +77,7 @@
     "badge": "Gestión de Clínica Inteligente",
     "titleLine1": "Tu clínica",
     "titleLine2": "en un solo lugar",
-    "subtitle": "Administra tu clínica y toma decisiones inteligentes. Todo integrado, todo simple.",
+    "subtitle": "Administra citas, pacientes, ventas y más.",
     "cta": "Solicitar Demo",
     "ctaSecondary": "Conocer más",
     "feature1": "Fácil de usar",
@@ -85,8 +85,8 @@
     "imageAlt": "Doctora usando tablet en una clínica moderna y luminosa"
   },
   "preview": {
-    "title": "Tu Ecosistema Médico, Unificado e Inteligente",
-    "description": "Una interfaz diseñada para humanos, potenciada por datos. Visualiza todo lo que importa en un solo vistazo.",
+    "title": "Medassistant",
+    "description": "Una interfaz pensada para el día a día.",
     "imageAlt": "Vista previa del Dashboard de Connecta"
   },
   "features": {
@@ -94,13 +94,13 @@
       "visitSummaries": {
         "badge": "Comunicación Directa",
         "title": "Resúmenes de Visita Automatizados",
-        "description": "Envía instantáneamente un resumen completo de la visita al correo electrónico de tu paciente después de la consulta. Mejora la adherencia del paciente y mantenlo informado con un solo clic.",
+        "description": "Envía un resumen completo de la visita al correo electrónico de tu paciente después de la consulta. Pacientes informados con un solo clic.",
         "imageAlt": "Interfaz de resumen de email automatizado"
       },
       "profileAccess": {
         "badge": "Acceso Rápido",
-        "title": "Acceso Instantáneo a Perfiles",
-        "description": "Los detalles específicos del paciente están a un solo click de distancia. Accede al historial completo, alergias y notas en segundos sin buscar en archivos físicos.",
+        "title": "Acceso instantáneo al historial clínico",
+        "description": "Los detalles específicos del paciente. Accede al historial completo, alergias y notas en segundos sin buscar en archivos físicos.",
         "imageAlt": "Interfaz de búsqueda de perfil de paciente"
       },
       "paymentManagement": {
@@ -109,6 +109,39 @@
         "description": "Maneja las finanzas de la clínica con facilidad. Registra pagos totales o parciales, rastrea saldos pendientes y gestiona facturas directamente dentro del archivo del paciente.",
         "imageAlt": "Interfaz de gestión de pagos"
       }
+    }
+  },
+  "whatsapp": {
+    "eyebrow": "Asistente de WhatsApp",
+    "badge": "Próximamente",
+    "title": "Atiende a tus pacientes por WhatsApp, también cuando la clínica está cerrada",
+    "subtitle": "El asistente con IA responde las dudas más comunes de tus pacientes en segundos, y tu equipo toma la conversación cuando hace falta. Sin perder ningún mensaje.",
+    "items": {
+      "answers": {
+        "title": "Responde las dudas de siempre",
+        "description": "Horarios, servicios, precios, formas de pago y ubicación, con la información que tú cargaste. Tus pacientes reciben respuesta a cualquier hora."
+      },
+      "schedule": {
+        "title": "Coordina citas",
+        "description": "Podrás agendar y coordinar citas directamente en la agenda de tu clínica, sin llamadas ni idas y vueltas."
+      },
+      "control": {
+        "title": "Tú tomas el control",
+        "description": "Toma cualquier conversación cuando quieras, responde desde la misma bandeja y devuélvela al asistente al terminar. También puedes apagarlo o elegir qué temas contesta."
+      }
+    },
+    "chat": {
+      "header": "Tu clínica",
+      "status": "Asistente activo",
+      "statusTeam": "Tu equipo responde",
+      "ai": "Asistente IA",
+      "m1": "Hola, ¿a qué hora abren mañana?",
+      "m2": "¡Hola! Mañana atendemos de 8:00 a 17:00. ¿Quieres que te comparta la ubicación y las formas de pago?",
+      "m3": "Hoy me duele mucho el pecho, ¿qué puedo tomar?",
+      "m4": "Eso necesita atención de una persona. Ya avisé a nuestro equipo para que te escriba de inmediato.",
+      "handoff": "Tu equipo tomó la conversación",
+      "m5": "Hola, te escribe recepción. Cuéntanos cómo te sientes y te ayudamos ahora mismo.",
+      "typing": "El asistente está escribiendo"
     }
   },
   "contact": {

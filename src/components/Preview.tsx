@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import '../styles/Preview.css';
-import previewImage from '../assets/preview.png';
+import previewImage from '../assets/landing.webp';
 import Reveal from './Reveal';
 
 function Preview() {
