@@ -3,9 +3,9 @@ import { useTranslation } from 'react-i18next';
 import FeatureRow from './FeatureRow';
 import '../styles/Features.css';
 
-import feature01 from '../assets/01_features.png';
-import feature02 from '../assets/02_features.png';
-import feature03 from '../assets/03_features.png';
+import feature01 from '../assets/01_features.webp';
+import feature02 from '../assets/02_features.webp';
+import feature03 from '../assets/03_features.webp';
 
 const Features: React.FC = () => {
   const { t } = useTranslation();
@@ -43,6 +43,7 @@ const Features: React.FC = () => {
         {featuresData.map((feature, index) => (
           <FeatureRow
             key={index}
+            index={index + 1}
             badgeText={feature.badgeText}
             title={feature.title}
             description={feature.description}
