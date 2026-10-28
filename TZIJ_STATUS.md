@@ -4,7 +4,7 @@
 
 ## Qué es
 
-Tzij es el laboratorio de IA generativa de Guatemala, una iniciativa de Connecta. Su meta es construir el primer LLM del país con datos que pertenecen a los pueblos de Guatemala. El primer paso es formar un consorcio para reunir y cuidar datos en idiomas mayas, con las comunidades como dueñas de la materia prima de la IA.
+Tzij es el laboratorio de IA generativa de Connecta, una iniciativa con base en Guatemala. Su meta es construir el primer LLM maya con datos que pertenecen a los pueblos que los aportan. La cultura maya se extiende más allá de Guatemala, por eso el texto del sitio no lo limita a un país. El primer paso es formar un consorcio para reunir y cuidar datos en idiomas mayas, con las comunidades como dueñas de la materia prima de la IA.
 
 El consorcio parte de cero: hoy es una iniciativa, no hay socios, protocolos ni pilotos confirmados.
 
@@ -19,7 +19,7 @@ El consorcio parte de cero: hoy es una iniciativa, no hay socios, protocolos ni 
 | Textos en español e inglés | Hecho |
 | Paleta `--tzij-*` en `src/App.css` y wrapper `.tzij-theme` | Hecho |
 | SEO (`PAGES`, `seo.tzij` es/en) y sitemap | Hecho |
-| Hero con relieve de Qʼumarkaj (diseño 3m) | En el código, sin commit; diseño aprobado y confirmado por el responsable (2026-10-20); falta la consulta con personas o autoridades kʼicheʼ |
+| Hero con relieve de Qʼumarkaj (diseño 3m) | En el código, sin commit; diseño aprobado y confirmado por el responsable (2026-10-20); consultado con una persona kʼicheʼ (2026-10-27) |
 | Navbar, contacto y footer con tema Tzij (excepción confirmada 2026-10-20) | Hecho en el código, diseño aprobado el 2026-10-20: `navbar-tzij` en `Navbar.css`, `Contact variant="tzij"`, `TzijFooter` con los perfiles de relieve (`src/lib/tzijRidges.ts`, `src/assets/tzij-footer-grain.webp`) |
 | Secciones por qué, consorcio, hacia dónde vamos y contacto (diseño E: grano, tipografía grande, numerales, perfil de elevación, kit gráfico) | Hecho en el código el 2026-10-20 |
 | Favicon e imagen para redes (Kit de identidad en el canvas) | En pausa: no se publican hasta que la persona responsable lo decida |
@@ -50,8 +50,9 @@ La página es informativa: no tiene botón de acción en el hero.
 - Formulario de contacto: el que ya existe.
 - No se menciona el tamaño del equipo en ningún texto.
 
-## Revisión cultural (abierta)
+## Revisión cultural
 
+- 2026-10-27: una persona kʼicheʼ revisó el diseño y confirmó que estaba bien. Recomendó que los textos no se refieran solo a Guatemala, porque la cultura maya se extiende más allá. El responsable actualizó los textos del sitio (es/en) y se verificaron: ya no mencionan a Guatemala en las páginas de Tzij. Es una consulta con una sola persona: no sustituye la consulta con autoridades o comunidades kʼicheʼ, que sigue recomendada si el proyecto crece.
 - 2026-10-20: el responsable aprobó la parte cultural (marcador de Qʼumarkaj en hero, perfil de la hoja de ruta y footer). Sigue abierta la consulta con personas hablantes o autoridades kʼicheʼ antes de publicar.
 - El hero ya no usa la cruz maya ni los cuatro rumbos (diseño anterior descartado). Ahora marca el Templo de Tohil sobre el relieve de Qʼumarkaj; el diseño sigue en revisión en el canvas. Pendiente: aprobación final del responsable y revisión por personas hablantes o autoridades kʼicheʼ antes de publicar.
 
@@ -80,7 +81,7 @@ La página es informativa: no tiene botón de acción en el hero.
 ## Reglas de contenido
 
 - No afirmar cifras, socios, protocolos o pilotos sin confirmación.
-- "El primer LLM de Guatemala" se presenta como meta, no como hecho.
+- "El primer LLM maya" se presenta como meta, no como hecho.
 - Ver `AGENTS.md` para colores, tipografía y límites culturales.
 
 ## Hero

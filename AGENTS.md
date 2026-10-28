@@ -42,7 +42,7 @@ Tzij pages follow the editorial style of the Connecta landing, not a separate vi
 
 ## Graphic kit (approved 2026-10-20)
 
-The identity is the territory as data: every line and point on a Tzij page is real Guatemalan terrain (Copernicus DEM GLO-30), never decoration.
+The identity is the territory as data: every line and point on a Tzij page is real terrain (Copernicus DEM GLO-30), never decoration.
 
 - **Two strokes:** a fine line (1px) and a master line (2px), like contour and index contours. Used for rules, underlines, borders and the relief itself.
 - **Marca de cota:** a single `--tzij-maiz` point with a ring, at most one per view (hero, stage 01, footer). It is also the hover state of the consortium rows. Never use maíz as text on light backgrounds.
@@ -96,6 +96,7 @@ Tzij works with Mayan peoples' languages and cosmovision, so cultural references
 - When a request involves one of them: propose the design, say exactly what it references and how, and wait for confirmation before it is implemented in code or marked as final.
 - Prefer a structural or abstract reference over a literal reproduction. Do not copy an existing emblem, flag or glyph as is.
 - Do not use stereotyped imagery of Indigenous people or decorative "Mayan-style" ornament.
+- Copy must not tie Tzij to a single country: Mayan peoples and languages extend beyond Guatemala, across Mexico, Belize, Honduras, El Salvador, the United States and wherever there is a Mayan population (feedback from a Kʼicheʼ reviewer, 2026-10-27). Say "Mayan", "the region" or "the peoples", not "Guatemala", unless it is a Connecta fact (office, made in) or the data source.
 - Do not claim cultural accuracy. Flag that references should be reviewed by Mayan speakers or community advisors, and record the open review in `TZIJ_STATUS.md`.
 
 ## Practical constraints
