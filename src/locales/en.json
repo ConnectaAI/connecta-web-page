@@ -4,7 +4,8 @@
     "medassistant": "medassistant",
     "about": "About",
     "services": "Services",
-    "getInTouch": "Get in touch"
+    "getInTouch": "Get in touch",
+    "tzij": "Tzij"
   },
   "companyHero": {
     "corner": "Guatemala, C.A.",
@@ -71,6 +72,13 @@
       "description": "Medassistant gives doctors and clinic managers control of their operation. From billing patients, generating invoices, managing payments, to following up on appointments and patients, all in one place.",
       "cta": "Visit Medassistant",
       "mockupCaption": "medassistant — dashboard preview"
+    },
+    "tzij": {
+      "badge": "AI lab",
+      "title": "Tzij",
+      "meaning": "K'iche': word, speech",
+      "description": "Generative AI lab. An initiative to gather data in Mayan languages, with the communities as owners of their data.",
+      "cta": "Meet Tzij"
     }
   },
   "hero": {
@@ -191,6 +199,63 @@
     "terms": {
       "title": "Terms of Service | Connecta",
       "description": "Terms of use for Connecta's WhatsApp assistant and inbox for businesses, organizations and professionals."
+    },
+    "tzij": {
+      "title": "Tzij — Generative AI lab | Connecta",
+      "description": "Tzij is a Connecta initiative to form a consortium that gathers and safeguards data in Mayan languages, with the communities as owners of their data."
+    }
+  },
+  "tzij": {
+    "hero": {
+      "meaning": "In K'iche', tzij means word and speech.",
+      "phrase": "Generative AI lab",
+      "intro": "Tzij is an initiative to bring together data in Mayan languages, advancing technology development together with the peoples who own them.",
+      "mapCaption": "Relief of the surroundings of Q'umarkaj, Quiché. Data: Copernicus DEM GLO-30.",
+      "mapLabel": "Temple of Tohil"
+    },
+    "why": {
+      "label": "Why",
+      "title": "AI is a key tool for the <em>development</em> <strong>of society.</strong>",
+      "text": "We want to place the region at the forefront of technology, and to have a say in how models and the data that feeds them are developed."
+    },
+    "consortium": {
+      "label": "The consortium",
+      "title": "Before the model, the data. Before the data, <em>the agreement</em>.",
+      "text": "Tzij begins as an initiative to form a consortium that gathers and safeguards data in Mayan languages. The peoples keep ownership of their data and decide how it is used.",
+      "principles": {
+        "ownership": {
+          "title": "Community ownership",
+          "text": "The data belongs to the peoples who contribute it. They decide who uses it and for what."
+        },
+        "consent": {
+          "title": "Prior consent",
+          "text": "Free and informed, in each community's language, before any data is gathered."
+        },
+        "benefit": {
+          "title": "Shared benefit",
+          "text": "What is built with this data returns value to the communities it comes from."
+        }
+      }
+    },
+    "roadmap": {
+      "label": "Where we're headed",
+      "title": "Our goal: the first Mayan LLM, built on <em>data it owns</em>.",
+      "stage": "Stage",
+      "stages": {
+        "one": "Form the consortium",
+        "two": "Gather and govern the data",
+        "three": "Train the first models",
+        "four": "Build products on top of them"
+      },
+      "caption": "Elevation profile of the highlands at 15.03° N. Data: Copernicus DEM GLO-30."
+    },
+    "contact": {
+      "title": "Let's talk about Tzij",
+      "emailPlaceholder": "you@email.com",
+      "messagePlaceholder": "Tell us what interests you about Tzij..."
+    },
+    "footer": {
+      "credit": "Relief: produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. The organisations in charge of the Copernicus programme by law or by delegation do not incur any liability for any use of the Copernicus WorldDEM-30."
     }
   }
 }

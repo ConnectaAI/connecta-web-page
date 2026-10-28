@@ -4,7 +4,8 @@
     "medassistant": "medassistant",
     "about": "Nosotros",
     "services": "Servicios",
-    "getInTouch": "Contáctanos"
+    "getInTouch": "Contáctanos",
+    "tzij": "Tzij"
   },
   "companyHero": {
     "corner": "Guatemala, C.A.",
@@ -71,6 +72,13 @@
       "description": "Medassistant le da a doctores y administradores el control de su operación. Desde cobrar a pacientes, generar facturas, gestionar pagos, y dar seguimiento, todo en un solo lugar.",
       "cta": "Visita Medassistant",
       "mockupCaption": "Medassistant — vista previa del panel"
+    },
+    "tzij": {
+      "badge": "Laboratorio de IA",
+      "title": "Tzij",
+      "meaning": "K'iche': palabra, habla",
+      "description": "Laboratorio de IA generativa. Una iniciativa para reunir datos en idiomas mayas, con las comunidades como dueñas de sus datos.",
+      "cta": "Conoce Tzij"
     }
   },
   "hero": {
@@ -191,6 +199,63 @@
     "terms": {
       "title": "Términos de servicio | Connecta",
       "description": "Condiciones de uso del asistente de WhatsApp y la bandeja de Connecta para empresas, organizaciones y profesionales."
+    },
+    "tzij": {
+      "title": "Tzij — Laboratorio de IA generativa | Connecta",
+      "description": "Tzij es una iniciativa de Connecta para formar un consorcio que reúna y proteja datos en idiomas mayas, con las comunidades como dueñas de sus datos."
+    }
+  },
+  "tzij": {
+    "hero": {
+      "meaning": "En K'iche', tzij significa palabra y habla.",
+      "phrase": "Laboratorio de IA generativa",
+      "intro": "Tzij es una iniciativa para reunir datos en idiomas mayas, promoviendo el desarrollo de la tecnología en la región.",
+      "mapCaption": "Relieve de los alrededores de Q'umarkaj, Quiché. Datos: Copernicus DEM GLO-30.",
+      "mapLabel": "Templo de Tohil"
+    },
+    "why": {
+      "label": "Por qué",
+      "title": "La IA es una herramienta clave para el <em>desarrollo</em> <strong>de la sociedad.</strong>",
+      "text": "Queremos posicionar a la región en la vanguardia de la tecnología, y tener decisión sobre el desarrollo de los modelos y de los datos que los alimentan."
+    },
+    "consortium": {
+      "label": "El consorcio",
+      "title": "Antes del modelo, los datos. Antes de los datos, <em>el acuerdo</em>.",
+      "text": "Tzij empieza como una iniciativa para formar un consorcio que reúna y proteja datos en idiomas mayas. Los pueblos conservan la propiedad de sus datos y deciden cómo se usan.",
+      "principles": {
+        "ownership": {
+          "title": "Propiedad comunitaria",
+          "text": "Los datos pertenecen a los pueblos que los aportan. Ellos deciden quién los usa y para qué."
+        },
+        "consent": {
+          "title": "Consentimiento previo",
+          "text": "Libre e informado, en el idioma de cada comunidad, antes de reunir cualquier dato."
+        },
+        "benefit": {
+          "title": "Beneficio compartido",
+          "text": "Lo que se construya con estos datos devuelve valor a las comunidades de las que vienen."
+        }
+      }
+    },
+    "roadmap": {
+      "label": "Hacia dónde vamos",
+      "title": "Nuestra meta: el primer LLM Maya, con <em>datos propios</em>.",
+      "stage": "Etapa",
+      "stages": {
+        "one": "Formar el consorcio",
+        "two": "Reunir y gobernar los datos",
+        "three": "Entrenar los primeros modelos",
+        "four": "Construir productos sobre ellos"
+      },
+      "caption": "Perfil de elevación del altiplano, a 15,03° N. Datos: Copernicus DEM GLO-30."
+    },
+    "contact": {
+      "title": "Hablemos de Tzij",
+      "emailPlaceholder": "tu@correo.com",
+      "messagePlaceholder": "Cuéntanos qué te interesa de Tzij..."
+    },
+    "footer": {
+      "credit": "Relieve: produced using Copernicus WorldDEM-30 © DLR e.V. 2010-2014 and © Airbus Defence and Space GmbH 2014-2018 provided under COPERNICUS by the European Union and ESA; all rights reserved. Las organizaciones a cargo del programa Copernicus, por ley o por delegación, no asumen ninguna responsabilidad por el uso de Copernicus WorldDEM-30."
     }
   }
 }

@@ -106,7 +106,7 @@ function Navbar() {
 
   return (
     <nav
-      className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${isOverLight ? 'navbar-on-light' : ''} ${basePath === '/' ? 'navbar-black-text' : ''}`}
+      className={`navbar ${isScrolled ? 'navbar-scrolled' : ''} ${isOverLight ? 'navbar-on-light' : ''} ${basePath === '/' ? 'navbar-black-text' : ''} ${basePath === '/tzij' ? 'tzij-theme navbar-tzij' : ''}`}
     >
       <div className="container">
         <div className="logo">
@@ -131,6 +131,15 @@ function Navbar() {
               onClick={closeMenu}
             >
               {t('nav.medassistant')}
+            </Link>
+          </li>
+          <li>
+            <Link
+              to={localizedPath('/tzij', lng)}
+              className={basePath === '/tzij' ? 'active' : ''}
+              onClick={closeMenu}
+            >
+              {t('nav.tzij')}
             </Link>
           </li>
           <li className="nav-cta-mobile-item">
