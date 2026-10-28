@@ -16,8 +16,14 @@ const SOCIALS = [
   { key: 'linkedin', href: 'https://www.linkedin.com/company/connectagt', icon: '/linkedin.svg' },
 ] as const;
 
-function Contact() {
+interface ContactProps {
+  // 'tzij' swaps in Tzij's own copy and theme (see AGENTS.md exception).
+  variant?: 'tzij';
+}
+
+function Contact({ variant }: ContactProps) {
   const { t } = useTranslation();
+  const isTzij = variant === 'tzij';
   const [formData, setFormData] = useState<FormData>({
     name: '',
     email: '',
@@ -54,8 +60,8 @@ function Contact() {
           name: formData.name,
           email: formData.email,
           message: formData.message,
-          subject: `Contact Form Message from ${formData.name}`,
-          from_name: 'Connecta Website',
+          subject: `${isTzij ? 'Tzij contact' : 'Contact Form Message'} from ${formData.name}`,
+          from_name: isTzij ? 'Connecta Website (Tzij)' : 'Connecta Website',
           redirect: false
         }),
       });
@@ -92,13 +98,16 @@ function Contact() {
   };
 
   return (
-    <section id="contact" className="contact-section">
+    <section
+      id="contact"
+      className={isTzij ? 'tzij-theme contact-section contact-section--tzij' : 'contact-section'}
+    >
       <div className="contact-container">
         <div className="contact-grid">
           <div className="contact-content">
             <Reveal className="contact-header">
               <span className="contact-label">{t('contact.label')}</span>
-              <h2 className="contact-title">{t('contact.title')}</h2>
+              <h2 className="contact-title">{t(isTzij ? 'tzij.contact.title' : 'contact.title')}</h2>
               <p className="contact-description">
                 {t('contact.description')}{' '}
                 {t('contact.emailNote')}{' '}
@@ -143,7 +152,7 @@ function Contact() {
                   <input
                     type="email"
                     id="email"
-                    placeholder={t('contact.form.emailPlaceholder')}
+                    placeholder={t(isTzij ? 'tzij.contact.emailPlaceholder' : 'contact.form.emailPlaceholder')}
                     value={formData.email}
                     onChange={handleChange}
                     required
@@ -155,7 +164,7 @@ function Contact() {
                   <textarea
                     id="message"
                     rows={5}
-                    placeholder={t('contact.form.messagePlaceholder')}
+                    placeholder={t(isTzij ? 'tzij.contact.messagePlaceholder' : 'contact.form.messagePlaceholder')}
                     value={formData.message}
                     onChange={handleChange}
                     required
