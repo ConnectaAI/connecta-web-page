@@ -72,8 +72,8 @@ La página es informativa: no tiene botón de acción en el hero.
 
 ## Decisiones abiertas
 
-- Redes sociales de Connecta en el contacto de Tzij: se mantienen (el diseño no las mostraba); pendiente decidir si se quitan.
-- El hueco de 48 px sobre el formulario viene de una regla antigua de `App.css` (`.contact-form`). Se corrigió solo en `/tzij`; sigue igual en las páginas de Connecta.
+- Redes sociales de Connecta en el contacto de Tzij: se mantienen por ahora (decisión del 2026-10-27). Cuando existan las redes propias de Tzij se reemplazarán en este contacto.
+- El hueco de 48 px sobre el formulario viene de una regla antigua de `App.css` (`.contact-form`). Se corrigió solo en `/tzij`; sigue igual en las páginas de Connecta; se deja así por ahora (decisión del 2026-10-27).
 - El perfil de elevación de "Hacia dónde vamos" repite el relieve del hero y del footer: confirmar que se lee como coherencia y no como repetición.
 - Los perfiles del footer y de la hoja de ruta están espejados respecto a una vista real hacia el sur desde Qʼumarkaj; se presentan como vista estilizada.
 
@@ -88,3 +88,5 @@ La página es informativa: no tiene botón de acción en el hero.
 - Contornos en `src/lib/tzijRelief.ts` (generados), grano en `src/assets/tzij-grain.webp` (18 KB), estilos del hero y del marcador en `src/styles/Tzij.css`.
 - El pie del mapa ya no dice que la posición es aproximada (texto editado en el diseño); la posición del templo sigue siendo aproximada. Verificar con fuente oficial (IDAEH) y decidir si se restituye la aclaración.
 - Pendiente: crédito formal de Copernicus.
+
+- 2026-10-27: licencia de Copernicus WorldDEM-30 verificada contra el PDF oficial (art. 6): el aviso de datos modificados coincide, y se agregó la frase de no responsabilidad (6c, traducida al español) al crédito del footer. Pendiente menor: el crédito del hero/hoja de ruta lo cita solo como "Copernicus DEM GLO-30" (nombre del producto, no el aviso).
