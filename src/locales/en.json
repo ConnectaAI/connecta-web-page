@@ -76,7 +76,7 @@
     "tzij": {
       "badge": "AI lab",
       "title": "Tzij",
-      "meaning": "K'iche': word, speech",
+      "meaning": "Kʼicheʼ: word, speech",
       "description": "Generative AI lab. An initiative to gather data in Mayan languages, with the communities as owners of their data.",
       "cta": "Meet Tzij"
     }
@@ -202,15 +202,15 @@
     },
     "tzij": {
       "title": "Tzij — Generative AI lab | Connecta",
-      "description": "Tzij is a Connecta initiative to form a consortium that gathers and safeguards data in Mayan languages, with the communities as owners of their data."
+      "description": "Tzij is a Connecta project to gather and safeguard data in Mayan languages, with the communities as owners of their data."
     }
   },
   "tzij": {
     "hero": {
-      "meaning": "In K'iche', tzij means word and speech.",
+      "meaning": "In Kʼicheʼ, tzij means word and speech.",
       "phrase": "Generative AI lab",
       "intro": "Tzij is an initiative to bring together data in Mayan languages, advancing technology development together with the peoples who own them.",
-      "mapCaption": "Relief of the surroundings of Q'umarkaj, Quiché. Data: Copernicus DEM GLO-30.",
+      "mapCaption": "Relief of the surroundings of Qʼumarkaj, Quiché. Data: Copernicus DEM GLO-30.",
       "mapLabel": "Temple of Tohil"
     },
     "why": {
@@ -219,9 +219,9 @@
       "text": "We want to place the region at the forefront of technology, and to have a say in how models and the data that feeds them are developed."
     },
     "consortium": {
-      "label": "The consortium",
+      "label": "The project",
       "title": "Before the model, the data. Before the data, <em>the agreement</em>.",
-      "text": "Tzij begins as an initiative to form a consortium that gathers and safeguards data in Mayan languages. The peoples keep ownership of their data and decide how it is used.",
+      "text": "Tzij begins as a project to gather and safeguard data in Mayan languages. The peoples keep ownership of their data and decide how it is used.",
       "principles": {
         "ownership": {
           "title": "Community ownership",
@@ -242,7 +242,7 @@
       "title": "Our goal: the first Mayan LLM, built on <em>data it owns</em>.",
       "stage": "Stage",
       "stages": {
-        "one": "Form the consortium",
+        "one": "Launch the project",
         "two": "Gather and govern the data",
         "three": "Train the first models",
         "four": "Build products on top of them"

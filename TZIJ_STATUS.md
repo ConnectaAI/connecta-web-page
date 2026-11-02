@@ -1,35 +1,35 @@
 # Tzij — estado del proyecto
 
-Última actualización: 2026-10-20
+Última actualización: 2026-11-02
 
 ## Qué es
 
-Tzij es el laboratorio de IA generativa de Connecta, una iniciativa con base en Guatemala. Su meta es construir el primer LLM maya con datos que pertenecen a los pueblos que los aportan. La cultura maya se extiende más allá de Guatemala, por eso el texto del sitio no lo limita a un país. El primer paso es formar un consorcio para reunir y cuidar datos en idiomas mayas, con las comunidades como dueñas de la materia prima de la IA.
+Tzij es el laboratorio de IA generativa de Connecta, una iniciativa con base en Guatemala. Su meta es construir el primer LLM maya con datos que pertenecen a los pueblos que los aportan. La cultura maya se extiende más allá de Guatemala, por eso el texto del sitio no lo limita a un país. El primer paso es un proyecto para reunir y cuidar datos en idiomas mayas, con las comunidades como dueñas de la materia prima de la IA.
 
-El consorcio parte de cero: hoy es una iniciativa, no hay socios, protocolos ni pilotos confirmados.
+El proyecto parte de cero: hoy es una iniciativa, no hay socios, protocolos ni pilotos confirmados.
 
 ## Sitio web
 
 | Pieza | Estado |
 |---|---|
 | Diseño de la página `/tzij` y de la tarjeta del home | Hecho (canvas de diseño; variante B editorial implementada) |
-| Página `/tzij` y `/en/tzij` en el sitio | Hecho, pendiente de revisión visual |
+| Página `/tzij` y `/en/tzij` en el sitio | Hecho; revisión visual hecha por el responsable (2026-11-02) |
 | Tarjeta de Tzij en la sección Productos del home | Hecho (debajo de la tarjeta de Medassistant) |
 | Enlace en el navbar | Hecho |
 | Textos en español e inglés | Hecho |
 | Paleta `--tzij-*` en `src/App.css` y wrapper `.tzij-theme` | Hecho |
 | SEO (`PAGES`, `seo.tzij` es/en) y sitemap | Hecho |
-| Hero con relieve de Qʼumarkaj (diseño 3m) | En el código, sin commit; diseño aprobado y confirmado por el responsable (2026-10-20); consultado con una persona kʼicheʼ (2026-10-27) |
+| Hero con relieve de Qʼumarkaj (diseño 3m) | Hecho (commit `53d1584`); diseño aprobado y confirmado por el responsable (2026-10-20); consultado con una persona kʼicheʼ (2026-10-27) |
 | Navbar, contacto y footer con tema Tzij (excepción confirmada 2026-10-20) | Hecho en el código, diseño aprobado el 2026-10-20: `navbar-tzij` en `Navbar.css`, `Contact variant="tzij"`, `TzijFooter` con los perfiles de relieve (`src/lib/tzijRidges.ts`, `src/assets/tzij-footer-grain.webp`) |
-| Secciones por qué, consorcio, hacia dónde vamos y contacto (diseño E: grano, tipografía grande, numerales, perfil de elevación, kit gráfico) | Hecho en el código el 2026-10-20 |
-| Favicon e imagen para redes (Kit de identidad en el canvas) | En pausa: no se publican hasta que la persona responsable lo decida |
-| Cambios sin commit | Pendiente de commit |
+| Secciones por qué, el proyecto (antes "el consorcio"), hacia dónde vamos y contacto (diseño E: grano, tipografía grande, perfil de elevación, kit gráfico) | Hecho en el código el 2026-10-20. Numeración de las secciones (01, 02, 03) eliminada el 2026-11-02. "Consorcio" reemplazado por "proyecto" en todos los textos es/en (2026-11-02) |
+| Saltillo `ʼ` (U+02BC) en los textos | Normalizado el 2026-11-02 (Kʼicheʼ, Qʼumarkaj en es/en y en comentarios) |
+| Favicon e imagen para redes (Kit de identidad en el canvas) | Dirección de logo elegida el 2026-10-28: opción B (onda de un trazo maestro que termina en el punto de maíz). Una oscilación, sin anillo y sin la palabra, trazo grueso (decidido el 2026-10-29). El favicon del sitio sigue siendo el de Connecta, porque el sitio es la landing de Connecta (decisión del 2026-11-02); se puede cambiar más adelante. La imagen para redes de Tzij sigue sin visto bueno |
 
 Diseño: https://claude.ai/artifact/HFzGmQtjKydDjyisrcFSSG
 
 ## Contenido de la página
 
-Secciones incluidas: hero, por qué, el consorcio (tres principios: propiedad comunitaria, consentimiento previo, beneficio compartido), hacia dónde vamos (cuatro etapas, solo "Formar el consorcio" en negrita) y el formulario de contacto de Connecta. La sección de idiomas mayas está en pausa (ver Pendiente).
+Secciones incluidas: hero, por qué, el proyecto (tres principios: propiedad comunitaria, consentimiento previo, beneficio compartido), hacia dónde vamos (cuatro etapas, solo "Iniciar el proyecto" en negrita) y el formulario de contacto de Connecta. La sección de idiomas mayas está en pausa (ver Pendiente).
 
 La página es informativa: no tiene botón de acción en el hero.
 
@@ -63,11 +63,11 @@ La página es informativa: no tiene botón de acción en el hero.
 - Los perfiles del footer están espejados respecto a una vista real desde Qʼumarkaj hacia el sur (el este queda a la derecha). Pendiente de decisión: dejarlo como vista estilizada o voltearlo.
 - Las variantes de Tikal (3k, 3l) se descartaron; quedan en el canvas solo como referencia.
 
-## Variante Q'umarkaj (altiplano k'iche')
+## Variante Qʼumarkaj (altiplano kʼicheʼ)
 
-- Relieve real de los alrededores de Q'umarkaj (Utatlán), Quiché, generado con Copernicus DEM GLO-30 (curvas cada 20 m, una más gruesa cada 100 m). Elevación del recorte: 1 798 a 2 241 m; el sitio, a unos 1 992 m.
-- En el hero, el anillo marca la plaza de Q'umarkaj (15.0234 N, 91.1719 O según OpenStreetMap y Wikipedia, coincidentes a unos 15 m), donde según la bibliografía se encuentra el Templo de Tohil. No se encontró una coordenada específica del templo: la posición es aproximada (decenas de metros) y el pie del mapa ya no lo dice (ver pendiente en la sección del hero).
-- Q'umarkaj sigue siendo un lugar ceremonial vivo para el pueblo k'iche'. Antes de publicar: confirmación del responsable, y consulta y aprobación de las comunidades o autoridades k'iche' sobre marcar el sitio y sobre la redacción.
+- Relieve real de los alrededores de Qʼumarkaj (Utatlán), Quiché, generado con Copernicus DEM GLO-30 (curvas cada 20 m, una más gruesa cada 100 m). Elevación del recorte: 1 798 a 2 241 m; el sitio, a unos 1 992 m.
+- En el hero, el anillo marca la plaza de Qʼumarkaj (15.0234 N, 91.1719 O según OpenStreetMap y Wikipedia, coincidentes a unos 15 m), donde según la bibliografía se encuentra el Templo de Tohil. No se encontró una coordenada específica del templo: la posición es aproximada (decenas de metros) y el pie del mapa ya no lo dice (ver pendiente en la sección del hero).
+- Qʼumarkaj sigue siendo un lugar ceremonial vivo para el pueblo kʼicheʼ. Antes de publicar: confirmación del responsable, y consulta y aprobación de las comunidades o autoridades kʼicheʼ sobre marcar el sitio y sobre la redacción.
 
 - El footer repite el marcador de Qʼumarkaj (punto de maíz sobre el perfil). Entra en la misma revisión con personas o autoridades kʼicheʼ.
 

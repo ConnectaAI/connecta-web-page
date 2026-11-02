@@ -2,7 +2,7 @@
 
 Instructions for AI coding agents working in this repository or applying the Tzij brand in other projects. Human-facing rationale lives in `README.md`; this file is the operational rulebook. When the two disagree, the CSS variables defined in `src/App.css` win for values and this file wins for rules.
 
-Status: **v0.3 draft**. Typography, color and the small graphic kit below are defined. Do not invent other identity elements (logo symbols, patterns, illustrations, taglines). Project progress and pending work live in `TZIJ_STATUS.md`.
+Status: **v0.3 draft**. Typography, color and the small graphic kit below are defined. Do not invent other identity elements (patterns, illustrations, taglines). The Tzij mark is the direction chosen on 2026-10-28 (see Graphic kit); do not draw other logo symbols. Project progress and pending work live in `TZIJ_STATUS.md`.
 
 ## Source of truth
 
@@ -36,7 +36,7 @@ Rules:
 
 Tzij pages follow the editorial style of the Connecta landing, not a separate visual language:
 
-- Editorial layout: large Fraunces headlines, generous whitespace, hairline borders, numbered sections (`01`, `02`…) with a small uppercase Geist Mono label, dot-grid backgrounds.
+- Editorial layout: large Fraunces headlines, generous whitespace, hairline borders, a small uppercase Geist Mono label on each section, dot-grid backgrounds. Tzij section labels carry no number (removed 2026-11-02 at the owner's request); do not add `01`, `02`… back.
 - Micro animations in the same spirit as the landing: scroll reveals through the existing `Reveal` component, subtle hover lifts, a drawn timeline line, a slow marquee. Always respect `prefers-reduced-motion`.
 - Buttons and links never use fixed widths (see Practical constraints).
 
@@ -45,11 +45,12 @@ Tzij pages follow the editorial style of the Connecta landing, not a separate vi
 The identity is the territory as data: every line and point on a Tzij page is real terrain (Copernicus DEM GLO-30), never decoration.
 
 - **Two strokes:** a fine line (1px) and a master line (2px), like contour and index contours. Used for rules, underlines, borders and the relief itself.
-- **Marca de cota:** a single `--tzij-maiz` point with a ring, at most one per view (hero, stage 01, footer). It is also the hover state of the consortium rows. Never use maíz as text on light backgrounds.
-- **Cota in mono:** section numbers and image captions in `--font-mono`, with a short master dash before the number (`.tzij-cota`). Only real data in captions; no invented figures.
+- **Marca de cota:** a single `--tzij-maiz` point with a ring, at most one per view (hero, stage 01, footer). It is also the hover state of the project principle rows. Never use maíz as text on light backgrounds.
+- **Cota in mono:** section labels and image captions in `--font-mono`. Only real data in captions; no invented figures.
 - **One ink per surface:** each surface uses a single ink plus its grain (`tzij-grain.webp` on obsidiana and pino, `tzij-footer-grain.webp` on niebla). No gradients or shadows.
 - **Motion:** lines draw in once, on first view (`useDrawIn`), and the point ripples on hover. Always respect `prefers-reduced-motion`.
-- Do not sequence the four brand colors by elevation (it can echo the colors tied to the four directions) and do not turn the relief into a logo shape. Favicon and social image studies exist in the design canvas but are **on hold**: do not ship them without the owner's go-ahead.
+- **Tzij mark (direction chosen 2026-10-28, option B in the canvas "Logo y favicon"):** one master stroke that oscillates and ends in the maíz point, the word as a wave (tzij = word, speech). It is abstract, not a real profile. One single design for every use (favicon, logo, profile), without the ring and without the word. Stroke weight chosen 2026-10-29: thick (8 on a 64 grid, round caps; dot radius 8.4, centered on the end of the stroke). Geometry: `M6 36 C14 10 26 10 32 32 S50 54 56 28`, dot at (56, 28), viewBox `-2 -2 68 68`. Ink is niebla on pino or obsidiana, pino on niebla; the dot is always maíz. Do not ship it as favicon or social image until the owner gives the go-ahead. The site favicon stays Connecta's (`public/favicon.svg`) because the site is Connecta's landing (decision 2026-11-02); it may change later.
+- Do not sequence the four brand colors by elevation (it can echo the colors tied to the four directions) and do not turn the real relief into a logo shape. Favicon and social image studies exist in the design canvas but are **on hold**: do not ship them without the owner's go-ahead.
 
 ## Glottal stop: always `ʼ` (U+02BC)
 

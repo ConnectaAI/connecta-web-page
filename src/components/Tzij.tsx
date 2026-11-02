@@ -98,10 +98,9 @@ function Profile() {
   );
 }
 
-function SectionLabel({ num, text }: { num: string; text: string }) {
+function SectionLabel({ text }: { text: string }) {
   return (
     <div className="tzij-label">
-      <span className="tzij-label-num tzij-cota">{num}</span>
       <span className="tzij-label-text">{text}</span>
     </div>
   );
@@ -131,7 +130,7 @@ function Tzij() {
         <section className="tzij-why">
           <div className="tzij-container tzij-why-inner">
             <Reveal>
-              <SectionLabel num="01" text={t('tzij.why.label')} />
+              <SectionLabel text={t('tzij.why.label')} />
             </Reveal>
             <Reveal delay={0.05}>
               <h2 className="tzij-title tzij-title--statement">
@@ -147,7 +146,7 @@ function Tzij() {
         <section className="tzij-consortium">
           <div className="tzij-container">
             <Reveal className="tzij-section-head">
-              <SectionLabel num="02" text={t('tzij.consortium.label')} />
+              <SectionLabel text={t('tzij.consortium.label')} />
               <div className="tzij-section-body">
                 <h2 className="tzij-title">
                   <Trans i18nKey="tzij.consortium.title" components={emphasis} />
@@ -171,7 +170,7 @@ function Tzij() {
         <section className="tzij-roadmap">
           <div className="tzij-container">
             <Reveal className="tzij-section-head">
-              <SectionLabel num="03" text={t('tzij.roadmap.label')} />
+              <SectionLabel text={t('tzij.roadmap.label')} />
               <h2 className="tzij-title">
                 <Trans i18nKey="tzij.roadmap.title" components={emphasis} />
               </h2>

@@ -20,11 +20,6 @@
   min-width: 11rem;
 }
 
-.tzij-label-num {
-  font-family: var(--font-mono);
-  font-size: 0.8rem;
-}
-
 .tzij-label-text {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -194,7 +189,7 @@
   color: rgb(var(--tzij-niebla-rgb) / 0.85);
 }
 
-/* Marker on the plaza of Q'umarkaj. Idle: ring, dot, leader and label.
+/* Marker on the plaza of Qʼumarkaj. Idle: ring, dot, leader and label.
    Hover or keyboard focus: the ring swells, two ripples travel outward and
    the label turns maiz. */
 .tzij-pin {
@@ -417,21 +412,7 @@
   position: relative;
 }
 
-.tzij-cota {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.625rem;
-}
-
-.tzij-cota::before {
-  content: '';
-  flex: none;
-  width: 18px;
-  height: 2px;
-  background: currentColor;
-}
-
-/* 01 · Por qué: statement type, muted lead-in, heavy conclusion */
+/* Por qué: statement type, muted lead-in, heavy conclusion */
 .tzij-why {
   padding: 8.75rem 1.5rem 8rem;
   border-top: 1px solid rgb(var(--tzij-obsidiana-rgb) / 0.14);
@@ -445,10 +426,6 @@
 
 .tzij-why .tzij-label {
   flex: none;
-}
-
-.tzij-why .tzij-label-num {
-  color: var(--tzij-lago);
 }
 
 .tzij-why .tzij-label-text {
@@ -485,7 +462,7 @@
   color: var(--tzij-obsidiana);
 }
 
-/* 02 · El consorcio */
+/* El consorcio */
 .tzij-consortium {
   padding: 8rem 1.5rem;
   background: var(--tzij-pino);
@@ -622,7 +599,7 @@
   color: rgb(var(--tzij-niebla-rgb) / 0.9);
 }
 
-/* 03 · Hacia dónde vamos: four stages on a real elevation profile */
+/* Hacia dónde vamos: four stages on a real elevation profile */
 .tzij-roadmap {
   padding: 8rem 1.5rem 7.5rem;
   background: var(--tzij-obsidiana);
@@ -633,10 +610,6 @@
   display: flex;
   flex-direction: column;
   gap: 4rem;
-}
-
-.tzij-roadmap .tzij-label-num {
-  color: var(--tzij-maiz);
 }
 
 .tzij-roadmap .tzij-label-text {

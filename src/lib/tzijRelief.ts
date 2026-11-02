@@ -1,4 +1,4 @@
-// Contour lines around Q'umarkaj, Quiché: Copernicus DEM GLO-30, one line every 20 m.
+// Contour lines around Qʼumarkaj, Quiché: Copernicus DEM GLO-30, one line every 20 m.
 // Coordinates are in the 618 x 648 map box (see Tzij.tsx). Generated data; do not edit by hand.
 export const RELIEF_BOX = { width: 618, height: 648 } as const;
 export const RELIEF_SITE = { x: 308.6, y: 324.8 } as const;
