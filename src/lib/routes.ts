@@ -8,6 +8,7 @@ export const LANGS: Lang[] = ['es', 'en'];
 export const PAGES = [
   { path: '/', key: 'home', indexable: true },
   { path: '/medassistant', key: 'medassistant', indexable: true },
+  { path: '/tzij', key: 'tzij', indexable: true },
   { path: '/privacidad', key: 'privacy', indexable: true },
   { path: '/terminos', key: 'terms', indexable: true },
 ] as const;

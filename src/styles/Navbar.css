@@ -331,3 +331,116 @@
     height: 32px;
   }
 }
+
+/* /tzij — the navbar takes the Tzij theme (AGENTS.md exception). Variables
+   come from the .tzij-theme class set on the nav itself. Transparent over the
+   black hero, niebla paper once it is over light sections. */
+.navbar-tzij .logo-image {
+  color: var(--tzij-niebla);
+}
+
+.navbar-tzij .nav-menu a {
+  color: rgb(var(--tzij-niebla-rgb) / 0.82);
+}
+
+.navbar-tzij .nav-menu a:hover,
+.navbar-tzij .nav-menu a.active {
+  color: var(--tzij-maiz);
+}
+
+.navbar-tzij .nav-cta {
+  background: var(--tzij-niebla);
+  color: var(--tzij-obsidiana);
+}
+
+.navbar-tzij .nav-cta:hover {
+  background: var(--tzij-maiz);
+  color: var(--tzij-obsidiana);
+}
+
+.navbar-tzij .language-switcher {
+  color: rgb(var(--tzij-niebla-rgb) / 0.82);
+  border-color: rgb(var(--tzij-niebla-rgb) / 0.3);
+}
+
+.navbar-tzij .language-switcher:hover {
+  background: rgb(var(--tzij-niebla-rgb) / 0.12);
+  border-color: var(--tzij-niebla);
+}
+
+.navbar-tzij .hamburger span {
+  background: var(--tzij-niebla);
+}
+
+.navbar-tzij.navbar-on-light .container {
+  background: var(--tzij-niebla);
+  border-bottom-color: rgb(var(--tzij-obsidiana-rgb) / 0.14);
+}
+
+.navbar-tzij.navbar-scrolled.navbar-on-light .container {
+  background: rgb(var(--tzij-niebla-rgb) / 0.92);
+  border-bottom-color: transparent;
+}
+
+.navbar-tzij.navbar-on-light .logo-image {
+  color: var(--tzij-obsidiana);
+}
+
+.navbar-tzij.navbar-on-light .nav-menu a {
+  color: var(--tzij-piedra);
+}
+
+.navbar-tzij.navbar-on-light .nav-menu a:hover,
+.navbar-tzij.navbar-on-light .nav-menu a.active {
+  color: var(--tzij-pino);
+}
+
+.navbar-tzij.navbar-on-light .nav-cta {
+  background: var(--tzij-obsidiana);
+  color: var(--tzij-niebla);
+}
+
+.navbar-tzij.navbar-on-light .nav-cta:hover {
+  background: var(--tzij-pino);
+  color: var(--tzij-niebla);
+}
+
+.navbar-tzij.navbar-on-light .language-switcher {
+  color: var(--tzij-piedra);
+  border-color: rgb(var(--tzij-obsidiana-rgb) / 0.3);
+}
+
+.navbar-tzij.navbar-on-light .language-switcher:hover {
+  background: rgb(var(--tzij-obsidiana-rgb) / 0.06);
+  border-color: var(--tzij-pino);
+  color: var(--tzij-pino);
+}
+
+.navbar-tzij.navbar-on-light .hamburger span {
+  background: var(--tzij-piedra);
+}
+
+@media (max-width: 768px) {
+  /* The open mobile sheet is always opaque niebla, whatever the navbar theme. */
+  .navbar-tzij .nav-menu {
+    background: rgb(var(--tzij-niebla-rgb) / 0.96);
+  }
+
+  .navbar-tzij .nav-menu a {
+    color: var(--tzij-piedra);
+  }
+
+  .navbar-tzij .nav-menu a:hover,
+  .navbar-tzij .nav-menu a.active {
+    color: var(--tzij-pino);
+  }
+
+  .navbar-tzij .nav-menu a.nav-cta,
+  .navbar-tzij .nav-menu a.nav-cta:hover,
+  .navbar-tzij .nav-menu a.nav-cta.active,
+  .navbar-tzij.navbar-on-light .nav-menu a.nav-cta,
+  .navbar-tzij.navbar-on-light .nav-menu a.nav-cta:hover {
+    background: var(--tzij-obsidiana);
+    color: var(--tzij-niebla);
+  }
+}

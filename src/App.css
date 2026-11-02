@@ -47,6 +47,22 @@
   --rose-500: #fb7185;
 }
 
+/* Tzij palette (see AGENTS.md). Scoped to .tzij-theme so it never leaks into
+   the rest of the site; Connecta elements keep the variables above. */
+.tzij-theme {
+  --tzij-pino: #2f5d50;
+  --tzij-lago: #2b5f7e;
+  --tzij-barro: #a54a29;
+  --tzij-maiz: #e2aa33;
+  --tzij-piedra: #6e695f;
+  --tzij-obsidiana: #1e1c1a;
+  --tzij-niebla: #f6f2ea;
+  /* RGB channels of the two ink/paper colors, for hairlines and soft text */
+  --tzij-obsidiana-rgb: 30 28 26;
+  --tzij-niebla-rgb: 246 242 234;
+  --tzij-maiz-rgb: 226 170 51; /* channels of --tzij-maiz, for hover glow */
+}
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   line-height: 1.6;

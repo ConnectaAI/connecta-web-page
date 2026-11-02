@@ -4,6 +4,7 @@ import Reveal from './Reveal';
 import { localizedPath } from '../lib/routes';
 import dashboardImage from '../assets/dashboard.jpg';
 import '../styles/Products.css';
+import '../styles/Tzij.css';
 
 function Products() {
   const { t, i18n } = useTranslation();
@@ -30,6 +31,19 @@ function Products() {
             </div>
             <span className="product-feature-caption">{t('products.medassistant.mockupCaption')}</span>
           </div>
+        </Reveal>
+
+        <Reveal delay={0.1}>
+          <Link to={localizedPath('/tzij', i18n.language === 'en' ? 'en' : 'es')} className="tzij-theme tzij-card">
+            <span className="tzij-card-badge">{t('products.tzij.badge')}</span>
+            <h3 className="tzij-card-title">{t('products.tzij.title')}</h3>
+            <span className="tzij-card-meaning">{t('products.tzij.meaning')}</span>
+            <p className="tzij-card-text">{t('products.tzij.description')}</p>
+            <span className="tzij-card-cta">
+              {t('products.tzij.cta')}
+              <span className="tzij-card-arrow" aria-hidden="true">→</span>
+            </span>
+          </Link>
         </Reveal>
       </div>
     </section>
